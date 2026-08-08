@@ -6,3 +6,4 @@ dist/
 *.log
 astro.config.mjs.bak
 redbank-iii-*.pdf
+concept-art/gen*.py

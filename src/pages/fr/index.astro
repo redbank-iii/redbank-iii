@@ -150,6 +150,57 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
   </div>
 </section>
 
+<!-- ============ 3D DESIGN ============ -->
+<section class="section section-dark" id="design3d">
+  <div class="container">
+    <div class="section-eyebrow">3D DESIGN · 三维设计</div>
+    <h2 class="section-title">{t(lang, 'design3d.title')}</h2>
+    <p class="section-sub">{t(lang, 'design3d.sub')}</p>
+    <div class="science-grid">
+      <div class="science-card">
+        <img src={`${imgBase}/images/design/pr-unit.png`} alt="Redbank III unit with Samyang 135mm f/2.0" loading="lazy">
+        <div class="science-card-overlay">
+          <h3>{t(lang, 'design3d.unit')}</h3>
+          <p>{t(lang, 'design3d.unit.desc')}</p>
+          <div class="credit">Path-traced from the printable STLs · cad/</div>
+        </div>
+      </div>
+      <div class="science-card">
+        <img src={`${imgBase}/images/design/pr-array.png`} alt="Redbank III 4x8 array with 32 Samyang lenses" loading="lazy">
+        <div class="science-card-overlay">
+          <h3>{t(lang, 'design3d.array')}</h3>
+          <p>{t(lang, 'design3d.array.desc')}</p>
+          <div class="credit">Path-traced from the printable STLs · cad/</div>
+        </div>
+      </div>
+      <div class="science-card">
+        <img src={`${imgBase}/images/design/pr-puck.png`} alt="Redbank III unit exploded view" loading="lazy">
+        <div class="science-card-overlay">
+          <h3>{t(lang, 'design3d.exploded')}</h3>
+          <p>{t(lang, 'design3d.exploded.desc')}</p>
+          <div class="credit">Path-traced from the printable STLs · cad/</div>
+        </div>
+      </div>
+      <div class="science-card">
+        <img src={`${imgBase}/images/design/socket.png`} alt="Redbank III bayonet socket — drop in and twist to lock" loading="lazy">
+        <div class="science-card-overlay">
+          <h3>{t(lang, 'design3d.carrier')}</h3>
+          <p>{t(lang, 'design3d.carrier.desc')}</p>
+          <div class="credit">Path-traced from the printable STLs · cad/</div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:28px; border:1px solid rgba(255,255,255,0.12); border-radius:14px; overflow:hidden; background:#0d1117;">
+      <div style="padding:14px 18px 4px 18px;">
+        <h3 style="margin:0; font-size:1.05rem;">{t(lang, 'design3d.live')}</h3>
+        <p style="margin:6px 0 10px 0; color:#8391a0; font-size:0.85rem;">{t(lang, 'design3d.live.desc')}</p>
+      </div>
+      <iframe src={`${imgBase}/viewer/index.html?v=18`} title="Redbank III interactive URDF viewer" loading="lazy"
+        style="width:100%; height:560px; border:0; display:block; background:#0d1117;"></iframe>
+    </div>
+  </div>
+</section>
+
 <!-- ============ DESIGN PHILOSOPHY ============ -->
 <section class="section" id="design">
   <div class="container">

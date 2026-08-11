@@ -26,7 +26,7 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
       <a href="https://github.com/mistyminds/redbank-iii" class="btn btn-ghost">{t(lang, 'hero.cta.github')}</a>
     </div>
     <div class="hero-stats">
-      <div class="stat"><div class="stat-num">$618</div><div class="stat-label">{t(lang, 'hero.stat.cost')}</div></div>
+      <div class="stat"><div class="stat-num">Â¥1,500</div><div class="stat-label">{t(lang, 'hero.stat.cost')}</div></div>
       <div class="stat"><div class="stat-num">382mm</div><div class="stat-label">{t(lang, 'hero.stat.aperture')}</div></div>
       <div class="stat"><div class="stat-num">100×</div><div class="stat-label">{t(lang, 'hero.stat.advantage')}</div></div>
       <div class="stat"><div class="stat-num">100%</div><div class="stat-label">{t(lang, 'hero.stat.open')}</div></div>
@@ -62,7 +62,122 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
   </div>
 </section>
 
-<!-- ============ SCIENCE — real Hubble/JWST images ============ -->
+<!-- ============ OPPORTUNITY ============ -->
+<section class="section section-dark" id="opportunity">
+  <div class="container">
+    <div class="section-eyebrow">L'OPPORTUNITÉ · 机会</div>
+    <h2 class="section-title">L'astronomie professionnelle gagne en profondeur.<br>L'astronomie amateur gagne en largeur.</h2>
+    <p class="section-sub">
+      La profondeur (matière noire, ondes gravitationnelles, atmosphères d'exoplanètes) appartient à Hubble, JWST et au télescope de la station spatiale chinoise — hors de portée des amateurs. Mais la largeur est différente : le ciel est vaste, les phénomènes innombrables, et tous les grands relevés du monde réunis ne regardent que <strong>1,5 %</strong> du ciel à chaque instant.
+    </p>
+
+    <div class="opp-stats">
+      <div class="opp-stat">
+        <div class="opp-num">~1,5%</div>
+        <div class="opp-label">Couverture instantanée des relevés mondiaux<br><span>Rubin + ZTF + PS1 + ATLAS + ASAS-SN réunis ≈ 600 deg² sur 41 253 deg²</span></div>
+      </div>
+      <div class="opp-stat">
+        <div class="opp-num">~40%</div>
+        <div class="opp-label">Complétude de découverte des géocroiseurs ≥140 m<br><span>Chiffre officiel NASA CNEOS ; le Congrès exige 90 %, LSST n'atteint que 62 %</span></div>
+      </div>
+      <div class="opp-stat">
+        <div class="opp-num">0</div>
+        <div class="opp-label">Groupes amateurs dans le top-10 des découvreurs de transitoires<br><span>Le TNS recense 200 000 transitoires ; le top 10 est 100 % professionnel</span></div>
+      </div>
+      <div class="opp-stat">
+        <div class="opp-num">0,3%</div>
+        <div class="opp-label">Surface terrestre couverte par les réseaux de bolides<br><span>Les 150 caméras de FRIPON — déjà l'un des plus grands réseaux au monde</span></div>
+      </div>
+    </div>
+
+    <div class="mission-grid">
+      <div class="mission-text">
+        <p>
+          <strong>Les victoires amateurs tombent précisément dans les angles morts des professionnels.</strong>
+          En 2016, l'amateur argentin Víctor Buso a capturé le shock breakout de SN 2016gkg depuis son jardin — les premières heures de lumière d'une supernova — et co-signé un article dans <em>Nature</em>.
+          En 2023, Koichi Itagaki a découvert SN 2023ixf à magnitude 14,9, deux jours complets avant les données de ZTF.
+          Les grandes campagnes amateurs d'occultations (Pallas 1983, 130 stations ; MU69 2017, éclaireur de New Horizons) restent inégalées par tout observatoire unique.
+        </p>
+        <p>
+          <strong>Pourtant, les réseaux amateurs existants n'ont pas saisi ce prix.</strong>
+          L'AAVSO détient 84,8 millions de mesures photométriques — soumises à la main, ce n'est pas un relevé.
+          Unistellar a vendu 25 000 télescopes intelligents ; cinq ans de science en réseau ont produit ~10 articles évalués, le tout closed-source.
+          Seestar a automatisé le télescope individuel, mais les données restent piégées dans chaque téléphone — <strong>l'automatisation d'un seul n'est pas la science de tous</strong>.
+          Matériel fermé, données privées, pas d'ordonnancement autonome, pas de déclenchement inter-nœuds — voilà les goulots structurels.
+        </p>
+        <p>
+          <strong>Le contre-exemple prouve que ça marche :</strong> le Global Meteor Network est passé de 450 caméras Raspberry Pi à plus de 1 000 dans 40+ pays, entièrement open source, publiant 220 000+ orbites de météores en 24 heures.
+          Il ne lui manque qu'une chose — des capteurs plus profonds et une plus grande ouverture. C'est exactement ce que Redbank III ajoute.
+        </p>
+      </div>
+      <div class="mission-quote">
+        <blockquote>
+          "Les amateurs ne manquent ni de passion ni d'équipement —<br>
+          il leur manque le protocole qui transforme<br>
+          dix mille petits télescopes<br>
+          en une seule machine de relevé."
+        </blockquote>
+        <cite>— Manifeste réseau Redbank III</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FIRST PRINCIPLES ============ -->
+<section class="section" id="principle">
+  <div class="container">
+    <div class="section-eyebrow">PREMIERS PRINCIPES · 第一性原理</div>
+    <h2 class="section-title">Choisir un capteur, ce n'est pas choisir des specs —<br>c'est choisir sur quelle chaîne d'approvisionnement on se tient</h2>
+    <p class="section-sub">
+      La capacité de collecte de lumière tient en une grandeur physique — <strong>l'étendue (A×Ω, surface de pupille × champ solide)</strong>.
+      Elle se moque des finesses optiques, mais elle croît brutalement avec surface du capteur × ouverture.
+      Et le prix des capteurs et objectifs n'est pas fixé par le marché astronomique — il est fixé par la chaîne d'approvisionnement de masse sur laquelle chaque produit s'adosse.
+    </p>
+
+    <div class="fp-grid">
+      <div class="fp-card fp-them">
+        <div class="fp-tag">Télescopes intelligents grand public</div>
+        <h3>Adossés au marché de la vidéosurveillance</h3>
+        <p class="fp-sensor">Capteurs Sony STARVIS de surveillance<br><span>IMX462 / IMX585 / IMX678 — formats 1/2,8" à 1/1,2"</span></p>
+        <p>
+          Des centaines de millions de caméras de surveillance s'écoulent chaque année ; STARVIS a poussé le bruit de lecture à 0,6e⁻ pour quelques dollars pièce.
+          Mais les objectifs de surveillance ne couvrent que les petits capteurs — toute l'industrie est donc enfermée sous 1/1,2" :
+          petit capteur → petit cercle image → petites optiques → 400–1 000 $ → des centaines d'images empilées en direct, « échanger du temps contre du diamètre ».
+        </p>
+        <div class="fp-etendue">
+          <div class="fp-row"><span>Seestar S50 (IMX462)</span><strong>≈ 0,55 mm²·sr</strong></div>
+          <div class="fp-row"><span>Celestron Origin (RASA 6")</span><strong>≈ 6,0 mm²·sr</strong></div>
+        </div>
+        <p class="fp-note">Aucune coïncidence — déterminisme de la chaîne d'approvisionnement : le marché de la surveillance n'a pas de capteur 1", les télescopes intelligents ne peuvent pas s'en offrir un.</p>
+      </div>
+
+      <div class="fp-card fp-us">
+        <div class="fp-tag fp-tag-warm">Redbank III</div>
+        <h3>Adossé au marché du smartphone</h3>
+        <p class="fp-sensor">Sony IMX989, capteur 1 pouce de flagship photo<br><span>128 mm² de silicium — surplus de la course aux armements photo des smartphones</span></p>
+        <p>
+          Les constructeurs ont poussé les capteurs 1" à 50 MP / 1,6 µm et emballé SoC, ISP, stockage, écran et batterie dans un seul appareil.
+          Une génération plus tard, tout ce « calculateur + grand capteur » se revend d'occasion à 1 200 ¥ (~210 $).
+          Ajoutez un objectif Samyang 135mm f/2.0 à 500 ¥ — 2 000 ¥ par unité. Aucun concurrent ne peut offrir ça à ce prix.
+        </p>
+        <div class="fp-etendue">
+          <div class="fp-row"><span>Unité Redbank III (IMX989 + 135mm f/2.0)</span><strong>≈ 22,6–24,1 mm²·sr</strong></div>
+          <div class="fp-row"><span>vs Origin / Seestar S50</span><strong>4× / 40×</strong></div>
+        </div>
+        <p class="fp-note">À budget égal, 4–40× la saisie de lumière — pas parce que notre optique est meilleure, mais parce que notre chaîne d'approvisionnement est plus riche.</p>
+      </div>
+    </div>
+
+    <div class="fp-conclusion">
+      <p>
+        <strong>Voilà pourquoi aucun fabricant de télescopes intelligents n'utilise de grand capteur — ce n'est pas qu'ils ne veulent pas, c'est qu'il n'existe pas dans leur chaîne d'approvisionnement.</strong>
+        Du Seestar (499 $) au Celestron Origin II (4 299 $), tout converge vers des capteurs STARVIS 1/2,8"–1/1,2". Personne ne franchit la ligne.
+        Le Xiaomi 12S Ultra d'occasion à 1 200 ¥ de Redbank III est la seule combinaison « capteur 1 pouce + plateforme de calcul complète » de ce marché —
+        et elle existe précisément parce que les smartphones itèrent un ordre de grandeur plus vite que l'astronomie.
+      </p>
+    </div>
+  </div>
+</section>
 <section class="section section-dark" id="science">
   <div class="container">
     <div class="section-eyebrow">CIBLES SCIENTIFIQUES · 科学目标</div>
@@ -195,7 +310,7 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
         <h3 style="margin:0; font-size:1.05rem;">{t(lang, 'design3d.live')}</h3>
         <p style="margin:6px 0 10px 0; color:#8391a0; font-size:0.85rem;">{t(lang, 'design3d.live.desc')}</p>
       </div>
-      <iframe src={`${imgBase}/viewer/index.html?v=18`} title="Redbank III interactive URDF viewer" loading="lazy"
+      <iframe src={`${imgBase}/viewer/index.html?v=23`} title="Redbank III interactive URDF viewer" loading="lazy"
         style="width:100%; height:560px; border:0; display:block; background:#0d1117;"></iframe>
     </div>
   </div>
@@ -246,17 +361,17 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
           <div class="spec-row"><span>Calcul/ISP</span><strong>Snapdragon 8+ Gen 1 (inclus)</strong></div>
           <div class="spec-row"><span>Objectif</span><strong>Samyang 135mm f/2.0</strong></div>
           <div class="spec-row"><span>Ouverture équivalente</span><strong>67.5mm (unité seule)</strong></div>
-          <div class="spec-row"><span>Coût unitaire</span><strong class="cost">$618</strong></div>
-          <div class="spec-row"><span>Réseau 4 unités</span><strong>$2,532</strong></div>
+          <div class="spec-row"><span>Coût unitaire</span><strong class="cost">1 500 ¥ (~210 $)</strong></div>
+          <div class="spec-row"><span>Réseau 4 unités</span><strong>6 000 ¥ (~840 $)</strong></div>
         </div>
         <div class="plan-pros-cons">
           <div class="pros">
             <h4>Avantages</h4>
             <ul>
-              <li>61 % moins cher (618 $ vs 1 600 $)</li>
+              <li>Xiaomi 12S Ultra d’occasion à 1 500 ¥ (Xianyu, 2026-08) — ~6,7× moins cher qu’une monture IMX571</li>
               <li>SoC + ISP + écran + batterie + stockage inclus</li>
               <li>Écosystème d'apps astro Android prêt</li>
-              <li>Capteur 1" IMX989 (le plus grand dans un téléphone)</li>
+              <li>Capteur 1" IMX989 (le plus grand dans un téléphone ; 13 Ultra identique — le 14 Ultra passe au LYT-900)</li>
             </ul>
           </div>
           <div class="cons">
@@ -265,7 +380,7 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
               <li>不可逆改装 (拆Objectif组)</li>
               <li>Nécessite une bague d'adaptation sur mesure</li>
               <li>La compensation du tirage est le défi technique</li>
-              <li>Dépend de la chaîne Huaqiangbei</li>
+              <li>Dépend du marché de l’occasion (12S Ultra abandonné ; acheter le même lot pour la cohérence des capteurs)</li>
               <li>Banc de calibration unique ~1,5–4 k$ (DIY: microscope+platine+collimateur), 0,5–2 h par capteur</li>
             </ul>
           </div>
@@ -318,9 +433,9 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
           <tr><td>Contrôle entrant + rodage</td><td>Test de mise sous tension + test MTF en boîte à lumière</td><td>1</td><td>$5</td><td>$5</td></tr>
         </tbody>
         <tfoot>
-          <tr class="bom-total"><td colspan="4">Total par unité</td><td><strong>$618</strong></td></tr>
-          <tr><td colspan="4">Réseau 4 unités</td><td><strong>$2,532</strong></td></tr>
-          <tr><td colspan="4">Réseau 16 unités</td><td><strong>$10,128</strong></td></tr>
+          <tr class="bom-total"><td colspan="4">Total par unité</td><td><strong>1 500 Â¥ (~210 $)</strong></td></tr>
+          <tr><td colspan="4">Réseau 4 unités</td><td><strong>6 000 Â¥ (~840 $)</strong></td></tr>
+          <tr><td colspan="4">Réseau 16 unités</td><td><strong>24 000 Â¥ (~3 350 $)</strong></td></tr>
         </tfoot>
       </table>
     </div>
@@ -346,11 +461,11 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
           </tr>
         </thead>
         <tbody>
-          <tr><td><strong>1 台</strong></td><td>67.5mm</td><td>2.7"</td><td>$1,600</td><td>$618</td><td>Lune, Jupiter, Saturne, M42, M31</td></tr>
-          <tr><td><strong>4 台</strong></td><td>135mm</td><td>5.3"</td><td>$6,400</td><td>$2,532</td><td>+ galaxies faibles, halos stellaires</td></tr>
-          <tr><td><strong>8 台</strong></td><td>191mm</td><td>7.5"</td><td>$12,800</td><td>$5,064</td><td>+ galaxies ultra-diffuses, milieu intergalactique</td></tr>
-          <tr><td><strong>16 台</strong></td><td>270mm</td><td>10.6"</td><td>$25,600</td><td>$10,128</td><td>+ science de classe Dragonfly 8 objectifs</td></tr>
-          <tr><td><strong>32 台</strong></td><td>382mm</td><td>15"</td><td>$51,200</td><td>$20,256</td><td>+ toile cosmique, milieu circumgalactique</td></tr>
+          <tr><td><strong>1 台</strong></td><td>67.5mm</td><td>2.7"</td><td>$1,600</td><td>1 500 Â¥</td><td>Lune, Jupiter, Saturne, M42, M31</td></tr>
+          <tr><td><strong>4 台</strong></td><td>135mm</td><td>5.3"</td><td>$6,400</td><td>6 000 Â¥</td><td>+ galaxies faibles, halos stellaires</td></tr>
+          <tr><td><strong>8 台</strong></td><td>191mm</td><td>7.5"</td><td>$12,800</td><td>12 000 Â¥</td><td>+ galaxies ultra-diffuses, milieu intergalactique</td></tr>
+          <tr><td><strong>16 台</strong></td><td>270mm</td><td>10.6"</td><td>$25,600</td><td>24 000 Â¥</td><td>+ science de classe Dragonfly 8 objectifs</td></tr>
+          <tr><td><strong>32 台</strong></td><td>382mm</td><td>15"</td><td>$51,200</td><td>48 000 Â¥</td><td>+ toile cosmique, milieu circumgalactique</td></tr>
         </tbody>
       </table>
     </div>
@@ -365,7 +480,7 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
         </div>
         <div class="vs-item">
           <div class="vs-label">红岸 III Plan B (32 镜)</div>
-          <div class="vs-bar vs-redbank" style="--pct:13.5%">$20,256</div>
+          <div class="vs-bar vs-redbank" style="--pct:4.5%">48 000 Â¥ (~6 700 $)</div>
           <div class="vs-note">382mm Ouverture équivalente · Entièrement open source</div>
         </div>
       </div>
@@ -395,6 +510,10 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
       <div class="software-item">
         <h3>Contrôle</h3>
         <p>Contrôle de monture (INDI / LX200), relevé automatisé, ordonnancement des cibles. Intégration native d'Octos AgentOS — le télescope comme agent, répondant automatiquement aux alertes GRB/SN.</p>
+      </div>
+      <div class="software-item">
+        <h3>Pose décalée · Ordonnancement double mode</h3>
+        <p>Les capteurs de smartphone plafonnent la pose unitaire à 30 s (limite dure du HAL Android). La solution : <strong>32 nœuds en 4 groupes de 8, déphasés de 7,5 s</strong> — à tout instant ~30/32 nœuds collectent des photons, portant la couverture temporelle du réseau à ~100 %. Plus aucune fenêtre aveugle pour les transitoires, occultations ou rémanents de GRB. En mode relevé on décale (couverture) ; sur alerte, tout le réseau bascule en cycles synchronisés (résolution temporelle). C'est exactement ainsi qu'Evryscope et ASAS-SN opèrent leurs relevés professionnels.</p>
       </div>
     </div>
   </div>
@@ -494,7 +613,7 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
     <div class="join-grid">
       <div class="join-item">
         <h3>En construire un</h3>
-        <p>Achetez le BOM, suivez le tutoriel, prenez votre première photo du ciel profond. Lite 200 $, Pro 618 $.</p>
+        <p>Achetez le BOM, suivez le tutoriel, prenez votre première photo du ciel profond. Lite 1 000 Â¥, Pro 1 500 Â¥.</p>
         <a href="#" class="btn btn-plan">Guide d'assemblage</a>
       </div>
       <div class="join-item">

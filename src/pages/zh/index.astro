@@ -369,8 +369,8 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
           <div class="spec-row"><span>平台</span><strong>小米 12S Ultra 料板</strong></div>
           <div class="spec-row"><span>传感器</span><strong>1" IMX989 (50MP)</strong></div>
           <div class="spec-row"><span>计算/ISP</span><strong>Snapdragon 8+ Gen 1 (白嫖)</strong></div>
-          <div class="spec-row"><span>镜头</span><strong>Samyang 135mm f/2.0</strong></div>
-          <div class="spec-row"><span>等效口径</span><strong>67.5mm (单镜)</strong></div>
+          <div class="spec-row"><span>镜头</span><strong>三档可选 (见下) — 默认 Samyang 135mm f/2.0</strong></div>
+          <div class="spec-row"><span>等效口径</span><strong>36–67.5mm (视镜头档)</strong></div>
           <div class="spec-row"><span>单台成本</span><strong class="cost">¥1,500 (二手整机)</strong></div>
           <div class="spec-row"><span>4 镜阵列</span><strong>¥6,000</strong></div>
         </div>
@@ -397,6 +397,52 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
         </div>
         <a href="#bom-b" class="btn btn-plan">看 BOM</a>
       </div>
+    </div>
+
+    <!-- lens options: three tiers for different survey needs -->
+    <div class="lens-options">
+      <h3 class="lens-title">镜头三档 · 按巡天需求选</h3>
+      <p class="lens-sub">
+        天文成像的收光能力 = étendue (口径² × 视场²)。超广角 (14–24mm) 看着视场大, 但口径只有 5–17mm, étendue 反而最低, 且全开光圈彗差烂到无法测光 — <strong>超广只适合流星雨, 不适合深空巡天</strong>。甜点在 50–135mm 大光圈: 胶片时代老镜头二手海量, 单位价格的 étendue 最高。阵列靠 √N 叠加, 单镜 étendue 降档可以用节点数补回来。
+      </p>
+      <div class="lens-grid">
+        <div class="lens-card">
+          <div class="lens-badge lens-badge-wide">广角巡天 · 推荐主力</div>
+          <h4>50mm f/1.4 老镜头</h4>
+          <div class="lens-price">¥150–300</div>
+          <div class="lens-specs">
+            <div><span>étendue</span><strong>~13 mm²·sr</strong></div>
+            <div><span>视场</span><strong>15° × 11°</strong></div>
+            <div><span>巡天效率</span><strong>最高 (deg²/h)</strong></div>
+          </div>
+          <p>佳能 EF 50/1.4, 尼康 50/1.4G, 俄头 Helios 44 — 胶片时代遗产, 二手市场海量。135mm 的 57% 收光, 1/3 的价格。32 台全配这档, 把"宽度赢天下"做到极致。</p>
+        </div>
+        <div class="lens-card lens-card-featured">
+          <div class="lens-badge">深度节点 · 默认方案</div>
+          <h4>Samyang 135mm f/2.0</h4>
+          <div class="lens-price">¥400–600</div>
+          <div class="lens-specs">
+            <div><span>étendue</span><strong>~23 mm²·sr</strong></div>
+            <div><span>视场</span><strong>5.6° × 4.2°</strong></div>
+            <div><span>单帧深度</span><strong>最高</strong></div>
+          </div>
+          <p>67.5mm 通光口径, 天文摄影圈验证过的深空神镜。价格偏高 — 建议只给少数"深度节点"用, 拍星系/星云等小视场高价值目标。</p>
+        </div>
+        <div class="lens-card">
+          <div class="lens-badge lens-badge-scope">望远镜路线 · 免转接</div>
+          <h4>60ED 折射镜</h4>
+          <div class="lens-price">¥300–500</div>
+          <div class="lens-specs">
+            <div><span>étendue</span><strong>~18 mm²·sr</strong></div>
+            <div><span>焦距</span><strong>~330mm (F/5.5)</strong></div>
+            <div><span>像质</span><strong>APO 级, 免调</strong></div>
+          </div>
+          <p>60mm 口径 ED 小折射, 天生为天文设计 — 无彗差, 无改装, M42 直插。étendue 不输 135mm f/2.0, 还省掉转接环和法兰距校准的工程痛点。</p>
+        </div>
+      </div>
+      <p class="lens-conclusion">
+        <strong>推荐编队: 28 台 50mm f/1.4 广角巡天 + 4 台 135mm f/2.0 (或 60ED) 深度节点</strong> — 镜头成本从 32×¥500=¥16,000 降到 28×¥200+4×¥500=¥7,600, 省下的钱再造 5 台节点。
+      </p>
     </div>
 
 <!-- engineering deep-dive: phone repurposing feasibility -->
@@ -468,23 +514,23 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
         <tbody>
           <tr><td>手机料板</td><td>小米 12S Ultra (屏幕坏/后盖裂, 主板+摄像头完好)</td><td>1</td><td>$50</td><td>$50</td></tr>
           <tr><td>改造人工</td><td>华强北改机师傅 (拆镜头组 + 清洁 + 组装)</td><td>1</td><td>$3</td><td>$3</td></tr>
-          <tr><td>天文镜头</td><td>Samyang 135mm f/2.0 (Canon EF)</td><td>1</td><td>$500</td><td>$500</td></tr>
-          <tr><td>转接环</td><td>Canon EF → 手机传感器 (CNC 定制)</td><td>1</td><td>$25</td><td>$25</td></tr>
+          <tr><td>天文镜头</td><td>三档: 50mm f/1.4 老镜头 (¥150–300) / Samyang 135mm f/2.0 (¥400–600) / 60ED 折射镜 (¥300–500)</td><td>1</td><td>$200–600</td><td>$200–600</td></tr>
+          <tr><td>转接环</td><td>EF/M42 → 手机传感器 (CNC 定制; 60ED 档免转接, M42 直插)</td><td>1</td><td>$25</td><td>$25</td></tr>
           <tr><td>外壳</td><td>铝合金 CNC 外壳 (含散热)</td><td>1</td><td>$30</td><td>$30</td></tr>
           <tr><td>调焦筒</td><td>M42 调焦筒 (天文标准件)</td><td>1</td><td>$10</td><td>$10</td></tr>
           <tr><td>杂件</td><td>密封圈, IR-cut 滤镜, 螺丝等</td><td>1</td><td>$15</td><td>$15</td></tr>
           <tr><td>来料检测 + 老化</td><td>通电测试 + 灯箱 MTF 测试</td><td>1</td><td>$5</td><td>$5</td></tr>
         </tbody>
         <tfoot>
-          <tr class="bom-total"><td colspan="4">单台总成本</td><td><strong>$618</strong></td></tr>
-          <tr><td colspan="4">4 镜阵列</td><td><strong>$2,532</strong></td></tr>
-          <tr><td colspan="4">16 镜阵列</td><td><strong>$10,128</strong></td></tr>
+          <tr class="bom-total"><td colspan="4">单台总成本 (50mm 档 / 135mm 档 / 60ED 档)</td><td><strong>¥1,300 / ¥1,700 / ¥1,500</strong></td></tr>
+          <tr><td colspan="4">推荐编队: 28×50mm + 4×135mm (或 60ED)</td><td><strong>~¥44,400</strong></td></tr>
+          <tr><td colspan="4">32 台全 50mm 广角巡天</td><td><strong>~¥41,600</strong></td></tr>
         </tfoot>
       </table>
     </div>
     <p class="bom-note">
-      ✅ <strong>优势:</strong> 便宜 61%, 白嫖 SoC + ISP + 屏幕 + 电池 + 存储, Android 生态现成<br>
-      ⚠️ <strong>注意:</strong> 不可逆改装, 依赖华强北供应链, 转接环需为每款手机定制 (建议统一用小米 12S Ultra)
+      ✅ <strong>优势:</strong> 二手整机 ¥1,500 白嫖 SoC + ISP + 屏幕 + 电池 + 存储, Android 生态现成; 镜头按巡天需求选档<br>
+      ⚠️ <strong>注意:</strong> 不可逆改装, 12S Ultra 已停产需同批次采购; 手机 sensor 30s 单帧上限由阵列交错曝光补偿 (见软件章节)
     </p>
   </div>
 </section>

@@ -176,6 +176,49 @@ body {
   margin-bottom: 56px;
 }
 
+/* ============ TRACKING ============ */
+.track-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 32px;
+  margin-top: 48px;
+}
+.track-card {
+  padding: 36px 32px; background: var(--surface);
+  border: 1px solid var(--border); border-radius: 6px;
+  transition: all 0.3s;
+}
+.track-card:hover { border-color: var(--accent); }
+.track-eq { border-color: var(--accent-warm); }
+.track-tag {
+  display: inline-block; font-family: var(--font-mono); font-size: 10px;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--accent-warm); border: 1px solid var(--accent-warm);
+  padding: 3px 10px; border-radius: 3px; margin-bottom: 16px;
+}
+.track-tag-mute { color: var(--text-mute); border-color: var(--text-mute); }
+.track-card h3 {
+  font-family: var(--font-serif); font-size: 21px; font-weight: 600;
+  line-height: 1.4; margin-bottom: 16px;
+}
+.track-card p { font-size: 14px; color: var(--text-dim); line-height: 1.8; margin-bottom: 20px; }
+.track-card p strong { color: var(--accent-warm); font-weight: 600; }
+.track-row {
+  display: flex; justify-content: space-between; align-items: baseline;
+  gap: 16px; padding: 8px 0; font-size: 13px; color: var(--text-dim);
+}
+.track-row + .track-row { border-top: 1px solid var(--border); }
+.track-row strong { color: var(--text); font-family: var(--font-mono); font-size: 12px; text-align: right; }
+.track-note {
+  margin-top: 40px; padding: 36px 40px; background: var(--surface);
+  border-left: 3px solid var(--accent); border-radius: 4px;
+}
+.track-note h4 {
+  font-family: var(--font-serif); font-size: 20px; font-weight: 600;
+  margin-bottom: 16px;
+}
+.track-note p { font-size: 15px; color: var(--text-dim); line-height: 1.85; margin-bottom: 16px; }
+.track-note p strong { color: var(--accent-warm); font-weight: 600; }
+.track-conclusion { margin-bottom: 0 !important; }
+
 /* ============ LENS OPTIONS ============ */
 .lens-options { margin-top: 64px; }
 .lens-title {
@@ -340,6 +383,9 @@ body {
 .plans-compare {
   display: grid; grid-template-columns: 1fr 1fr; gap: 32px;
   margin-top: 56px;
+}
+.plans-compare > .plan-card:last-child:not(:nth-child(2)) {
+  grid-column: 1 / -1;
 }
 .plan-card {
   padding: 40px; background: var(--surface);
@@ -625,6 +671,7 @@ body {
   .opp-stats { grid-template-columns: repeat(2, 1fr); }
   .fp-grid { grid-template-columns: 1fr; }
   .lens-grid { grid-template-columns: 1fr; }
+  .track-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; gap: 32px; }
   .section { padding: 72px 0; }
 }

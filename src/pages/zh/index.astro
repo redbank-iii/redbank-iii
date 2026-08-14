@@ -369,8 +369,8 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
           <div class="spec-row"><span>平台</span><strong>小米 12S Ultra 料板</strong></div>
           <div class="spec-row"><span>传感器</span><strong>1" IMX989 (50MP)</strong></div>
           <div class="spec-row"><span>计算/ISP</span><strong>Snapdragon 8+ Gen 1 (白嫖)</strong></div>
-          <div class="spec-row"><span>镜头</span><strong>三档可选 (见下) — 默认 Samyang 135mm f/2.0</strong></div>
-          <div class="spec-row"><span>等效口径</span><strong>36–67.5mm (视镜头档)</strong></div>
+          <div class="spec-row"><span>镜头</span><strong>三档可选 (见下) — 默认 Nikon 50/1.8D (二手 ~¥410)</strong></div>
+          <div class="spec-row"><span>等效口径</span><strong>28–48mm (视镜头档)</strong></div>
           <div class="spec-row"><span>单台成本</span><strong class="cost">¥1,500 (二手整机)</strong></div>
           <div class="spec-row"><span>4 镜阵列</span><strong>¥6,000</strong></div>
         </div>
@@ -403,45 +403,46 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
     <div class="lens-options">
       <h3 class="lens-title">镜头三档 · 按巡天需求选</h3>
       <p class="lens-sub">
-        天文成像的收光能力 = étendue (口径² × 视场²)。超广角 (14–24mm) 看着视场大, 但口径只有 5–17mm, étendue 反而最低, 且全开光圈彗差烂到无法测光 — <strong>超广只适合流星雨, 不适合深空巡天</strong>。甜点在 50–135mm 大光圈: 胶片时代老镜头二手海量, 单位价格的 étendue 最高。阵列靠 √N 叠加, 单镜 étendue 降档可以用节点数补回来。
+        天文成像的收光能力 = étendue (口径² × 视场²)。先破除两个迷思: <strong>超广角 (14–24mm) 是陷阱</strong> — 视场大但口径只有 5–17mm, étendue 最低, 全开彗差无法测光, 只适合流星雨; <strong>F 值会骗人</strong> — 真正决定进光的是通光口径 (焦距 ÷ F 值), Samyang 135mm f/2.0 口径 67.5mm 是 50mm f/1.4 (35.7mm) 的 1.9 倍。所以"F1.4 vs F2.0"的正确比法是: <strong>谁的全开星点好谁赢</strong> — 很多 ¥300 国产 f/1.4 全开烂, 收到 f/2.8 才可用, 等于花 f/1.4 的钱买 f/2.8 的头; 而天文神镜 Samyang 135/2.0 强在 <em>全开 f/2.0 星点就好</em>。阵列靠 √N 叠加, 单镜降档可以用节点数补回来。
       </p>
       <div class="lens-grid">
         <div class="lens-card">
-          <div class="lens-badge lens-badge-wide">广角巡天 · 推荐主力</div>
-          <h4>50mm f/1.4 老镜头</h4>
-          <div class="lens-price">¥150–300</div>
+          <div class="lens-badge lens-badge-wide">广角巡天 · 极限性价比</div>
+          <h4>深光 50mm f/1.4 (APS-C)</h4>
+          <div class="lens-price">¥283 全新</div>
           <div class="lens-specs">
             <div><span>étendue</span><strong>~13 mm²·sr</strong></div>
-            <div><span>视场</span><strong>15° × 11°</strong></div>
-            <div><span>巡天效率</span><strong>最高 (deg²/h)</strong></div>
+            <div><span>视场 (1" 底)</span><strong>15° × 11°</strong></div>
+            <div><span>像圈</span><strong>APS-C, 贴合 1" 底</strong></div>
           </div>
-          <p>佳能 EF 50/1.4, 尼康 50/1.4G, 俄头 Helios 44 — 胶片时代遗产, 二手市场海量。135mm 的 57% 收光, 1/3 的价格。32 台全配这档, 把"宽度赢天下"做到极致。</p>
+          <p>全新 ¥283, 已售 200+。APS-C 像圈 (~28mm) 完美覆盖 1" 底 (16.4mm), 设计甜区更贴合。备选: 七工匠 35/1.4 (~¥350, 视场 21°×16° 更宽), 铭匠 AF 50/1.8 Neo (¥499, 全开星点预期最好)。f/1.4 全开星点待实测, 建议先单颗试拍再批量。</p>
         </div>
         <div class="lens-card lens-card-featured">
-          <div class="lens-badge">深度节点 · 默认方案</div>
-          <h4>Samyang 135mm f/2.0</h4>
-          <div class="lens-price">¥400–600</div>
-          <div class="lens-specs">
-            <div><span>étendue</span><strong>~23 mm²·sr</strong></div>
-            <div><span>视场</span><strong>5.6° × 4.2°</strong></div>
-            <div><span>单帧深度</span><strong>最高</strong></div>
-          </div>
-          <p>67.5mm 通光口径, 天文摄影圈验证过的深空神镜。价格偏高 — 建议只给少数"深度节点"用, 拍星系/星云等小视场高价值目标。</p>
-        </div>
-        <div class="lens-card">
-          <div class="lens-badge lens-badge-scope">望远镜路线 · 免转接</div>
-          <h4>60ED 折射镜</h4>
-          <div class="lens-price">¥300–500</div>
+          <div class="lens-badge">深度主力 · 大口径优选</div>
+          <h4>天虎 60ED APO + 1× 平场镜</h4>
+          <div class="lens-price">¥490 全新</div>
           <div class="lens-specs">
             <div><span>étendue</span><strong>~18 mm²·sr</strong></div>
-            <div><span>焦距</span><strong>~330mm (F/5.5)</strong></div>
-            <div><span>像质</span><strong>APO 级, 免调</strong></div>
+            <div><span>口径 / 焦距</span><strong>60mm / 360mm (F/6)</strong></div>
+            <div><span>像圈 (经平场)</span><strong>44mm, 全开整幅可用</strong></div>
           </div>
-          <p>60mm 口径 ED 小折射, 天生为天文设计 — 无彗差, 无改装, M42 直插。étendue 不输 135mm f/2.0, 还省掉转接环和法兰距校准的工程痛点。</p>
+          <p>为无穷远星点设计的复消色差 APO, 口径 60mm 碾压所有相机镜头。随附 1× 平场镜: 把弯曲的聚焦面"掰平", 44mm 像圈内星点锐利, 且对后截距容差大 (拆接环后 70.5mm) — 法兰距校准痛点天然消解。M54/T2 标准接口, 几块钱转接件, 社区要造的只是"裸 CMOS→T2 对接座"。</p>
+        </div>
+        <div class="lens-card">
+          <div class="lens-badge lens-badge-scope">极致深度 · 可选升级</div>
+          <h4>Samyang 135mm f/2.0 (二手)</h4>
+          <div class="lens-price">¥1,500–2,500</div>
+          <div class="lens-specs">
+            <div><span>étendue</span><strong>~23 mm²·sr</strong></div>
+            <div><span>视场 (1" 底)</span><strong>5.6° × 4.2°</strong></div>
+            <div><span>口径</span><strong>67.5mm, 全开星点神镜</strong></div>
+          </div>
+          <p>天文圈公认深空神镜 — 强在 67.5mm 大口径 + 全开 f/2.0 星点就扎实。但二手 ¥1,500–2,500 超预算, 视场比 60ED 宽 (深度反而浅)。只给极少数高价值目标节点, 或预算宽裕时升级。</p>
         </div>
       </div>
       <p class="lens-conclusion">
-        <strong>推荐编队: 28 台 50mm f/1.4 广角巡天 + 4 台 135mm f/2.0 (或 60ED) 深度节点</strong> — 镜头成本从 32×¥500=¥16,000 降到 28×¥200+4×¥500=¥7,600, 省下的钱再造 5 台节点。
+        <strong>推荐编队: 20 台 50mm (¥283 深光, 铺面积) + 12 台天虎 60ED (¥490, 打深度)</strong> — 镜头成本 20×283+12×490 = <strong>¥11,540</strong>。20 台 50mm 仍有 ~3,300 deg² 覆盖 (宽度主业不丢), 12 台 60ED 组成深度子阵列 (√12=3.5× SNR, 等效口径 208mm), 宽度发现 + 深度确认一个阵列两种模式。<br>
+        <strong>为什么不 32 台全用 60ED (¥490 光学这么香)?</strong> 三重约束: ① 视场 — 360mm 焦距配 1" 底只有 2.6°×2° (50mm 的 1/32), 全用等于把巡天阵列变成深空阵列, 背离"宽度赢天下"; ② 跟踪 — 60ED 像元尺度 0.92"/px, 跟踪误差容忍 ±1", 50mm 是 6.6"/px 容忍 ±10", 全用 60ED 支架/赤道仪成本失控; ③ 操作门槛 — 360mm 长焦对极轴对准/风振敏感, 中学生难以操作。
       </p>
     </div>
 
@@ -462,6 +463,48 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
           <p>{t(lang, 'eng.q3.a')}</p>
         </div>
       </div>
+
+    <!-- 第四方案: IMX 天文相机模组 + 二手三阳镜头 -->
+    <div class="plan-card" id="plan-c">
+      <div class="plan-badge">方案 C · 高端参考</div>
+      <h3>天文相机模组 + 二手三阳 135/2.0</h3>
+      <p class="plan-tagline">不改装手机, 天文原生路径 — 制冷、无 ISP 污染、像素大</p>
+      <div class="plan-spec">
+        <div class="spec-row"><span>传感器 A</span><strong>IMX585 1/1.2" (ToupTek ATR585C 制冷, $800)</strong></div>
+        <div class="spec-row"><span>传感器 B</span><strong>IMX571 APS-C (ZWO ASI2600MC 制冷, $1,350)</strong></div>
+        <div class="spec-row"><span>镜头</span><strong>二手三阳 Samyang 135mm f/2.0 (¥1,500–2,500)</strong></div>
+        <div class="spec-row"><span>口径</span><strong>67.5mm (全开 f/2.0 神镜)</strong></div>
+        <div class="spec-row"><span>制冷</span><strong>✅ TEC -45℃ (手机方案没有)</strong></div>
+        <div class="spec-row"><span>单台成本 (IMX585 档)</span><strong class="cost">¥9,000–11,000</strong></div>
+        <div class="spec-row"><span>单台成本 (IMX571 档)</span><strong class="cost">¥13,500–16,000</strong></div>
+      </div>
+      <div class="plan-pros-cons">
+        <div class="pros">
+          <h4>优势</h4>
+          <ul>
+            <li>制冷 TEC -45℃: 长曝热噪声压制, 手机方案的致命短板直接消失</li>
+            <li>FITS/RAW 原生输出, 无手机 ISP 污染 (Lens Shading / 黑电平 / 降噪全免)</li>
+            <li>三阳 135/2.0 是天文圈公认神镜 — 全开 f/2.0 星点即扎实, 67.5mm 大口径</li>
+            <li>IMX585 读出噪声 0.5e⁻ (手机 sensor 无公开数据)</li>
+            <li>INDI/ASCOM 生态原生支持, 无 ADB 魔改</li>
+            <li>IMX571 APS-C 画幅: 13.1×9.8mm 的 3× 面积, 单帧 étendue 碾压手机</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>代价</h4>
+          <ul>
+            <li>贵 6–10 倍: ¥9,000–16,000/台 vs 手机方案 ¥1,500/台</li>
+            <li>32 台 IMX571 阵列 ≈ ¥430,000 — 超 "$2,000 内人人可造" 宣言 20 倍</li>
+            <li>三阳 135/2.0 二手 ¥1,500–2,500 (¥6,950 全新), 仍比手机方案的 Nikon 50/1.8D (¥410) 贵 3–6 倍</li>
+            <li>需自配主控 (树莓派/PC), 不能白嫖 SoC</li>
+            <li>背离 "中学生能造" 的社区参与定位</li>
+          </ul>
+        </div>
+      </div>
+      <p style="font-size:13px;color:var(--text-mute);margin-top:20px;padding:16px 20px;background:var(--bg);border-radius:4px;line-height:1.7">
+        <strong style="color:var(--accent-warm)">方案 C 的定位:</strong> 不是主力, 是 <strong>"深度旗舰节点" 或 "科学验证基准"</strong>。一个 1000 节点的红岸网络里, 1–2 台制冷 IMX585/571 + 三阳 135/2.0 可以做 <strong>定标基准</strong> (给手机阵列的平场/测光提供绝对参考) 和 <strong>低面亮度巡天示范</strong> (手机阵列做不了的 LSB 科学)。这也正是 deep research 报告推荐的 "混合架构": 30 台手机做时域宽度, 1–2 台制冷相机做深度定标。
+      </p>
+    </div>
   </div>
 </section>
 
@@ -514,17 +557,17 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
         <tbody>
           <tr><td>手机料板</td><td>小米 12S Ultra (屏幕坏/后盖裂, 主板+摄像头完好)</td><td>1</td><td>$50</td><td>$50</td></tr>
           <tr><td>改造人工</td><td>华强北改机师傅 (拆镜头组 + 清洁 + 组装)</td><td>1</td><td>$3</td><td>$3</td></tr>
-          <tr><td>天文镜头</td><td>三档: 50mm f/1.4 老镜头 (¥150–300) / Samyang 135mm f/2.0 (¥400–600) / 60ED 折射镜 (¥300–500)</td><td>1</td><td>$200–600</td><td>$200–600</td></tr>
-          <tr><td>转接环</td><td>EF/M42 → 手机传感器 (CNC 定制; 60ED 档免转接, M42 直插)</td><td>1</td><td>$25</td><td>$25</td></tr>
+          <tr><td>天文镜头</td><td>三档: 深光 50mm f/1.4 APS-C 全新 (¥283) / 天虎 60ED APO + 1× 平场镜 全新 (¥490) / Samyang 135mm f/2.0 二手 (¥1,500–2,500)</td><td>1</td><td>$283–2,500</td><td>$283–2,500</td></tr>
+          <tr><td>转接/对接</td><td>相机镜头档: EF/M42→裸 CMOS (CNC 定制); 60ED 档: 裸 CMOS→T2 对接座 (社区造, 免法兰距校准)</td><td>1</td><td>$25</td><td>$25</td></tr>
           <tr><td>外壳</td><td>铝合金 CNC 外壳 (含散热)</td><td>1</td><td>$30</td><td>$30</td></tr>
-          <tr><td>调焦筒</td><td>M42 调焦筒 (天文标准件)</td><td>1</td><td>$10</td><td>$10</td></tr>
+          <tr><td>调焦筒</td><td>M42 调焦筒 (天文标准件; 60ED 自带调焦座)</td><td>1</td><td>$10</td><td>$10</td></tr>
           <tr><td>杂件</td><td>密封圈, IR-cut 滤镜, 螺丝等</td><td>1</td><td>$15</td><td>$15</td></tr>
           <tr><td>来料检测 + 老化</td><td>通电测试 + 灯箱 MTF 测试</td><td>1</td><td>$5</td><td>$5</td></tr>
         </tbody>
         <tfoot>
-          <tr class="bom-total"><td colspan="4">单台总成本 (50mm 档 / 135mm 档 / 60ED 档)</td><td><strong>¥1,300 / ¥1,700 / ¥1,500</strong></td></tr>
-          <tr><td colspan="4">推荐编队: 28×50mm + 4×135mm (或 60ED)</td><td><strong>~¥44,400</strong></td></tr>
-          <tr><td colspan="4">32 台全 50mm 广角巡天</td><td><strong>~¥41,600</strong></td></tr>
+          <tr class="bom-total"><td colspan="4">单台总成本 (50mm 档 ¥283 镜头 / 60ED 档 ¥490 镜头)</td><td><strong>¥1,561 / ¥1,768</strong></td></tr>
+          <tr><td colspan="4">推荐编队镜头: 20×¥283 + 12×¥490</td><td><strong>~¥11,540</strong></td></tr>
+          <tr><td colspan="4">编队总成本 (20×¥1,561 + 12×¥1,768) + 共享赤道仪 (二手 EQ6 座 + OnStep 开源控制器 ¥2,900)</td><td><strong>~¥55,336</strong></td></tr>
         </tfoot>
       </table>
     </div>
@@ -574,6 +617,66 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
         </div>
       </div>
       <p class="vs-conclusion"><strong>便宜 22 倍, 口径接近, 完全开源。</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRACKING (赤道仪 vs 经纬仪) ============ -->
+<section class="section section-dark" id="tracking">
+  <div class="container">
+    <div class="section-eyebrow">跟踪 · TRACKING</div>
+    <h2 class="section-title">32 个节点, 一台赤道仪 —<br>跟踪精度是买来的, 阵列结构是造出来的</h2>
+    <p class="section-sub">
+      赤道仪本质上是一个 2 自由度 (赤经 RA + 赤纬 Dec) 的旋转平台。32 个节点指向同一天区, 只需要 <strong>一台赤道仪</strong> 承载整个 8×4 支架统一跟踪 — 跟踪误差对所有节点是共模的, 不影响叠加对齐。32 台独立小赤道仪要 ¥48,000, 共享一台只要 <strong>¥1,400–2,900 (开源方案, 见下)</strong>, 还免掉 32 套极轴对准。
+    </p>
+
+    <div class="track-grid">
+      <div class="track-card track-eq">
+        <div class="track-tag">赤道仪 (EQ) · 红岸三号的选择</div>
+        <h3>转轴对准天极, 让旋转在机械上不产生</h3>
+        <p>
+          星星在天上绕北极星画圈 (周日视运动 15°/h)。赤道仪的赤经轴<strong>和地球自转轴平行</strong> — 它跟着地球反转, 于是星空在视场里<strong>既不移位, 也不旋转</strong>, 单帧可曝光几分钟到几十分钟星点始终锐利。这是机械同构, 不是多轴补偿。
+        </p>
+        <div class="track-row"><span>深空长曝</span><strong>✅ 唯一正解</strong></div>
+        <div class="track-row"><span>视场旋转</span><strong>无</strong></div>
+        <div class="track-row"><span>代价</span><strong>贵, 重, 需对极轴</strong></div>
+        <div class="track-row"><span>红岸推荐</span><strong>二手 EQ6 座 + OnStep ≈¥2,900</strong></div>
+      </div>
+
+      <div class="track-card track-az">
+        <div class="track-tag track-tag-mute">经纬仪 (Alt-Az) · Seestar 路线</div>
+        <h3>两轴联动跟位置, 但补不了旋转</h3>
+        <p>
+          经纬仪用水平+垂直两轴联动、各自变速, <strong>位置</strong>跟踪不输赤道仪。但它的两根轴没有一根和地球自转轴共线 — 星星虽然钉在中心, <strong>整个星空绕视场中心慢慢转圈 (视场旋转)</strong>。位置 (x,y) 需 2 自由度, 旋转 (θ) 需第 3 个 — 纯 2 轴经纬仪在物理上补不了 θ。
+        </p>
+        <div class="track-row"><span>深空长曝</span><strong>❌ 边缘拖线</strong></div>
+        <div class="track-row"><span>视场旋转</span><strong>有 (长曝致命)</strong></div>
+        <div class="track-row"><span>补救</span><strong>短曝 + 软件逐帧旋转对齐</strong></div>
+        <div class="track-row"><span>典型</span><strong>Seestar / NexStar SE</strong></div>
+      </div>
+    </div>
+
+    <div class="track-note">
+      <h4>位置 vs 旋转 — 大多数人讲错的地方</h4>
+      <p>
+        "经纬仪理论上可以补偿" 这句话对一半: <strong>位置可以, 旋转不行。</strong> 让平面图像不移位 + 不旋转需要 3 个自由度 (x, y, θ)。经纬仪 2 根轴只能控 x,y, θ 失控; 赤道仪 2 根轴但 RA ∥ 地轴, 跟踪时 x,y,θ 被一个机械约束同时锁死。专业大望远镜 (VLT/Keck 用经纬仪式架) 的解法是<strong>加第 3 根"视场旋转轴"</strong>; Seestar 的解法是<strong>放弃机械补偿, 短曝 10s + 软件仿射对齐 (x,y,θ 全算)</strong> — 以算力换机械。
+      </p>
+      <p>
+        <strong>红岸三号的 30s 单帧上限让两条路都可行:</strong> 30s 内视场旋转 ~0.125°, 1" 底边缘拖尾 ~11px, 可忍 — 所以经纬仪 + 软件旋转对齐 (Seestar 路线) 能走, 但要把叠加算法复杂度加重; <strong>共享一台赤道仪更省心</strong> — 手机没有"视场旋转器", 走经纬仪路线就只能纯软件补, 没有中间态。
+      </p>
+
+      <h4 style="margin-top:32px">开源赤道仪: OnStep — 只开源大脑, 机械买二手</h4>
+      <p>
+        赤道仪的"开源"分两层: <strong>控制器 (大脑) 可以完全开源, 机械传动 (蜗杆/轴承) 的角秒级精度只能买。</strong> 最成熟的开源控制器是 <strong>OnStep</strong> (GitHub 5k+ stars, 社区上万改装案例): 用 ESP32/Teensy + TMC2209 步进驱动 (¥200–600), 把普通 EQ3/EQ5/EQ6 机械座升级成 GoTo 赤道仪 — GoTo、PEC 周期误差校正、ST-4 导星、WiFi 遥控、INDI/ASCOM 驱动全有, 精度做到 ±5–10", 追平成品。这正契合红岸三号"完全开源"的精神: <strong>跟踪的"智能"是开源的, 跟踪的"精度"是买来的。</strong>
+      </p>
+      <div class="track-row"><span>成品 NEQ6 二手</span><strong>¥4,000 · ±10" · 闭源</strong></div>
+      <div class="track-row"><span>二手 EQ6 座 + OnStep</span><strong>¥2,900 · ±5–10" · 控制器开源 ✅</strong></div>
+      <div class="track-row"><span>16 节点验证: EQ5 座 + OnStep</span><strong>¥1,400 · ±10" · 控制器开源 ✅</strong></div>
+
+      <p class="track-conclusion">
+        <strong>⚠️ 载重预警:</strong> 32 节点 (手机 6.4kg + 镜头 ~12kg + 8×4 支架 5–8kg) ≈ <strong>23–26kg, 逼近 EQ6 的 20kg 载重上限</strong> (超载加剧周期误差与磨损)。对策: ① 支架用碳纤维/镂空 3D 打印减重到 20kg 内; ② 上 CEM60 (27kg) / CGX (25kg) 级机械座 + OnStep (¥4,000–5,000); ③ 先 16 节点 (~12kg) 用 EQ5+OnStep (¥1,400) 验证再扩展。<br>
+        <strong>分工:</strong> 机械座买二手 (角秒级蜗杆精度是买来的, 中学生造不出也不该造), 控制器用 OnStep 开源 (这是社区要焊要调的), 8×4 网格支架造 (3D 打印 + 铝型材), sensor 改 (手机是拆的), 软件写 (叠加组网是开源的)。
+      </p>
     </div>
   </div>
 </section>

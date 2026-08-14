@@ -26,7 +26,7 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
       <a href="https://github.com/mistyminds/redbank-iii" class="btn btn-ghost">{t(lang, 'hero.cta.github')}</a>
     </div>
     <div class="hero-stats">
-      <div class="stat"><div class="stat-num">$618</div><div class="stat-label">{t(lang, 'hero.stat.cost')}</div></div>
+      <div class="stat"><div class="stat-num">¥1,500</div><div class="stat-label">{t(lang, 'hero.stat.cost')}</div></div>
       <div class="stat"><div class="stat-num">382mm</div><div class="stat-label">{t(lang, 'hero.stat.aperture')}</div></div>
       <div class="stat"><div class="stat-num">100×</div><div class="stat-label">{t(lang, 'hero.stat.advantage')}</div></div>
       <div class="stat"><div class="stat-num">100%</div><div class="stat-label">{t(lang, 'hero.stat.open')}</div></div>
@@ -64,6 +64,126 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
         </blockquote>
         <cite>— 红岸三号设计宣言</cite>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OPPORTUNITY (宽度空缺论证) ============ -->
+<section class="section section-dark" id="opportunity">
+  <div class="container">
+    <div class="section-eyebrow">机会 · THE OPPORTUNITY</div>
+    <h2 class="section-title">专业天文拼深度,<br>民间天文赢宽度</h2>
+    <p class="section-sub">
+      深度 (暗物质, 引力波, 系外行星大气) 属于哈勃, JWST 和中国空间站巡天望远镜 — 民间无法介入。
+      但宽度是另一回事: 宇宙这么大, 可观测的现象这么多, 而全球所有主力巡天设备在同一时刻加起来,
+      只盯着天空的 <strong>1.5%</strong>。
+    </p>
+
+    <div class="opp-stats">
+      <div class="opp-stat">
+        <div class="opp-num">~1.5%</div>
+        <div class="opp-label">全球巡天瞬时覆盖<br><span>Rubin + ZTF + PS1 + ATLAS + ASAS-SN 视场合计 ≈ 600 deg², 全天 41,253 deg²</span></div>
+      </div>
+      <div class="opp-stat">
+        <div class="opp-num">~40%</div>
+        <div class="opp-label">≥140m 近地小行星发现完备度<br><span>NASA CNEOS 官方口径; 国会目标 90%, LSST 也只能到 62%</span></div>
+      </div>
+      <div class="opp-stat">
+        <div class="opp-num">0</div>
+        <div class="opp-label">瞬变源发现前十中的业余组织<br><span>TNS 统计 20 万颗瞬变源, 前十全是专业机构</span></div>
+      </div>
+      <div class="opp-stat">
+        <div class="opp-num">0.3%</div>
+        <div class="opp-label">全球火球网地表覆盖<br><span>FRIPON 150 台相机, 已是世界最大组网之一</span></div>
+      </div>
+    </div>
+
+    <div class="mission-grid">
+      <div class="mission-text">
+        <p>
+          <strong>业余的胜利, 恰好都落在专业空白带。</strong>
+          2016 年, 阿根廷爱好者 Víctor Buso 用后院望远镜拍到 SN 2016gkg 的激波突破 — 超新星爆炸后最初几小时的闪光 —
+          共同署名《Nature》论文。
+          2023 年, 板垣公一在 14.9 等发现 SN 2023ixf, 比 ZTF 的回溯数据早了整整 2 天。
+          大规模掩星组网 (1983 年 Pallas 130 站, 2017 年 MU69 为新视野号探路) 至今没有单台天文台能匹敌。
+        </p>
+        <p>
+          <strong>但现有的爱好者网络没有吃到这个红利。</strong>
+          AAVSO 积累了 8,480 万条测光, 却靠手动提交, 不是巡天;
+          Unistellar 卖出 25,000 台智能望远镜, 组网科研 5 年仅 ~10 篇论文, 且完全闭源;
+          Seestar 让单台观测自动化了, 但数据困在每台手机里 — <strong>单台自动化 ≠ 组网科研</strong>。
+          硬件闭源, 数据私有, 无自动调度, 无跨节点协同 — 这是结构性瓶颈。
+        </p>
+        <p>
+          <strong>反例证明这条路可行:</strong> 全球流星网 (GMN) 用树莓派 + 开源软件,
+          从 450 台相机长到 1,000+ 台 / 40+ 国, 2.5 年产出 22 万条流星轨道, 数据 24 小时内公开。
+          它只缺一件事 — 更深的 sensor 和更大的口径。这正是红岸三号要补的。
+        </p>
+      </div>
+      <div class="mission-quote">
+        <blockquote>
+          "爱好者缺的不是热情, 也不是设备 —<br>
+          缺的是把一万台小望远镜<br>
+          变成一台巡天机器的协议。"
+        </blockquote>
+        <cite>— 红岸三号 · 组网宣言</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FIRST PRINCIPLES (étendue 论证) ============ -->
+<section class="section" id="principle">
+  <div class="container">
+    <div class="section-eyebrow">第一性原理 · FIRST PRINCIPLES</div>
+    <h2 class="section-title">传感器选型, 选的不是参数,<br>是你嫁接在哪个供应链上</h2>
+    <p class="section-sub">
+      天文成像的收光能力由一个物理量决定 — <strong>étendue (A×Ω, 口径面积 × 立体视场)</strong>。
+      它对镜头画质的微小差异不敏感, 却对"传感器面积 × 镜头光圈"的乘积极端敏感。
+      而传感器和镜头的价格, 不由天文市场决定 — 由它嫁接的那个千万级量产市场决定。
+    </p>
+
+    <div class="fp-grid">
+      <div class="fp-card fp-them">
+        <div class="fp-tag">消费级智能望远镜</div>
+        <h3>嫁接在安防市场上</h3>
+        <p class="fp-sensor">Sony STARVIS 安防 sensor 系<br><span>IMX462 / IMX585 / IMX678 — 1/2.8" ~ 1/1.2" 小底</span></p>
+        <p>
+          监控摄像头年出货量以亿计, STARVIS 把低读出噪声做到了 0.6e⁻ 级别、单价压到几十元人民币。
+          但安防镜头像圈只覆盖小底 — 于是全行业被锁死在 1/1.2" 以内:
+          小底 → 小像圈 → 小镜组 → 整机 $400–1,000 → 靠几百帧实时叠加"以时间换口径"。
+        </p>
+        <div class="fp-etendue">
+          <div class="fp-row"><span>Seestar S50 (IMX462)</span><strong>≈ 0.55 mm²·sr</strong></div>
+          <div class="fp-row"><span>Celestron Origin (6" RASA)</span><strong>≈ 6.0 mm²·sr</strong></div>
+        </div>
+        <p class="fp-note">这不是巧合, 是供应链决定论: 安防市场没有 1" 大底, 智能望远镜就用不起 1" 大底。</p>
+      </div>
+
+      <div class="fp-card fp-us">
+        <div class="fp-tag fp-tag-warm">红岸三号</div>
+        <h3>嫁接在消费级手机市场上</h3>
+        <p class="fp-sensor">Sony IMX989 一英寸影像旗舰 sensor<br><span>128 mm² 感光面积 — 手机影像军备竞赛的过剩产能</span></p>
+        <p>
+          手机厂商为拍照竞赛把 1" sensor 做到了 50MP / 1.6µm, 并把 SoC、ISP、存储、屏幕、电池全部打包进一台
+          二手 ¥1,200 的整机里。影像旗舰换代后, 这套"计算平台 + 大底 sensor"的组合在二手市场跌成白菜价。
+          配上 ¥500 的 Samyang 135mm f/2.0 拆机镜头 — 单台 ¥2,000, 没有任何竞品在这个价位给得起。
+        </p>
+        <div class="fp-etendue">
+          <div class="fp-row"><span>红岸三号 单镜 (IMX989 + 135mm f/2.0)</span><strong>≈ 22.6–24.1 mm²·sr</strong></div>
+          <div class="fp-row"><span>对比 Origin / Seestar S50</span><strong>4× / 40×</strong></div>
+        </div>
+        <p class="fp-note">同样的钱, 买到 4–40 倍的收光能力 — 不是我们的光学更好, 是我们站的供应链更肥。</p>
+      </div>
+    </div>
+
+    <div class="fp-conclusion">
+      <p>
+        <strong>这就是为什么整机厂不用大底 — 不是不想要, 是安防供应链里没有。</strong>
+        Seestar ($499) 到 Celestron Origin II ($4,299) 全部收敛在 STARVIS 1/2.8"–1/1.2" 区间, 没有一家越界。
+        红岸三号的 ¥1,200 二手小米 12S Ultra, 是这个市场里唯一一台"1 英寸大底 + 完整计算平台"的越级组合 —
+        而它存在的原因, 恰恰是因为手机市场的换代速度, 比天文市场快了一个数量级。
+      </p>
     </div>
   </div>
 </section>
@@ -202,7 +322,7 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
         <h3 style="margin:0; font-size:1.05rem;">{t(lang, 'design3d.live')}</h3>
         <p style="margin:6px 0 10px 0; color:#8391a0; font-size:0.85rem;">{t(lang, 'design3d.live.desc')}</p>
       </div>
-      <iframe src={`${imgBase}/viewer/index.html?v=18`} title="Redbank III interactive URDF viewer" loading="lazy"
+      <iframe src={`${imgBase}/viewer/index.html?v=23`} title="Redbank III interactive URDF viewer" loading="lazy"
         style="width:100%; height:560px; border:0; display:block; background:#0d1117;"></iframe>
     </div>
   </div>
@@ -249,19 +369,19 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
           <div class="spec-row"><span>平台</span><strong>小米 12S Ultra 料板</strong></div>
           <div class="spec-row"><span>传感器</span><strong>1" IMX989 (50MP)</strong></div>
           <div class="spec-row"><span>计算/ISP</span><strong>Snapdragon 8+ Gen 1 (白嫖)</strong></div>
-          <div class="spec-row"><span>镜头</span><strong>Samyang 135mm f/2.0</strong></div>
-          <div class="spec-row"><span>等效口径</span><strong>67.5mm (单镜)</strong></div>
-          <div class="spec-row"><span>单台成本</span><strong class="cost">$618</strong></div>
-          <div class="spec-row"><span>4 镜阵列</span><strong>$2,532</strong></div>
+          <div class="spec-row"><span>镜头</span><strong>三档可选 (见下) — 默认 Nikon 50/1.8D (二手 ~¥410)</strong></div>
+          <div class="spec-row"><span>等效口径</span><strong>28–48mm (视镜头档)</strong></div>
+          <div class="spec-row"><span>单台成本</span><strong class="cost">¥1,500 (二手整机)</strong></div>
+          <div class="spec-row"><span>4 镜阵列</span><strong>¥6,000</strong></div>
         </div>
         <div class="plan-pros-cons">
           <div class="pros">
             <h4>优势</h4>
             <ul>
-              <li>便宜 61% ($618 vs $1,600)</li>
+              <li>二手小米 12S Ultra 整机 ¥1,500 (闲鱼实测, 2026-08) — 比 IMX571 天文相机方案便宜 ~6.7×</li>
               <li>白嫖 SoC + ISP + 屏幕 + 电池 + 存储</li>
               <li>Android 天文 app 生态现成</li>
-              <li>1" 一英寸大底 (手机最大 sensor)</li>
+              <li>1" 一英寸大底 (手机最大 sensor; 注意: 13 Ultra 同为 IMX989, 14 Ultra 已换 LYT-900)</li>
             </ul>
           </div>
           <div class="cons">
@@ -270,13 +390,60 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
               <li>不可逆改装 (拆镜头组)</li>
               <li>需要定制转接环</li>
               <li>法兰距补偿是工程难点</li>
-              <li>依赖华强北供应链</li>
+              <li>依赖二手手机供应链 (12S Ultra 已停产, 需同批次采购保料板一致性)</li>
               <li>一次性校准台投入 ~¥1–4万 (自组: 显微镜+位移台+平行光管), 每颗校准 0.5–2 小时</li>
             </ul>
           </div>
         </div>
         <a href="#bom-b" class="btn btn-plan">看 BOM</a>
       </div>
+    </div>
+
+    <!-- lens options: three tiers for different survey needs -->
+    <div class="lens-options">
+      <h3 class="lens-title">镜头三档 · 按巡天需求选</h3>
+      <p class="lens-sub">
+        天文成像的收光能力 = étendue (口径² × 视场²)。先破除两个迷思: <strong>超广角 (14–24mm) 是陷阱</strong> — 视场大但口径只有 5–17mm, étendue 最低, 全开彗差无法测光, 只适合流星雨; <strong>F 值会骗人</strong> — 真正决定进光的是通光口径 (焦距 ÷ F 值), Samyang 135mm f/2.0 口径 67.5mm 是 50mm f/1.4 (35.7mm) 的 1.9 倍。所以"F1.4 vs F2.0"的正确比法是: <strong>谁的全开星点好谁赢</strong> — 很多 ¥300 国产 f/1.4 全开烂, 收到 f/2.8 才可用, 等于花 f/1.4 的钱买 f/2.8 的头; 而天文神镜 Samyang 135/2.0 强在 <em>全开 f/2.0 星点就好</em>。阵列靠 √N 叠加, 单镜降档可以用节点数补回来。
+      </p>
+      <div class="lens-grid">
+        <div class="lens-card">
+          <div class="lens-badge lens-badge-wide">广角巡天 · 极限性价比</div>
+          <h4>深光 50mm f/1.4 (APS-C)</h4>
+          <div class="lens-price">¥283 全新</div>
+          <div class="lens-specs">
+            <div><span>étendue</span><strong>~13 mm²·sr</strong></div>
+            <div><span>视场 (1" 底)</span><strong>15° × 11°</strong></div>
+            <div><span>像圈</span><strong>APS-C, 贴合 1" 底</strong></div>
+          </div>
+          <p>全新 ¥283, 已售 200+。APS-C 像圈 (~28mm) 完美覆盖 1" 底 (16.4mm), 设计甜区更贴合。备选: 七工匠 35/1.4 (~¥350, 视场 21°×16° 更宽), 铭匠 AF 50/1.8 Neo (¥499, 全开星点预期最好)。f/1.4 全开星点待实测, 建议先单颗试拍再批量。</p>
+        </div>
+        <div class="lens-card lens-card-featured">
+          <div class="lens-badge">深度主力 · 大口径优选</div>
+          <h4>天虎 60ED APO + 1× 平场镜</h4>
+          <div class="lens-price">¥490 全新</div>
+          <div class="lens-specs">
+            <div><span>étendue</span><strong>~18 mm²·sr</strong></div>
+            <div><span>口径 / 焦距</span><strong>60mm / 360mm (F/6)</strong></div>
+            <div><span>像圈 (经平场)</span><strong>44mm, 全开整幅可用</strong></div>
+          </div>
+          <p>为无穷远星点设计的复消色差 APO, 口径 60mm 碾压所有相机镜头。随附 1× 平场镜: 把弯曲的聚焦面"掰平", 44mm 像圈内星点锐利, 且对后截距容差大 (拆接环后 70.5mm) — 法兰距校准痛点天然消解。M54/T2 标准接口, 几块钱转接件, 社区要造的只是"裸 CMOS→T2 对接座"。</p>
+        </div>
+        <div class="lens-card">
+          <div class="lens-badge lens-badge-scope">极致深度 · 可选升级</div>
+          <h4>Samyang 135mm f/2.0 (二手)</h4>
+          <div class="lens-price">¥1,500–2,500</div>
+          <div class="lens-specs">
+            <div><span>étendue</span><strong>~23 mm²·sr</strong></div>
+            <div><span>视场 (1" 底)</span><strong>5.6° × 4.2°</strong></div>
+            <div><span>口径</span><strong>67.5mm, 全开星点神镜</strong></div>
+          </div>
+          <p>天文圈公认深空神镜 — 强在 67.5mm 大口径 + 全开 f/2.0 星点就扎实。但二手 ¥1,500–2,500 超预算, 视场比 60ED 宽 (深度反而浅)。只给极少数高价值目标节点, 或预算宽裕时升级。</p>
+        </div>
+      </div>
+      <p class="lens-conclusion">
+        <strong>推荐编队: 20 台 50mm (¥283 深光, 铺面积) + 12 台天虎 60ED (¥490, 打深度)</strong> — 镜头成本 20×283+12×490 = <strong>¥11,540</strong>。20 台 50mm 仍有 ~3,300 deg² 覆盖 (宽度主业不丢), 12 台 60ED 组成深度子阵列 (√12=3.5× SNR, 等效口径 208mm), 宽度发现 + 深度确认一个阵列两种模式。<br>
+        <strong>为什么不 32 台全用 60ED (¥490 光学这么香)?</strong> 三重约束: ① 视场 — 360mm 焦距配 1" 底只有 2.6°×2° (50mm 的 1/32), 全用等于把巡天阵列变成深空阵列, 背离"宽度赢天下"; ② 跟踪 — 60ED 像元尺度 0.92"/px, 跟踪误差容忍 ±1", 50mm 是 6.6"/px 容忍 ±10", 全用 60ED 支架/赤道仪成本失控; ③ 操作门槛 — 360mm 长焦对极轴对准/风振敏感, 中学生难以操作。
+      </p>
     </div>
 
 <!-- engineering deep-dive: phone repurposing feasibility -->
@@ -296,6 +463,48 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
           <p>{t(lang, 'eng.q3.a')}</p>
         </div>
       </div>
+
+    <!-- 第四方案: IMX 天文相机模组 + 二手三阳镜头 -->
+    <div class="plan-card" id="plan-c">
+      <div class="plan-badge">方案 C · 高端参考</div>
+      <h3>天文相机模组 + 二手三阳 135/2.0</h3>
+      <p class="plan-tagline">不改装手机, 天文原生路径 — 制冷、无 ISP 污染、像素大</p>
+      <div class="plan-spec">
+        <div class="spec-row"><span>传感器 A</span><strong>IMX585 1/1.2" (ToupTek ATR585C 制冷, $800)</strong></div>
+        <div class="spec-row"><span>传感器 B</span><strong>IMX571 APS-C (ZWO ASI2600MC 制冷, $1,350)</strong></div>
+        <div class="spec-row"><span>镜头</span><strong>二手三阳 Samyang 135mm f/2.0 (¥1,500–2,500)</strong></div>
+        <div class="spec-row"><span>口径</span><strong>67.5mm (全开 f/2.0 神镜)</strong></div>
+        <div class="spec-row"><span>制冷</span><strong>✅ TEC -45℃ (手机方案没有)</strong></div>
+        <div class="spec-row"><span>单台成本 (IMX585 档)</span><strong class="cost">¥9,000–11,000</strong></div>
+        <div class="spec-row"><span>单台成本 (IMX571 档)</span><strong class="cost">¥13,500–16,000</strong></div>
+      </div>
+      <div class="plan-pros-cons">
+        <div class="pros">
+          <h4>优势</h4>
+          <ul>
+            <li>制冷 TEC -45℃: 长曝热噪声压制, 手机方案的致命短板直接消失</li>
+            <li>FITS/RAW 原生输出, 无手机 ISP 污染 (Lens Shading / 黑电平 / 降噪全免)</li>
+            <li>三阳 135/2.0 是天文圈公认神镜 — 全开 f/2.0 星点即扎实, 67.5mm 大口径</li>
+            <li>IMX585 读出噪声 0.5e⁻ (手机 sensor 无公开数据)</li>
+            <li>INDI/ASCOM 生态原生支持, 无 ADB 魔改</li>
+            <li>IMX571 APS-C 画幅: 13.1×9.8mm 的 3× 面积, 单帧 étendue 碾压手机</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>代价</h4>
+          <ul>
+            <li>贵 6–10 倍: ¥9,000–16,000/台 vs 手机方案 ¥1,500/台</li>
+            <li>32 台 IMX571 阵列 ≈ ¥430,000 — 超 "$2,000 内人人可造" 宣言 20 倍</li>
+            <li>三阳 135/2.0 二手 ¥1,500–2,500 (¥6,950 全新), 仍比手机方案的 Nikon 50/1.8D (¥410) 贵 3–6 倍</li>
+            <li>需自配主控 (树莓派/PC), 不能白嫖 SoC</li>
+            <li>背离 "中学生能造" 的社区参与定位</li>
+          </ul>
+        </div>
+      </div>
+      <p style="font-size:13px;color:var(--text-mute);margin-top:20px;padding:16px 20px;background:var(--bg);border-radius:4px;line-height:1.7">
+        <strong style="color:var(--accent-warm)">方案 C 的定位:</strong> 不是主力, 是 <strong>"深度旗舰节点" 或 "科学验证基准"</strong>。一个 1000 节点的红岸网络里, 1–2 台制冷 IMX585/571 + 三阳 135/2.0 可以做 <strong>定标基准</strong> (给手机阵列的平场/测光提供绝对参考) 和 <strong>低面亮度巡天示范</strong> (手机阵列做不了的 LSB 科学)。这也正是 deep research 报告推荐的 "混合架构": 30 台手机做时域宽度, 1–2 台制冷相机做深度定标。
+      </p>
+    </div>
   </div>
 </section>
 
@@ -348,23 +557,23 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
         <tbody>
           <tr><td>手机料板</td><td>小米 12S Ultra (屏幕坏/后盖裂, 主板+摄像头完好)</td><td>1</td><td>$50</td><td>$50</td></tr>
           <tr><td>改造人工</td><td>华强北改机师傅 (拆镜头组 + 清洁 + 组装)</td><td>1</td><td>$3</td><td>$3</td></tr>
-          <tr><td>天文镜头</td><td>Samyang 135mm f/2.0 (Canon EF)</td><td>1</td><td>$500</td><td>$500</td></tr>
-          <tr><td>转接环</td><td>Canon EF → 手机传感器 (CNC 定制)</td><td>1</td><td>$25</td><td>$25</td></tr>
+          <tr><td>天文镜头</td><td>三档: 深光 50mm f/1.4 APS-C 全新 (¥283) / 天虎 60ED APO + 1× 平场镜 全新 (¥490) / Samyang 135mm f/2.0 二手 (¥1,500–2,500)</td><td>1</td><td>$283–2,500</td><td>$283–2,500</td></tr>
+          <tr><td>转接/对接</td><td>相机镜头档: EF/M42→裸 CMOS (CNC 定制); 60ED 档: 裸 CMOS→T2 对接座 (社区造, 免法兰距校准)</td><td>1</td><td>$25</td><td>$25</td></tr>
           <tr><td>外壳</td><td>铝合金 CNC 外壳 (含散热)</td><td>1</td><td>$30</td><td>$30</td></tr>
-          <tr><td>调焦筒</td><td>M42 调焦筒 (天文标准件)</td><td>1</td><td>$10</td><td>$10</td></tr>
+          <tr><td>调焦筒</td><td>M42 调焦筒 (天文标准件; 60ED 自带调焦座)</td><td>1</td><td>$10</td><td>$10</td></tr>
           <tr><td>杂件</td><td>密封圈, IR-cut 滤镜, 螺丝等</td><td>1</td><td>$15</td><td>$15</td></tr>
           <tr><td>来料检测 + 老化</td><td>通电测试 + 灯箱 MTF 测试</td><td>1</td><td>$5</td><td>$5</td></tr>
         </tbody>
         <tfoot>
-          <tr class="bom-total"><td colspan="4">单台总成本</td><td><strong>$618</strong></td></tr>
-          <tr><td colspan="4">4 镜阵列</td><td><strong>$2,532</strong></td></tr>
-          <tr><td colspan="4">16 镜阵列</td><td><strong>$10,128</strong></td></tr>
+          <tr class="bom-total"><td colspan="4">单台总成本 (50mm 档 ¥283 镜头 / 60ED 档 ¥490 镜头)</td><td><strong>¥1,561 / ¥1,768</strong></td></tr>
+          <tr><td colspan="4">推荐编队镜头: 20×¥283 + 12×¥490</td><td><strong>~¥11,540</strong></td></tr>
+          <tr><td colspan="4">编队总成本 (20×¥1,561 + 12×¥1,768) + 共享赤道仪 (二手 EQ6 座 + OnStep 开源控制器 ¥2,900)</td><td><strong>~¥55,336</strong></td></tr>
         </tfoot>
       </table>
     </div>
     <p class="bom-note">
-      ✅ <strong>优势:</strong> 便宜 61%, 白嫖 SoC + ISP + 屏幕 + 电池 + 存储, Android 生态现成<br>
-      ⚠️ <strong>注意:</strong> 不可逆改装, 依赖华强北供应链, 转接环需为每款手机定制 (建议统一用小米 12S Ultra)
+      ✅ <strong>优势:</strong> 二手整机 ¥1,500 白嫖 SoC + ISP + 屏幕 + 电池 + 存储, Android 生态现成; 镜头按巡天需求选档<br>
+      ⚠️ <strong>注意:</strong> 不可逆改装, 12S Ultra 已停产需同批次采购; 手机 sensor 30s 单帧上限由阵列交错曝光补偿 (见软件章节)
     </p>
   </div>
 </section>
@@ -384,11 +593,11 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
           </tr>
         </thead>
         <tbody>
-          <tr><td><strong>1 台</strong></td><td>67.5mm</td><td>2.7"</td><td>$1,600</td><td>$618</td><td>月亮, 木星, 土星, M42, M31</td></tr>
-          <tr><td><strong>4 台</strong></td><td>135mm</td><td>5.3"</td><td>$6,400</td><td>$2,532</td><td>+ 暗弱星系, 星系晕</td></tr>
-          <tr><td><strong>8 台</strong></td><td>191mm</td><td>7.5"</td><td>$12,800</td><td>$5,064</td><td>+ 超暗弱星系, 星系际介质</td></tr>
-          <tr><td><strong>16 台</strong></td><td>270mm</td><td>10.6"</td><td>$25,600</td><td>$10,128</td><td>+ Dragonfly 8 镜级别科学</td></tr>
-          <tr><td><strong>32 台</strong></td><td>382mm</td><td>15"</td><td>$51,200</td><td>$20,256</td><td>+ 宇宙网, 星系周介质</td></tr>
+          <tr><td><strong>1 台</strong></td><td>67.5mm</td><td>2.7"</td><td>$1,600</td><td>¥1,500</td><td>月亮, 木星, 土星, M42, M31</td></tr>
+          <tr><td><strong>4 台</strong></td><td>135mm</td><td>5.3"</td><td>$6,400</td><td>¥6,000</td><td>+ 暗弱星系, 星系晕</td></tr>
+          <tr><td><strong>8 台</strong></td><td>191mm</td><td>7.5"</td><td>$12,800</td><td>¥12,000</td><td>+ 超暗弱星系, 星系际介质</td></tr>
+          <tr><td><strong>16 台</strong></td><td>270mm</td><td>10.6"</td><td>$25,600</td><td>¥24,000</td><td>+ Dragonfly 8 镜级别科学</td></tr>
+          <tr><td><strong>32 台</strong></td><td>382mm</td><td>15"</td><td>$51,200</td><td>¥48,000</td><td>+ 宇宙网, 星系周介质</td></tr>
         </tbody>
       </table>
     </div>
@@ -403,11 +612,71 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
         </div>
         <div class="vs-item">
           <div class="vs-label">红岸 III Plan B (32 镜)</div>
-          <div class="vs-bar vs-redbank" style="--pct:13.5%">$20,256</div>
+          <div class="vs-bar vs-redbank" style="--pct:4.5%">¥48,000 (~$6,700)</div>
           <div class="vs-note">382mm 等效口径 · 完全开源</div>
         </div>
       </div>
-      <p class="vs-conclusion"><strong>便宜 7.4 倍, 口径接近, 完全开源。</strong></p>
+      <p class="vs-conclusion"><strong>便宜 22 倍, 口径接近, 完全开源。</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRACKING (赤道仪 vs 经纬仪) ============ -->
+<section class="section section-dark" id="tracking">
+  <div class="container">
+    <div class="section-eyebrow">跟踪 · TRACKING</div>
+    <h2 class="section-title">32 个节点, 一台赤道仪 —<br>跟踪精度是买来的, 阵列结构是造出来的</h2>
+    <p class="section-sub">
+      赤道仪本质上是一个 2 自由度 (赤经 RA + 赤纬 Dec) 的旋转平台。32 个节点指向同一天区, 只需要 <strong>一台赤道仪</strong> 承载整个 8×4 支架统一跟踪 — 跟踪误差对所有节点是共模的, 不影响叠加对齐。32 台独立小赤道仪要 ¥48,000, 共享一台只要 <strong>¥1,400–2,900 (开源方案, 见下)</strong>, 还免掉 32 套极轴对准。
+    </p>
+
+    <div class="track-grid">
+      <div class="track-card track-eq">
+        <div class="track-tag">赤道仪 (EQ) · 红岸三号的选择</div>
+        <h3>转轴对准天极, 让旋转在机械上不产生</h3>
+        <p>
+          星星在天上绕北极星画圈 (周日视运动 15°/h)。赤道仪的赤经轴<strong>和地球自转轴平行</strong> — 它跟着地球反转, 于是星空在视场里<strong>既不移位, 也不旋转</strong>, 单帧可曝光几分钟到几十分钟星点始终锐利。这是机械同构, 不是多轴补偿。
+        </p>
+        <div class="track-row"><span>深空长曝</span><strong>✅ 唯一正解</strong></div>
+        <div class="track-row"><span>视场旋转</span><strong>无</strong></div>
+        <div class="track-row"><span>代价</span><strong>贵, 重, 需对极轴</strong></div>
+        <div class="track-row"><span>红岸推荐</span><strong>二手 EQ6 座 + OnStep ≈¥2,900</strong></div>
+      </div>
+
+      <div class="track-card track-az">
+        <div class="track-tag track-tag-mute">经纬仪 (Alt-Az) · Seestar 路线</div>
+        <h3>两轴联动跟位置, 但补不了旋转</h3>
+        <p>
+          经纬仪用水平+垂直两轴联动、各自变速, <strong>位置</strong>跟踪不输赤道仪。但它的两根轴没有一根和地球自转轴共线 — 星星虽然钉在中心, <strong>整个星空绕视场中心慢慢转圈 (视场旋转)</strong>。位置 (x,y) 需 2 自由度, 旋转 (θ) 需第 3 个 — 纯 2 轴经纬仪在物理上补不了 θ。
+        </p>
+        <div class="track-row"><span>深空长曝</span><strong>❌ 边缘拖线</strong></div>
+        <div class="track-row"><span>视场旋转</span><strong>有 (长曝致命)</strong></div>
+        <div class="track-row"><span>补救</span><strong>短曝 + 软件逐帧旋转对齐</strong></div>
+        <div class="track-row"><span>典型</span><strong>Seestar / NexStar SE</strong></div>
+      </div>
+    </div>
+
+    <div class="track-note">
+      <h4>位置 vs 旋转 — 大多数人讲错的地方</h4>
+      <p>
+        "经纬仪理论上可以补偿" 这句话对一半: <strong>位置可以, 旋转不行。</strong> 让平面图像不移位 + 不旋转需要 3 个自由度 (x, y, θ)。经纬仪 2 根轴只能控 x,y, θ 失控; 赤道仪 2 根轴但 RA ∥ 地轴, 跟踪时 x,y,θ 被一个机械约束同时锁死。专业大望远镜 (VLT/Keck 用经纬仪式架) 的解法是<strong>加第 3 根"视场旋转轴"</strong>; Seestar 的解法是<strong>放弃机械补偿, 短曝 10s + 软件仿射对齐 (x,y,θ 全算)</strong> — 以算力换机械。
+      </p>
+      <p>
+        <strong>红岸三号的 30s 单帧上限让两条路都可行:</strong> 30s 内视场旋转 ~0.125°, 1" 底边缘拖尾 ~11px, 可忍 — 所以经纬仪 + 软件旋转对齐 (Seestar 路线) 能走, 但要把叠加算法复杂度加重; <strong>共享一台赤道仪更省心</strong> — 手机没有"视场旋转器", 走经纬仪路线就只能纯软件补, 没有中间态。
+      </p>
+
+      <h4 style="margin-top:32px">开源赤道仪: OnStep — 只开源大脑, 机械买二手</h4>
+      <p>
+        赤道仪的"开源"分两层: <strong>控制器 (大脑) 可以完全开源, 机械传动 (蜗杆/轴承) 的角秒级精度只能买。</strong> 最成熟的开源控制器是 <strong>OnStep</strong> (GitHub 5k+ stars, 社区上万改装案例): 用 ESP32/Teensy + TMC2209 步进驱动 (¥200–600), 把普通 EQ3/EQ5/EQ6 机械座升级成 GoTo 赤道仪 — GoTo、PEC 周期误差校正、ST-4 导星、WiFi 遥控、INDI/ASCOM 驱动全有, 精度做到 ±5–10", 追平成品。这正契合红岸三号"完全开源"的精神: <strong>跟踪的"智能"是开源的, 跟踪的"精度"是买来的。</strong>
+      </p>
+      <div class="track-row"><span>成品 NEQ6 二手</span><strong>¥4,000 · ±10" · 闭源</strong></div>
+      <div class="track-row"><span>二手 EQ6 座 + OnStep</span><strong>¥2,900 · ±5–10" · 控制器开源 ✅</strong></div>
+      <div class="track-row"><span>16 节点验证: EQ5 座 + OnStep</span><strong>¥1,400 · ±10" · 控制器开源 ✅</strong></div>
+
+      <p class="track-conclusion">
+        <strong>⚠️ 载重预警:</strong> 32 节点 (手机 6.4kg + 镜头 ~12kg + 8×4 支架 5–8kg) ≈ <strong>23–26kg, 逼近 EQ6 的 20kg 载重上限</strong> (超载加剧周期误差与磨损)。对策: ① 支架用碳纤维/镂空 3D 打印减重到 20kg 内; ② 上 CEM60 (27kg) / CGX (25kg) 级机械座 + OnStep (¥4,000–5,000); ③ 先 16 节点 (~12kg) 用 EQ5+OnStep (¥1,400) 验证再扩展。<br>
+        <strong>分工:</strong> 机械座买二手 (角秒级蜗杆精度是买来的, 中学生造不出也不该造), 控制器用 OnStep 开源 (这是社区要焊要调的), 8×4 网格支架造 (3D 打印 + 铝型材), sensor 改 (手机是拆的), 软件写 (叠加组网是开源的)。
+      </p>
     </div>
   </div>
 </section>
@@ -433,6 +702,10 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
       <div class="software-item">
         <h3>控制层</h3>
         <p>赤道仪控制 (INDI / LX200), 自动巡天, 目标调度。原生集成 Octos AgentOS — 望远镜作为 agent, 自动响应 GRB/SN 警报。</p>
+      </div>
+      <div class="software-item">
+        <h3>交错曝光层 · 双模式调度</h3>
+        <p>手机 sensor 单帧曝光上限 30s (Android HAL 硬限制)。对策: <strong>32 节点分 4 组 × 8 台, 相位错开 7.5s</strong> — 任意时刻都有 ~30/32 的节点在收光子, 阵列级时间覆盖率 ~100%, 瞬变源/掩星/GRB 余辉不再有系统盲区。巡天默认交错 (保覆盖), 警报触发时全阵列切同步 (保时间分辨率)。Evryscope / ASAS-SN 的专业巡天就是这么干的。</p>
       </div>
     </div>
   </div>
@@ -483,7 +756,7 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
         <div class="timeline-year">未来</div>
         <div class="timeline-content">
           <h3>全球分布式阵列</h3>
-          <p>1000 个红岸三号节点分布在全球, 通过 Octos AgentOS 统一调度, 形成一个等效口径超过任何单一望远镜的虚拟阵列。这是天文学的真正民主化。</p>
+          <p>1,000 个红岸三号节点 = 巡天覆盖能力超越任何单一专业设备。参照全球流星网 (GMN) 先例: 树莓派相机 5 年长到 1,000+ 台 / 40+ 国, 数据 24 小时公开。红岸三号把这个模式延伸到更深的天空 — 节点出生即内置 FITS / AAVSO / MPC 数据标准, TOM Toolkit 自动调度, GRB/SN 警报跨节点协同触发。</p>
         </div>
       </div>
     </div>

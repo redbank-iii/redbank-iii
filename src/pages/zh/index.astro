@@ -361,7 +361,7 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
     <p class="section-sub">{t(lang, 'plans.sub')}</p>
 
     <div class="plans-compare">
-      <div class="plan-card plan-featured" id="plan-b">
+      <div class="plan-card plan-featured" id="plan-main">
         <div class="plan-badge">设计方案</div>
         <h3>旧手机改造 + 华强北供应链</h3>
         <p class="plan-tagline">性价比之王, 白嫖整个软件栈</p>
@@ -395,7 +395,7 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
             </ul>
           </div>
         </div>
-        <a href="#bom-b" class="btn btn-plan">看 BOM</a>
+        <a href="#bom-main" class="btn btn-plan">看 BOM</a>
       </div>
     </div>
 
@@ -420,10 +420,10 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
 </section>
 
 <!-- ============ BOM A ============ -->
-<section class="section" id="bom-a">
+<section class="section" id="bom-ref">
   <div class="container">
-    <div class="section-eyebrow">PLAN A · BOM</div>
-    <h2 class="section-title">IMX 模组方案物料清单</h2>
+    <div class="section-eyebrow">对照方案 · 参考价</div>
+    <h2 class="section-title">IMX 模组方案 (历史对照, 已放弃)</h2>
     <div class="bom-table-wrap">
       <table class="bom-table">
         <thead>
@@ -456,10 +456,10 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
 </section>
 
 <!-- ============ BOM B ============ -->
-<section class="section section-dark" id="bom-b">
+<section class="section section-dark" id="bom-main">
   <div class="container">
-    <div class="section-eyebrow">PLAN B · BOM · 推荐</div>
-    <h2 class="section-title">旧手机改造方案物料清单</h2>
+    <div class="section-eyebrow">主方案 · BOM</div>
+    <h2 class="section-title">手机改造方案物料清单 (主方案)</h2>
     <div class="bom-table-wrap">
       <table class="bom-table">
         <thead>
@@ -500,7 +500,7 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
       <table class="array-table">
         <thead>
           <tr>
-            <th>阵列规模</th><th>等效口径</th><th>等效折射镜</th><th>Plan A 成本</th><th>Plan B 成本</th><th>能拍什么</th>
+            <th>阵列规模</th><th>等效口径</th><th>等效折射镜</th><th>IMX 模组 (对照)</th><th>手机方案 (主)</th><th>能拍什么</th>
           </tr>
         </thead>
         <tbody>
@@ -522,7 +522,7 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
           <div class="vs-note">404mm 等效口径 · 闭源</div>
         </div>
         <div class="vs-item">
-          <div class="vs-label">红岸 III Plan B (32 镜)</div>
+          <div class="vs-label">红岸 III 手机方案 (32 镜)</div>
           <div class="vs-bar vs-redbank" style="--pct:4.5%">¥48,000 (~$6,700)</div>
           <div class="vs-note">382mm 等效口径 · 完全开源</div>
         </div>
@@ -540,7 +540,7 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
     <div class="software-grid">
       <div class="software-item">
         <h3>采集层</h3>
-        <p>多路 MIPI 同步曝光 (Plan A) / WiFi 触发同步 (Plan B)。NTP 对时 &lt; 1ms。RAW/DNG 输出。</p>
+        <p>WiFi 触发同步曝光, NTP 对时 &lt; 1ms。RAW/DNG 输出。</p>
       </div>
       <div class="software-item">
         <h3>对齐层</h3>
@@ -600,7 +600,7 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
         <div class="timeline-year">2026</div>
         <div class="timeline-content">
           <h3>红岸三号启动</h3>
-          <p>我们把 Dragonfly 的科学思路 + 开源机器人的工程范式 + 华强北的供应链能力结合起来。Plan A (IMX 模组) 走标准化路线, Plan B (旧手机改造) 走极致性价比路线。完全开源, 任何人都能造。</p>
+          <p>我们把 Dragonfly 的科学思路 + 开源机器人的工程范式 + 二手市场的供应链能力结合起来。手机改造 (主方案) 走极致性价比 + 社区可复制路线; IMX 模组 (方案 C) 留作高端定标参考。完全开源, 任何人都能造。</p>
         </div>
       </div>
       <div class="timeline-item timeline-future">

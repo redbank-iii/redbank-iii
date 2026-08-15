@@ -359,125 +359,172 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
     <div class="section-eyebrow">技术方案 · DESIGN</div>
     <h2 class="section-title">{t(lang, 'plans.title')}</h2>
     <p class="section-sub">{t(lang, 'plans.sub')}</p>
-
-    <p class="section-sub">三个方案, 各就各位: <strong>方案 A (IMX 模组+树莓派)</strong> 是标准天文路线 — 数据质量稳、供应链稳, 优先推荐给追求科研可靠性的团队; <strong>方案 B (手机改造)</strong> 是极致性价比 — 白嫖 SoC、社区可复制, 32 台大规模巡天的唯一经济解; <strong>方案 C (制冷天文相机)</strong> 是高端定标旗舰 — 网络里 1–2 台做绝对参考。三者不互斥: A/B 共用镜头和支架, 推荐架构是 <strong>A 或 B 做主力 + C 做定标种子</strong>。</p>
+    <p class="section-sub">
+      三条路线, 一张图看懂: <strong>方案 A (IMX 模组 + 树莓派)</strong> — 标准天文路线, 优先推荐, 参数官方标称、供应链稳; <strong>方案 B (手机改造)</strong> — 极致性价比, 1" 大底白嫖全套计算平台, 32 台大规模巡天的唯一经济解; <strong>方案 C (制冷天文相机)</strong> — 官方整机旗舰, 1–2 台做全网络的定标基准。三者共用 <strong>Nikon 镜头 + OnStep 赤道仪 + 同一套叠加软件</strong>, 不互斥 — 推荐编队是 <strong>A 或 B 做主力节点 + C 做定标种子</strong>。
+    </p>
 
     <div class="plans-compare">
-      <!-- 方案 A: IMX 模组 (优先) -->
+      <!-- ============ 方案 A ============ -->
       <div class="plan-card plan-featured" id="plan-a">
-        <div class="plan-badge">方案 A · 优先</div>
-        <h3>IMX 模组 + 树莓派 (标准天文路线)</h3>
-        <p class="plan-tagline">货架产品, 天文原生, 数据质量最稳</p>
+        <div class="plan-badge">方案 A · 优先推荐</div>
+        <h3>IMX585 模组 + 树莓派</h3>
+        <p class="plan-tagline">标准天文路线 — 货架产品拼装, 参数全部官方标称</p>
         <div class="plan-spec">
-          <div class="spec-row"><span>传感器</span><strong>IMX585 1/1.2" 模组 (ToupTek/Svbony)</strong></div>
-          <div class="spec-row"><span>读出噪声</span><strong>0.5e⁻ (官方标称)</strong></div>
+          <div class="spec-row"><span>传感器</span><strong>IMX585 1/1.2" (ToupTek/Svbony 模组)</strong></div>
+          <div class="spec-row"><span>关键参数</span><strong>读出噪声 0.5e⁻ · QE ~91% (官方)</strong></div>
           <div class="spec-row"><span>计算单元</span><strong>树莓派 5 / RK3576 工业板</strong></div>
-          <div class="spec-row"><span>镜头</span><strong>Nikon 50/1.8D / 135/2.8 (与 B 共用)</strong></div>
-          <div class="spec-row"><span>数据管线</span><strong>FITS 原生, INDI/libcamera 生态</strong></div>
-          <div class="spec-row"><span>单台成本</span><strong class="cost">~¥3,000–4,500</strong></div>
+          <div class="spec-row"><span>制冷</span><strong>可选风扇款, 或 TEC 制冷款 (+¥500)</strong></div>
+          <div class="spec-row"><span>数据管线</span><strong>FITS 原生 · INDI/libcamera</strong></div>
+          <div class="spec-row"><span>单台成本</span><strong class="cost">~¥3,000–4,500 (TEC 款 +¥500)</strong></div>
           <div class="spec-row"><span>32 台阵列</span><strong>~¥96,000–144,000</strong></div>
         </div>
         <div class="plan-pros-cons">
           <div class="pros">
             <h4>优势</h4>
             <ul>
-              <li>天文原生: FITS 输出, 无手机 ISP 污染 (Lens Shading/黑电平/降噪全免)</li>
-              <li>低读出噪声 + 高 QE (STARVIS 2 为低光设计), 单帧质量可预期</li>
+              <li>天文原生: FITS 输出, 无手机 ISP 污染 (Lens Shading / 黑电平 / 降噪全免)</li>
+              <li>读出噪声 0.5e⁻ — 短帧叠加的极限星等比手机深 ~0.7 等</li>
               <li>Linux/INDI 生态成熟, 无 ADB 魔改, 控制简单</li>
               <li>供应链稳定: 模组长买长有, 不依赖停产的二手手机</li>
-              <li>GMN (全球流星网) 同款架构 — 树莓派+工业模组的开源先例</li>
+              <li>GMN (全球流星网, 1000+ 节点) 同款架构 — 开源先例</li>
             </ul>
           </div>
           <div class="cons">
             <h4>代价</h4>
             <ul>
-              <li>比手机方案贵 ~2×/台 (¥3,000–4,500 vs ¥1,700–2,000)</li>
+              <li>单台贵 ~2× (¥3,000–4,500 vs 手机 ¥1,700–2,000)</li>
               <li>1/1.2" 画幅小于 1" IMX989 (31 vs 128mm²), 单帧 étendue 低</li>
               <li>需自配主控/存储/供电, 不能白嫖 SoC</li>
-              <li>32 台全 A 超 "¥2,000 内" 宣言, 但 4–8 台起步可行</li>
+              <li>32 台全 A 超预算 — 但 4–8 台起步完全可行</li>
             </ul>
           </div>
         </div>
+        <p class="plan-note"><strong>适合谁:</strong> 追求科研可靠性的团队 — 第一台样机、深度节点 (小行星测光/变星精密测光)、或对极限星等有硬指标的场景。</p>
       </div>
 
-      <!-- 方案 B: 手机改造 -->
+      <!-- ============ 方案 B ============ -->
       <div class="plan-card" id="plan-b">
         <div class="plan-badge">方案 B · 极致性价比</div>
         <h3>手机改造 + 二手 Nikon 镜头</h3>
-        <p class="plan-tagline">性价比之王, 白嫖整个软件栈, 社区可复制</p>
+        <p class="plan-tagline">1" 大底 + 白嫖全套计算平台 — 32 台大规模巡天的唯一经济解</p>
         <div class="plan-spec">
-          <div class="spec-row"><span>平台</span><strong>小米 12S Ultra 料板</strong></div>
-          <div class="spec-row"><span>传感器</span><strong>1" IMX989 (50MP)</strong></div>
-          <div class="spec-row"><span>计算/ISP</span><strong>Snapdragon 8+ Gen 1 (白嫖)</strong></div>
-          <div class="spec-row"><span>镜头</span><strong>Nikon 50/1.8D 二手 ~¥410 (广角) / 135/2.8 AIS ~¥700 (深度)</strong></div>
-          <div class="spec-row"><span>等效口径</span><strong>28–48mm (视镜头档)</strong></div>
-          <div class="spec-row"><span>单台成本</span><strong class="cost">¥1,500 (二手整机)</strong></div>
-          <div class="spec-row"><span>4 镜阵列</span><strong>¥6,000</strong></div>
+          <div class="spec-row"><span>平台</span><strong>小米 12S Ultra 料板 (闲鱼 ¥1,500, 2026-08 实测)</strong></div>
+          <div class="spec-row"><span>传感器</span><strong>1" IMX989 (50MP, 128mm²)</strong></div>
+          <div class="spec-row"><span>计算/ISP</span><strong>Snapdragon 8+ Gen 1 + 屏幕 + 存储 (全白嫖)</strong></div>
+          <div class="spec-row"><span>镜头</span><strong>Nikon 50/1.8D ~¥410 / 135/2.8 AIS ~¥700</strong></div>
+          <div class="spec-row"><span>制冷</span><strong>可选 TEC 升级档 +¥50/台 (见下方制冷方案)</strong></div>
+          <div class="spec-row"><span>单台成本</span><strong class="cost">¥1,688 (裸) / ¥1,738 (TEC)</strong></div>
+          <div class="spec-row"><span>32 台编队</span><strong>~¥60,400 裸机 / ¥62,000 全TEC (含赤道仪)</strong></div>
         </div>
         <div class="plan-pros-cons">
           <div class="pros">
             <h4>优势</h4>
             <ul>
-              <li>二手小米 12S Ultra 整机 ¥1,500 (闲鱼实测, 2026-08) — 比 IMX571 天文相机方案便宜 ~6.7×</li>
-              <li>白嫖 SoC + ISP + 屏幕 + 电池 + 存储</li>
-              <li>Android 天文 app 生态现成</li>
-              <li>1" 一英寸大底 (手机最大 sensor; 注意: 13 Ultra 同为 IMX989, 14 Ultra 已换 LYT-900)</li>
+              <li>1" 一英寸大底 — 面积是 IMX585 的 4×, 单帧 étendue 最高</li>
+              <li>白嫖 SoC + ISP + 屏幕 + 电池 + 存储, 软件栈零成本</li>
+              <li>TEC 制冷升级只要 ¥50/台 — 暗电流降 6–10× (见制冷方案)</li>
+              <li>3D 打印 + 现成整机, 中学生社团能造 — 社区可复制</li>
+              <li>手机影像换代速度 = 光学硬件免费升级的长期红利</li>
             </ul>
           </div>
           <div class="cons">
             <h4>代价</h4>
             <ul>
-              <li>不可逆改装 (拆镜头组)</li>
-              <li>需要定制转接环</li>
-              <li>法兰距补偿是工程难点</li>
-              <li>依赖二手手机供应链 (12S Ultra 已停产, 需同批次采购保料板一致性)</li>
-              <li>一次性校准台投入 ~¥1–4万 (自组: 显微镜+位移台+平行光管), 每颗校准 0.5–2 小时</li>
+              <li>不可逆改装 (拆镜头组), 需定制转接环</li>
+              <li>IMX989 读出噪声/QE 无公开实测 — 需样机验证</li>
+              <li>30s 单帧上限 (Android HAL), 由阵列交错曝光补偿</li>
+              <li>依赖二手供应链 (12S Ultra 已停产, 需同批次采购)</li>
+              <li>一次性校准台 ~¥1–4 万, 每颗校准 0.5–2 小时</li>
             </ul>
           </div>
         </div>
-        <a href="#bom-main" class="btn btn-plan">看 BOM</a>
-      </div>
-
-      <!-- 高端参考: 制冷天文相机 + 二手三阳 -->
-      <div class="plan-card" id="plan-c">
-        <div class="plan-badge">方案 C · 高端参考 (制冷)</div>
-        <h3>制冷天文相机 + 二手三阳 135/2.0</h3>
-        <p class="plan-tagline">天文原生路径 — 制冷、无 ISP 污染, 用于定标基准与 LSB 示范</p>
-        <div class="plan-spec">
-          <div class="spec-row"><span>传感器 A</span><strong>IMX585 1/1.2" (ToupTek ATR585C 制冷, ~$800)</strong></div>
-          <div class="spec-row"><span>传感器 B</span><strong>IMX571 APS-C (ZWO ASI2600MC Pro, $1,349 官方实锤)</strong></div>
-          <div class="spec-row"><span>镜头</span><strong>二手三阳 Samyang 135mm f/2.0 (¥1,500–2,500)</strong></div>
-          <div class="spec-row"><span>单台成本</span><strong class="cost">¥9,000–16,000</strong></div>
-          <div class="spec-row"><span>32 台阵列</span><strong>≈ ¥290,000–500,000</strong></div>
-        </div>
-        <div class="plan-pros-cons">
-          <div class="pros">
-            <h4>优势 (手机方案做不到的)</h4>
-            <ul>
-              <li>TEC 制冷 −45℃ — 长曝热噪声压制, 手机方案的硬短板直接消失</li>
-              <li>FITS 原生输出, 无手机 ISP 污染 (Lens Shading / 黑电平 / 降噪全免)</li>
-              <li>IMX585 读出噪声 0.5e⁻; IMX571 APS-C 面积是手机的 2.9×</li>
-              <li>三阳 135/2.0 全开星点神镜 (但 ¥6,950 全新 / 二手超预算, 主线不用)</li>
-            </ul>
-          </div>
-          <div class="cons">
-            <h4>为何不是主线</h4>
-            <ul>
-              <li>贵 6–10 倍/台, 32 台阵列超 "$2,000 内人人可造" 宣言 20 倍以上</li>
-              <li>需自配主控 (树莓派/PC), 不能白嫖手机 SoC</li>
-              <li>背离 "中学生能造" 的社区参与定位</li>
-            </ul>
-          </div>
-        </div>
-        <p style="font-size:13px;color:var(--text-mute);margin-top:20px;padding:16px 20px;background:var(--bg);border-radius:4px;line-height:1.7">
-          <strong style="color:var(--accent-warm)">定位:</strong> 网络里的 <strong>1–2 台定标旗舰</strong> — 给手机阵列提供平场/测光绝对参考 + 承担手机做不了的低面亮度 (LSB) 巡天示范。对应 deep research 结论: 30 台手机做时域宽度 + 1–2 台制冷相机做深度定标的混合架构。
-        </p>
+        <p class="plan-note"><strong>适合谁:</strong> 大规模铺节点 — 32 台巡天主力、预算敏感的学生社团、追求"宽度赢天下"的分布式组网。</p>
       </div>
     </div>
 
-    <!-- lens options: three tiers for different survey needs -->
+    <!-- ============ 方案 C (全宽) ============ -->
+    <div class="plan-card plan-c-wide" id="plan-c">
+      <div class="plan-badge">方案 C · 高端定标旗舰 (制冷)</div>
+      <h3>制冷天文相机 + 二手三阳 135/2.0</h3>
+      <p class="plan-tagline">官方整机旗舰 — 全网络的绝对参考, 1–2 台足矣</p>
+      <div class="plan-spec">
+        <div class="spec-row"><span>传感器 A</span><strong>IMX585 1/1.2" 制冷 (ToupTek ATR585C, ~$800)</strong></div>
+        <div class="spec-row"><span>传感器 B</span><strong>IMX571 APS-C 制冷 (ZWO ASI2600MC Pro, $1,349)</strong></div>
+        <div class="spec-row"><span>制冷</span><strong>TEC −45℃ 官方整机 (两级)</strong></div>
+        <div class="spec-row"><span>镜头</span><strong>二手三阳 Samyang 135/2.0 (¥1,500–2,500)</strong></div>
+        <div class="spec-row"><span>单台成本</span><strong class="cost">¥9,000–16,000</strong></div>
+        <div class="spec-row"><span>32 台阵列</span><strong>≈ ¥290,000–500,000 (仅作对照)</strong></div>
+      </div>
+      <div class="plan-pros-cons">
+        <div class="pros">
+          <h4>优势 (A/B 做不到的)</h4>
+          <ul>
+            <li>TEC −45℃ 官方两级制冷 — 长曝热噪声压制的天花板</li>
+            <li>IMX571 APS-C: 面积是 IMX989 的 2.9×, 单帧集光碾压</li>
+            <li>三阳 135/2.0 全开星点神镜 (A/B 主线不用它, 因为贵)</li>
+            <li>全参数官方标定 — 平场/测光绝对参考</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>代价</h4>
+          <ul>
+            <li>贵 5–9 倍/台, 32 台超 "¥2,000 内人人可造" 宣言 20 倍以上</li>
+            <li>背离 "中学生能造" 的社区参与定位</li>
+          </ul>
+        </div>
+      </div>
+      <p class="plan-note"><strong>定位:</strong> 网络里的 1–2 台定标旗舰 — 给 A/B 阵列提供平场/测光绝对参考 + 承担 LSB (低面亮度) 巡天示范。对应 deep research 结论: 30+ 台 A/B 做时域宽度 + 1–2 台制冷相机做深度定标的混合架构。</p>
+    </div>
+
+    <!-- ============ 制冷方案: 单机与阵列 ============ -->
+    <div class="cooling-options">
+      <h3 class="lens-title">制冷方案 · 单机档与阵列档</h3>
+      <p class="lens-sub">
+        热噪声是短帧叠加的三大噪声源之一 (天光/读出/暗电流), 制冷直接压暗电流: <strong>每降 6–8℃, 暗电流约减半</strong>。三个方案都有自己的制冷路径, 代价差三个数量级。
+      </p>
+      <div class="lens-grid">
+        <div class="lens-card">
+          <div class="lens-badge">方案 B · 单机 TEC 升级档</div>
+          <h4>TEC1-12706 贴装 (¥50/台)</h4>
+          <div class="lens-price">+¥50 · sensor −15~−20℃</div>
+          <div class="lens-specs">
+            <div><span>暗电流</span><strong>降 6–10×</strong></div>
+            <div><span>极限星等</span><strong>+0.7–1.0 等</strong></div>
+            <div><span>功耗 (PWM 温控)</span><strong>平均 ~20W/台</strong></div>
+          </div>
+          <p>改装后 sensor 背面贴铜均热板 + TEC1-12706 (¥15) + 风冷散热 (¥30) + NTC 闭环 PWM 温控。暗电流从夏夜 ~0.5–1 e⁻/s 压到 ~0.05–0.1 e⁻/s。关键工程点: ① 电池必须移除 (本来就 DC 直供); ② sensor 腔密封 + 干燥剂防结露; ③ 镜头前组加薄加热丝保持高于露点。这是全项目性价比最高的一笔升级 — 32 台只加 ¥1,600。</p>
+        </div>
+        <div class="lens-card lens-card-featured">
+          <div class="lens-badge">方案 B · 阵列集中制冷档</div>
+          <h4>阵列级风道/水冷 (¥600–2,000)</h4>
+          <div class="lens-price">共享设施 · 整体 −10~−25℃</div>
+          <div class="lens-specs">
+            <div><span>结构</span><strong>8×4 网格密封风道</strong></div>
+            <div><span>形式</span><strong>半导体空调/水冷歧管</strong></div>
+            <div><span>附带收益</span><strong>整机恒温 = 校正帧可复用</strong></div>
+          </div>
+          <p>32 颗 sensor 各自贴 TEC 的问题 (功耗/结露/维护) 在阵列尺度被放大 — 集中方案是给整个 8×4 支架做一个密封腔 + 半导体空调 (¥1,500) 或水冷歧管循环 (¥2,000), 让所有节点同温。同温的隐藏收益: 32 颗的 dark 校正帧可共用一套, 校准工作量从 32 组降到 1 组 — 这正是纪要里"料板一致性"要求的延伸。</p>
+        </div>
+        <div class="lens-card">
+          <div class="lens-badge lens-badge-scope">方案 A/C · 官方制冷</div>
+          <h4>模组风冷 / 相机 TEC (¥0–500)</h4>
+          <div class="lens-price">A: 风扇款 +¥0 / TEC 款 +¥500 · C: 整机自带</div>
+          <div class="lens-specs">
+            <div><span>方案 A 风扇款</span><strong>sensor ≈ 环境 −5℃</strong></div>
+            <div><span>方案 A TEC 款</span><strong>−35℃ (单级)</strong></div>
+            <div><span>方案 C 整机</span><strong>−45℃ (两级, 厂商标定)</strong></div>
+          </div>
+          <p>方案 A 的模组出厂就有风扇版和 TEC 版 (ToupTek G3 风冷 / ATR 制冷款), 参数官方标定, 零工程风险 — 这是 A "数据质量最稳"的又一层含义。方案 C 的 −45℃ 两级 TEC 是整个网络的热噪声天花板, 也是它做定标旗舰的物理基础。</p>
+        </div>
+      </div>
+      <p class="lens-conclusion">
+        <strong>制冷决策树:</strong> 广角巡天节点 (20×50mm) 用裸 B 或 +¥50 TEC — 暗夜单晚 18 等点源本就 SNR>30; 深度节点 (12×135mm) 强烈建议 TEC 或直接用 A 的 TEC 款 — 追加投资换 0.7–1 等极限星等; 全网络 1–2 台 C 保底定标。32 台 B 全加 TEC 编队 = ¥61,996 (裸机 ¥60,396 + TEC ¥1,600), 仍不到 32 台 C 的 1/8。
+      </p>
+    </div>
+
+    <!-- ============ 镜头三档 (A/B 共用) ============ -->
     <div class="lens-options">
-      <h3 class="lens-title">镜头三档 · 按巡天需求选</h3>
+      <h3 class="lens-title">镜头三档 · A/B 共用, 按巡天需求选</h3>
       <p class="lens-sub">
         天文成像的收光能力 = étendue (口径² × 视场²)。先破除两个迷思: <strong>超广角 (14–24mm) 是陷阱</strong> — 视场大但口径只有 5–17mm, étendue 最低, 全开彗差无法测光, 只适合流星雨; <strong>F 值会骗人</strong> — 真正决定进光的是通光口径 (焦距 ÷ F 值), 135mm f/2.0 口径 67.5mm 是 50mm f/1.4 (35.7mm) 的 1.9 倍。所以"F1.4 vs F2.0"的正确比法是: <strong>谁的全开星点好谁赢</strong> — 很多 ¥300 国产 f/1.4 全开烂, 收到 f/2.8 才可用, 等于花 f/1.4 的钱买 f/2.8 的头; 二手 Nikon 50/1.8D 和 135/2.8 恰是"全开即可用"的原厂代表。阵列靠 √N 叠加, 单镜降档可以用节点数补回来。
       </p>
@@ -565,7 +612,7 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
         <tfoot>
           <tr class="bom-total"><td colspan="4">单台总成本 (50/1.8D 档 ¥410 镜头 / 135/2.8 档 ¥700 镜头)</td><td><strong>¥1,688 / ¥1,978</strong></td></tr>
           <tr><td colspan="4">最终编队镜头: 20×¥410 + 12×¥700</td><td><strong>~¥17,000</strong></td></tr>
-          <tr><td colspan="4">编队总成本 (20×¥1,688 + 12×¥1,978) + 共享赤道仪 (二手 EQ6 座 + OnStep ¥2,900)</td><td><strong>~¥61,608</strong></td></tr>
+          <tr><td colspan="4">编队总成本 (20×¥1,688 + 12×¥1,978 = ¥57,496) + 共享赤道仪 (二手 EQ6 座 + OnStep ¥2,900)</td><td><strong>¥60,396 (全 TEC +¥1,600 → ¥61,996)</strong></td></tr>
         </tfoot>
       </table>
     </div>

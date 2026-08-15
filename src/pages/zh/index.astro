@@ -360,11 +360,51 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
     <h2 class="section-title">{t(lang, 'plans.title')}</h2>
     <p class="section-sub">{t(lang, 'plans.sub')}</p>
 
+    <p class="section-sub">三个方案, 各就各位: <strong>方案 A (IMX 模组+树莓派)</strong> 是标准天文路线 — 数据质量稳、供应链稳, 优先推荐给追求科研可靠性的团队; <strong>方案 B (手机改造)</strong> 是极致性价比 — 白嫖 SoC、社区可复制, 32 台大规模巡天的唯一经济解; <strong>方案 C (制冷天文相机)</strong> 是高端定标旗舰 — 网络里 1–2 台做绝对参考。三者不互斥: A/B 共用镜头和支架, 推荐架构是 <strong>A 或 B 做主力 + C 做定标种子</strong>。</p>
+
     <div class="plans-compare">
-      <div class="plan-card plan-featured" id="plan-main">
-        <div class="plan-badge">设计方案</div>
-        <h3>旧手机改造 + 华强北供应链</h3>
-        <p class="plan-tagline">性价比之王, 白嫖整个软件栈</p>
+      <!-- 方案 A: IMX 模组 (优先) -->
+      <div class="plan-card plan-featured" id="plan-a">
+        <div class="plan-badge">方案 A · 优先</div>
+        <h3>IMX 模组 + 树莓派 (标准天文路线)</h3>
+        <p class="plan-tagline">货架产品, 天文原生, 数据质量最稳</p>
+        <div class="plan-spec">
+          <div class="spec-row"><span>传感器</span><strong>IMX585 1/1.2" 模组 (ToupTek/Svbony)</strong></div>
+          <div class="spec-row"><span>读出噪声</span><strong>0.5e⁻ (官方标称)</strong></div>
+          <div class="spec-row"><span>计算单元</span><strong>树莓派 5 / RK3576 工业板</strong></div>
+          <div class="spec-row"><span>镜头</span><strong>Nikon 50/1.8D / 135/2.8 (与 B 共用)</strong></div>
+          <div class="spec-row"><span>数据管线</span><strong>FITS 原生, INDI/libcamera 生态</strong></div>
+          <div class="spec-row"><span>单台成本</span><strong class="cost">~¥3,000–4,500</strong></div>
+          <div class="spec-row"><span>32 台阵列</span><strong>~¥96,000–144,000</strong></div>
+        </div>
+        <div class="plan-pros-cons">
+          <div class="pros">
+            <h4>优势</h4>
+            <ul>
+              <li>天文原生: FITS 输出, 无手机 ISP 污染 (Lens Shading/黑电平/降噪全免)</li>
+              <li>低读出噪声 + 高 QE (STARVIS 2 为低光设计), 单帧质量可预期</li>
+              <li>Linux/INDI 生态成熟, 无 ADB 魔改, 控制简单</li>
+              <li>供应链稳定: 模组长买长有, 不依赖停产的二手手机</li>
+              <li>GMN (全球流星网) 同款架构 — 树莓派+工业模组的开源先例</li>
+            </ul>
+          </div>
+          <div class="cons">
+            <h4>代价</h4>
+            <ul>
+              <li>比手机方案贵 ~2×/台 (¥3,000–4,500 vs ¥1,700–2,000)</li>
+              <li>1/1.2" 画幅小于 1" IMX989 (31 vs 128mm²), 单帧 étendue 低</li>
+              <li>需自配主控/存储/供电, 不能白嫖 SoC</li>
+              <li>32 台全 A 超 "¥2,000 内" 宣言, 但 4–8 台起步可行</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 方案 B: 手机改造 -->
+      <div class="plan-card" id="plan-b">
+        <div class="plan-badge">方案 B · 极致性价比</div>
+        <h3>手机改造 + 二手 Nikon 镜头</h3>
+        <p class="plan-tagline">性价比之王, 白嫖整个软件栈, 社区可复制</p>
         <div class="plan-spec">
           <div class="spec-row"><span>平台</span><strong>小米 12S Ultra 料板</strong></div>
           <div class="spec-row"><span>传感器</span><strong>1" IMX989 (50MP)</strong></div>
@@ -400,7 +440,7 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
 
       <!-- 高端参考: 制冷天文相机 + 二手三阳 -->
       <div class="plan-card" id="plan-c">
-        <div class="plan-badge">高端参考 · 非主线</div>
+        <div class="plan-badge">方案 C · 高端参考 (制冷)</div>
         <h3>制冷天文相机 + 二手三阳 135/2.0</h3>
         <p class="plan-tagline">天文原生路径 — 制冷、无 ISP 污染, 用于定标基准与 LSB 示范</p>
         <div class="plan-spec">
@@ -500,55 +540,13 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
           <p>{t(lang, 'eng.q3.a')}</p>
         </div>
       </div>
-
-    <!-- 第四方案: IMX 天文相机模组 + 二手三阳镜头 -->
-    <div class="plan-card" id="plan-c">
-      <div class="plan-badge">方案 C · 高端参考</div>
-      <h3>天文相机模组 + 二手三阳 135/2.0</h3>
-      <p class="plan-tagline">不改装手机, 天文原生路径 — 制冷、无 ISP 污染、像素大</p>
-      <div class="plan-spec">
-        <div class="spec-row"><span>传感器 A</span><strong>IMX585 1/1.2" (ToupTek ATR585C 制冷, $800)</strong></div>
-        <div class="spec-row"><span>传感器 B</span><strong>IMX571 APS-C (ZWO ASI2600MC 制冷, $1,350)</strong></div>
-        <div class="spec-row"><span>镜头</span><strong>二手三阳 Samyang 135mm f/2.0 (¥1,500–2,500)</strong></div>
-        <div class="spec-row"><span>口径</span><strong>67.5mm (全开 f/2.0 神镜)</strong></div>
-        <div class="spec-row"><span>制冷</span><strong>✅ TEC -45℃ (手机方案没有)</strong></div>
-        <div class="spec-row"><span>单台成本 (IMX585 档)</span><strong class="cost">¥9,000–11,000</strong></div>
-        <div class="spec-row"><span>单台成本 (IMX571 档)</span><strong class="cost">¥13,500–16,000</strong></div>
-      </div>
-      <div class="plan-pros-cons">
-        <div class="pros">
-          <h4>优势</h4>
-          <ul>
-            <li>制冷 TEC -45℃: 长曝热噪声压制, 手机方案的致命短板直接消失</li>
-            <li>FITS/RAW 原生输出, 无手机 ISP 污染 (Lens Shading / 黑电平 / 降噪全免)</li>
-            <li>三阳 135/2.0 是天文圈公认神镜 — 全开 f/2.0 星点即扎实, 67.5mm 大口径</li>
-            <li>IMX585 读出噪声 0.5e⁻ (手机 sensor 无公开数据)</li>
-            <li>INDI/ASCOM 生态原生支持, 无 ADB 魔改</li>
-            <li>IMX571 APS-C 画幅: 13.1×9.8mm 的 3× 面积, 单帧 étendue 碾压手机</li>
-          </ul>
-        </div>
-        <div class="cons">
-          <h4>代价</h4>
-          <ul>
-            <li>贵 6–10 倍: ¥9,000–16,000/台 vs 手机方案 ¥1,500/台</li>
-            <li>32 台 IMX571 阵列 ≈ ¥430,000 — 超 "$2,000 内人人可造" 宣言 20 倍</li>
-            <li>三阳 135/2.0 二手 ¥1,500–2,500 (¥6,950 全新), 仍比手机方案的 Nikon 50/1.8D (¥410) 贵 3–6 倍</li>
-            <li>需自配主控 (树莓派/PC), 不能白嫖 SoC</li>
-            <li>背离 "中学生能造" 的社区参与定位</li>
-          </ul>
-        </div>
-      </div>
-      <p style="font-size:13px;color:var(--text-mute);margin-top:20px;padding:16px 20px;background:var(--bg);border-radius:4px;line-height:1.7">
-        <strong style="color:var(--accent-warm)">方案 C 的定位:</strong> 不是主力, 是 <strong>"深度旗舰节点" 或 "科学验证基准"</strong>。一个 1000 节点的红岸网络里, 1–2 台制冷 IMX585/571 + 三阳 135/2.0 可以做 <strong>定标基准</strong> (给手机阵列的平场/测光提供绝对参考) 和 <strong>低面亮度巡天示范</strong> (手机阵列做不了的 LSB 科学)。这也正是 deep research 报告推荐的 "混合架构": 30 台手机做时域宽度, 1–2 台制冷相机做深度定标。
-      </p>
-    </div>
   </div>
 </section>
 
 <section class="section section-dark" id="bom-main">
   <div class="container">
-    <div class="section-eyebrow">主方案 · BOM</div>
-    <h2 class="section-title">手机改造方案物料清单 (主方案)</h2>
+    <div class="section-eyebrow">方案 B · BOM</div>
+    <h2 class="section-title">手机改造方案物料清单 (方案 B)</h2>
     <div class="bom-table-wrap">
       <table class="bom-table">
         <thead>
@@ -589,7 +587,7 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
       <table class="array-table">
         <thead>
           <tr>
-            <th>阵列规模</th><th>等效口径</th><th>等效折射镜</th><th>方案 C 制冷相机 (参考)</th><th>手机方案 (主)</th><th>能拍什么</th>
+            <th>阵列规模</th><th>等效口径</th><th>等效折射镜</th><th>方案 A 模组 (参考)</th><th>方案 B 手机 (主)</th><th>能拍什么</th>
           </tr>
         </thead>
         <tbody>
@@ -749,7 +747,7 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
         <div class="timeline-year">2026</div>
         <div class="timeline-content">
           <h3>红岸三号启动</h3>
-          <p>我们把 Dragonfly 的科学思路 + 开源机器人的工程范式 + 二手市场的供应链能力结合起来。手机改造是唯一主线 (极致性价比 + 社区可复制); 制冷天文相机 (方案 C) 只做 1–2 台定标旗舰。完全开源, 任何人都能造。</p>
+          <p>我们把 Dragonfly 的科学思路 + 开源机器人的工程范式 + 二手市场的供应链能力结合起来。方案 A (IMX 模组) 走标准天文路线, 方案 B (手机改造) 走极致性价比路线, 方案 C (制冷相机) 做定标旗舰 — 完全开源, 任何人都能造。</p>
         </div>
       </div>
       <div class="timeline-item timeline-future">

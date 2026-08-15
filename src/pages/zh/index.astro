@@ -347,7 +347,7 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
       <div class="principle">
         <div class="principle-num">叁</div>
         <h3>消费级部件</h3>
-        <p>不用科研 CCD, 不用专业镜头。用 IMX 模组、二手手机、华强北供应链 — 把成本压到 1/100。</p>
+        <p>不用科研 CCD, 不用专业镜头。用二手手机 + 二手 Nikon 老镜头 + 开源控制器 — 把成本压到 1/100。</p>
       </div>
     </div>
   </div>
@@ -397,6 +397,42 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
         </div>
         <a href="#bom-main" class="btn btn-plan">看 BOM</a>
       </div>
+
+      <!-- 高端参考: 制冷天文相机 + 二手三阳 -->
+      <div class="plan-card" id="plan-c">
+        <div class="plan-badge">高端参考 · 非主线</div>
+        <h3>制冷天文相机 + 二手三阳 135/2.0</h3>
+        <p class="plan-tagline">天文原生路径 — 制冷、无 ISP 污染, 用于定标基准与 LSB 示范</p>
+        <div class="plan-spec">
+          <div class="spec-row"><span>传感器 A</span><strong>IMX585 1/1.2" (ToupTek ATR585C 制冷, ~$800)</strong></div>
+          <div class="spec-row"><span>传感器 B</span><strong>IMX571 APS-C (ZWO ASI2600MC Pro, $1,349 官方实锤)</strong></div>
+          <div class="spec-row"><span>镜头</span><strong>二手三阳 Samyang 135mm f/2.0 (¥1,500–2,500)</strong></div>
+          <div class="spec-row"><span>单台成本</span><strong class="cost">¥9,000–16,000</strong></div>
+          <div class="spec-row"><span>32 台阵列</span><strong>≈ ¥290,000–500,000</strong></div>
+        </div>
+        <div class="plan-pros-cons">
+          <div class="pros">
+            <h4>优势 (手机方案做不到的)</h4>
+            <ul>
+              <li>TEC 制冷 −45℃ — 长曝热噪声压制, 手机方案的硬短板直接消失</li>
+              <li>FITS 原生输出, 无手机 ISP 污染 (Lens Shading / 黑电平 / 降噪全免)</li>
+              <li>IMX585 读出噪声 0.5e⁻; IMX571 APS-C 面积是手机的 2.9×</li>
+              <li>三阳 135/2.0 全开星点神镜 (但 ¥6,950 全新 / 二手超预算, 主线不用)</li>
+            </ul>
+          </div>
+          <div class="cons">
+            <h4>为何不是主线</h4>
+            <ul>
+              <li>贵 6–10 倍/台, 32 台阵列超 "$2,000 内人人可造" 宣言 20 倍以上</li>
+              <li>需自配主控 (树莓派/PC), 不能白嫖手机 SoC</li>
+              <li>背离 "中学生能造" 的社区参与定位</li>
+            </ul>
+          </div>
+        </div>
+        <p style="font-size:13px;color:var(--text-mute);margin-top:20px;padding:16px 20px;background:var(--bg);border-radius:4px;line-height:1.7">
+          <strong style="color:var(--accent-warm)">定位:</strong> 网络里的 <strong>1–2 台定标旗舰</strong> — 给手机阵列提供平场/测光绝对参考 + 承担手机做不了的低面亮度 (LSB) 巡天示范。对应 deep research 结论: 30 台手机做时域宽度 + 1–2 台制冷相机做深度定标的混合架构。
+        </p>
+      </div>
     </div>
 
 <!-- engineering deep-dive: phone repurposing feasibility -->
@@ -419,43 +455,6 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
   </div>
 </section>
 
-<!-- ============ BOM A ============ -->
-<section class="section" id="bom-ref">
-  <div class="container">
-    <div class="section-eyebrow">对照方案 · 参考价</div>
-    <h2 class="section-title">IMX 模组方案 (历史对照, 已放弃)</h2>
-    <div class="bom-table-wrap">
-      <table class="bom-table">
-        <thead>
-          <tr><th>组件</th><th>型号</th><th>数量</th><th>单价</th><th>小计</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>传感器模组</td><td>Arducam IMX571 APS-C (MIPI)</td><td>1</td><td>$500</td><td>$500</td></tr>
-          <tr><td>计算单元</td><td>RK3576 工业板 (8GB RAM)</td><td>1</td><td>$150</td><td>$150</td></tr>
-          <tr><td>天文镜头</td><td>Samyang 135mm f/2.0 (Canon EF)</td><td>1</td><td>$500</td><td>$500</td></tr>
-          <tr><td>散热系统</td><td>Peltier 制冷片 + 风扇 + 散热片</td><td>1</td><td>$120</td><td>$120</td></tr>
-          <tr><td>外壳</td><td>铝合金 CNC 外壳</td><td>1</td><td>$80</td><td>$80</td></tr>
-          <tr><td>转接环</td><td>Canon EF → 模组 (定制)</td><td>1</td><td>$40</td><td>$40</td></tr>
-          <tr><td>电源</td><td>12V 5A 电源 + 电缆</td><td>1</td><td>$40</td><td>$40</td></tr>
-          <tr><td>杂件</td><td>螺丝, 导热硅脂, 密封圈等</td><td>1</td><td>$70</td><td>$70</td></tr>
-          <tr><td>屏幕 (可选)</td><td>7" HDMI 触摸屏</td><td>1</td><td>$60</td><td>$60</td></tr>
-          <tr><td>存储</td><td>256GB NVMe SSD</td><td>1</td><td>$40</td><td>$40</td></tr>
-        </tbody>
-        <tfoot>
-          <tr class="bom-total"><td colspan="4">单台总成本</td><td><strong>$1,600</strong></td></tr>
-          <tr><td colspan="4">4 镜阵列</td><td><strong>$6,400</strong></td></tr>
-          <tr><td colspan="4">16 镜阵列</td><td><strong>$25,600</strong></td></tr>
-        </tfoot>
-      </table>
-    </div>
-    <p class="bom-note">
-      ✅ <strong>优势:</strong> 全部货架产品, 无需定制机械, Linux 生态成熟<br>
-      ⚠️ <strong>注意:</strong> IMX571 模组的 RK3576 驱动需要适配 (Arducam 有 RK3588 版本, 3576 需自行移植)
-    </p>
-  </div>
-</section>
-
-<!-- ============ BOM B ============ -->
 <section class="section section-dark" id="bom-main">
   <div class="container">
     <div class="section-eyebrow">主方案 · BOM</div>
@@ -500,15 +499,15 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
       <table class="array-table">
         <thead>
           <tr>
-            <th>阵列规模</th><th>等效口径</th><th>等效折射镜</th><th>IMX 模组 (对照)</th><th>手机方案 (主)</th><th>能拍什么</th>
+            <th>阵列规模</th><th>等效口径</th><th>等效折射镜</th><th>方案 C 制冷相机 (参考)</th><th>手机方案 (主)</th><th>能拍什么</th>
           </tr>
         </thead>
         <tbody>
-          <tr><td><strong>1 台</strong></td><td>67.5mm</td><td>2.7"</td><td>$1,600</td><td>¥1,500</td><td>月亮, 木星, 土星, M42, M31</td></tr>
-          <tr><td><strong>4 台</strong></td><td>135mm</td><td>5.3"</td><td>$6,400</td><td>¥6,000</td><td>+ 暗弱星系, 星系晕</td></tr>
-          <tr><td><strong>8 台</strong></td><td>191mm</td><td>7.5"</td><td>$12,800</td><td>¥12,000</td><td>+ 超暗弱星系, 星系际介质</td></tr>
-          <tr><td><strong>16 台</strong></td><td>270mm</td><td>10.6"</td><td>$25,600</td><td>¥24,000</td><td>+ Dragonfly 8 镜级别科学</td></tr>
-          <tr><td><strong>32 台</strong></td><td>382mm</td><td>15"</td><td>$51,200</td><td>¥48,000</td><td>+ 宇宙网, 星系周介质</td></tr>
+          <tr><td><strong>1 台</strong></td><td>67.5mm</td><td>2.7"</td><td>¥13,500</td><td>¥1,500</td><td>月亮, 木星, 土星, M42, M31</td></tr>
+          <tr><td><strong>4 台</strong></td><td>135mm</td><td>5.3"</td><td>¥54,000</td><td>¥6,000</td><td>+ 暗弱星系, 星系晕</td></tr>
+          <tr><td><strong>8 台</strong></td><td>191mm</td><td>7.5"</td><td>¥108,000</td><td>¥12,000</td><td>+ 超暗弱星系, 星系际介质</td></tr>
+          <tr><td><strong>16 台</strong></td><td>270mm</td><td>10.6"</td><td>¥216,000</td><td>¥24,000</td><td>+ Dragonfly 8 镜级别科学</td></tr>
+          <tr><td><strong>32 台</strong></td><td>382mm</td><td>15"</td><td>¥432,000</td><td>¥48,000</td><td>+ 宇宙网, 星系周介质</td></tr>
         </tbody>
       </table>
     </div>
@@ -600,7 +599,7 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
         <div class="timeline-year">2026</div>
         <div class="timeline-content">
           <h3>红岸三号启动</h3>
-          <p>我们把 Dragonfly 的科学思路 + 开源机器人的工程范式 + 二手市场的供应链能力结合起来。手机改造 (主方案) 走极致性价比 + 社区可复制路线; IMX 模组 (方案 C) 留作高端定标参考。完全开源, 任何人都能造。</p>
+          <p>我们把 Dragonfly 的科学思路 + 开源机器人的工程范式 + 二手市场的供应链能力结合起来。手机改造是唯一主线 (极致性价比 + 社区可复制); 制冷天文相机 (方案 C) 只做 1–2 台定标旗舰。完全开源, 任何人都能造。</p>
         </div>
       </div>
       <div class="timeline-item timeline-future">

@@ -219,6 +219,18 @@ body {
 .track-note p strong { color: var(--accent-warm); font-weight: 600; }
 .track-conclusion { margin-bottom: 0 !important; }
 
+/* Plan C full-width + plan notes + cooling */
+.plan-c-wide { margin-top: 32px; }
+.plan-c-wide .plan-spec {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0 32px;
+}
+.plan-note {
+  font-size: 13px; color: var(--text-mute); margin-top: 20px;
+  padding: 14px 18px; background: var(--bg); border-radius: 4px; line-height: 1.7;
+}
+.plan-note strong { color: var(--accent-warm); }
+.cooling-options { margin-top: 64px; }
+
 /* ============ LENS OPTIONS ============ */
 .lens-options { margin-top: 64px; }
 .lens-title {
@@ -671,6 +683,7 @@ body {
   .opp-stats { grid-template-columns: repeat(2, 1fr); }
   .fp-grid { grid-template-columns: 1fr; }
   .lens-grid { grid-template-columns: 1fr; }
+  .plan-c-wide .plan-spec { grid-template-columns: 1fr; }
   .track-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; gap: 32px; }
   .section { padding: 72px 0; }

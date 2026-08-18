@@ -2,8 +2,9 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://redbank-iii.github.io',
-  base: '/redbank-iii',
+  // Served from the apex domain root — keep in sync with public/CNAME.
+  site: 'https://redbank-iii.org',
+  base: '/',
   output: 'static',
   i18n: {
     defaultLocale: 'zh',

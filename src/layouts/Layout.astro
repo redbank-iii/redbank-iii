@@ -12,8 +12,8 @@ const { lang = defaultLang, title = 'Redbank III 红岸三号', description = 'O
 const currentPath = Astro.url.pathname;
 const base = import.meta.env.BASE_URL;
 
-// base is `/redbank-III` (no trailing slash) — normalize to `baseWithSlash`
-// so `${baseWithSlash}${lang}/` produces `/redbank-III/zh/` not `/redbank-IIIzh/`.
+// base may or may not carry a trailing slash — normalize to `baseWithSlash`
+// so `${baseWithSlash}${lang}/` always produces e.g. `/zh/`, never `/zh` glued to the base.
 const baseWithSlash = base.endsWith('/') ? base : `${base}/`;
 // strip locale prefix from path for language switcher
 const pathWithoutLocale =

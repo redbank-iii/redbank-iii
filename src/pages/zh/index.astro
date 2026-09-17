@@ -254,7 +254,7 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
     <p class="bom-note" style="margin-top:20px">
       界面四格: <strong>地球</strong> (台站分布与状态) · <strong>天球</strong> (望远镜在看哪里) · <strong>事件流</strong> (系统每一步) · <strong>光变曲线</strong> (目标亮度)。
       「Agent 值守版」中派站决策由 Claude 实时作出 — 推理逐条可见, 思考耗时计入评分。
-      <a href="https://redbank-twin.liyao.space/" style="color:var(--accent)">打开全部回放 ↗</a>
+      <a href="https://redbank-twin.liyao.space/" class="inline-cta" style="color:var(--accent)">打开全部回放 ↗</a>
     </p>
   </div>
 </section>
@@ -267,7 +267,7 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
     <p class="section-sub">{t(lang, 'design3d.sub')}</p>
     <div class="science-grid">
       <div class="science-card">
-        <img src={`${imgBase}/images/design/pr-unit.png`} alt="Redbank III unit with Nikon 135mm f/2.8 lens" loading="lazy">
+        <img src={`${imgBase}/images/design/pr-unit.webp`} alt="Redbank III unit with Nikon 135mm f/2.8 lens" loading="lazy">
         <div class="science-card-overlay">
           <h3>{t(lang, 'design3d.unit')}</h3>
           <p>{t(lang, 'design3d.unit.desc')}</p>
@@ -275,7 +275,7 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
         </div>
       </div>
       <div class="science-card">
-        <img src={`${imgBase}/images/design/pr-array.png`} alt="Redbank III 4x8 array with 32 Samyang lenses" loading="lazy">
+        <img src={`${imgBase}/images/design/pr-array.webp`} alt="Redbank III 4x8 array with 32 Samyang lenses" loading="lazy">
         <div class="science-card-overlay">
           <h3>{t(lang, 'design3d.array')}</h3>
           <p>{t(lang, 'design3d.array.desc')}</p>
@@ -283,7 +283,7 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
         </div>
       </div>
       <div class="science-card">
-        <img src={`${imgBase}/images/design/pr-puck.png`} alt="Redbank III unit exploded view" loading="lazy">
+        <img src={`${imgBase}/images/design/pr-puck.webp`} alt="Redbank III unit exploded view" loading="lazy">
         <div class="science-card-overlay">
           <h3>{t(lang, 'design3d.exploded')}</h3>
           <p>{t(lang, 'design3d.exploded.desc')}</p>
@@ -291,7 +291,7 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
         </div>
       </div>
       <div class="science-card">
-        <img src={`${imgBase}/images/design/socket.png`} alt="Redbank III bayonet socket — drop in and twist to lock" loading="lazy">
+        <img src={`${imgBase}/images/design/socket.webp`} alt="Redbank III bayonet socket — drop in and twist to lock" loading="lazy">
         <div class="science-card-overlay">
           <h3>{t(lang, 'design3d.carrier')}</h3>
           <p>{t(lang, 'design3d.carrier.desc')}</p>
@@ -304,8 +304,14 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
         <h3 style="margin:0; font-size:1.05rem;">{t(lang, 'design3d.live')}</h3>
         <p style="margin:6px 0 10px 0; color:#8391a0; font-size:0.85rem;">{t(lang, 'design3d.live.desc')}</p>
       </div>
-      <iframe src={`${imgBase}/viewer/index.html?v=23`} title="Redbank III interactive URDF viewer" loading="lazy"
-        style="width:100%; height:560px; border:0; display:block; background:#0d1117;"></iframe>
+      <div class="viewer-embed" data-viewer-src={`${imgBase}/viewer/index.html?v=23`}>
+        <img class="viewer-poster" src={`${imgBase}/images/design/pr-unit.webp`} alt="" aria-hidden="true" loading="lazy">
+        <div class="viewer-overlay">
+          <button type="button" class="btn btn-primary viewer-load">{t(lang, 'design3d.live.load')}</button>
+          <a class="viewer-newtab" href={`${imgBase}/viewer/index.html?v=23`} target="_blank" rel="noopener noreferrer">{t(lang, 'design3d.live.newtab')}</a>
+          <p class="viewer-note">{t(lang, 'design3d.live.note')}</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>

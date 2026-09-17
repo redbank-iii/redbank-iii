@@ -10,3 +10,4 @@ concept-art/gen*.py
 shots/
 shots-after/
 e2e-externals.txt
+vshots/

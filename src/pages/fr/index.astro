@@ -7,7 +7,7 @@ const base = import.meta.env.BASE_URL;// normalize: BASE_URL is '/' at the domai
 const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
 ---
 
-<Layout lang={lang} title="红岸三号 · Redbank III — 开源阵列望远镜" description="用消费级Capteur和开源设计,把 Dragonfly 级别的深空成像能力从 $150,000 压到 $2,000">
+<Layout lang={lang} title="Redbank III 红岸三号 — Réseau de télescopes open source" description="Un réseau de télescopes open source qui surveille le ciel brillant du domaine temporel (mag 6–16) : variables, novae, rémanences de sursauts gamma. Des nœuds à bas coût, un ordonnancement unifié, entièrement open source.">
 
 <!-- ============ HERO ============ -->
 <header class="hero" id="top">
@@ -23,6 +23,7 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
     <p class="hero-desc" style="white-space: pre-line">{t(lang, 'hero.desc')}</p>
     <div class="hero-actions">
       <a href="#design" class="btn btn-primary">{t(lang, 'hero.cta.design')}</a>
+      <a href="#sim" class="btn btn-ghost">{t(lang, 'hero.cta.sim')}</a>
       <a href="https://github.com/redbank-iii" class="btn btn-ghost">{t(lang, 'hero.cta.github')}</a>
     </div>
     <div class="hero-stats">
@@ -329,8 +330,8 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
       
 
       <div class="plan-card plan-featured" id="plan-b">
-        <div class="plan-badge">PLAN B · 推荐</div>
-        <h3>旧手机改造 + 华强北供应链</h3>
+        <div class="plan-badge">PLAN B · RECOMMANDÉ</div>
+        <h3>Téléphones recyclés + la chaîne de Huaqiangbei</h3>
         <p class="plan-tagline">Meilleur rapport qualité-prix — toute la pile logicielle incluse</p>
         <div class="plan-spec">
           <div class="spec-row"><span>Plateforme</span><strong>Carte donneuse Xiaomi 12S Ultra</strong></div>
@@ -354,7 +355,7 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
           <div class="cons">
             <h4>Inconvénients</h4>
             <ul>
-              <li>不可逆改装 (拆Objectif组)</li>
+              <li>Modification irréversible — le bloc optique collé doit être déposé</li>
               <li>Nécessite une bague d'adaptation sur mesure</li>
               <li>La compensation du tirage est le défi technique</li>
               <li>Dépend du marché de l’occasion (12S Ultra abandonné ; acheter le même lot pour la cohérence des capteurs)</li>
@@ -397,28 +398,28 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
     <div class="bom-table-wrap">
       <table class="bom-table">
         <thead>
-          <tr><th>Composant</th><th>Modèle / 来源</th><th>Qté</th><th>Prix unit.</th><th>Sous-total</th></tr>
+          <tr><th>Composant</th><th>Modèle / source</th><th>Qté</th><th>Prix unit.</th><th>Sous-total</th></tr>
         </thead>
         <tbody>
           <tr><td>Carte téléphone donneuse</td><td>Xiaomi 12S Ultra (écran/dos cassé, carte mère + caméra intactes)</td><td>1</td><td>$50</td><td>$50</td></tr>
-          <tr><td>Main-d'œuvre de conversion</td><td>华强北改机师傅 (拆Objectif组 + 清洁 + 组装)</td><td>1</td><td>$3</td><td>$3</td></tr>
-          <tr><td>天文Objectif</td><td>Samyang 135mm f/2.0 (Canon EF)</td><td>1</td><td>$500</td><td>$500</td></tr>
-          <tr><td>Bague d'adaptation</td><td>Canon EF → 手机Capteur (CNC 定制)</td><td>1</td><td>$25</td><td>$25</td></tr>
-          <tr><td>Boîtier</td><td>铝合金 CNC Boîtier (含散热)</td><td>1</td><td>$30</td><td>$30</td></tr>
-          <tr><td>Porte-oculaire</td><td>M42 Porte-oculaire (天文标准件)</td><td>1</td><td>$10</td><td>$10</td></tr>
+          <tr><td>Main-d'œuvre de conversion</td><td>Technicien de conversion à Huaqiangbei (dépose de l’objectif + nettoyage + assemblage)</td><td>1</td><td>$3</td><td>$3</td></tr>
+          <tr><td>Objectif astrographique</td><td>Samyang 135mm f/2.0 (Canon EF)</td><td>1</td><td>$500</td><td>$500</td></tr>
+          <tr><td>Bague d'adaptation</td><td>Canon EF → capteur de téléphone (CNC sur mesure)</td><td>1</td><td>$25</td><td>$25</td></tr>
+          <tr><td>Boîtier</td><td>Boîtier aluminium CNC (avec dissipateur)</td><td>1</td><td>$30</td><td>$30</td></tr>
+          <tr><td>Porte-oculaire</td><td>Porte-oculaire M42 (pièce astro standard)</td><td>1</td><td>$10</td><td>$10</td></tr>
           <tr><td>Divers</td><td>Joints, filtre IR-cut, vis, etc.</td><td>1</td><td>$15</td><td>$15</td></tr>
           <tr><td>Contrôle entrant + rodage</td><td>Test de mise sous tension + test MTF en boîte à lumière</td><td>1</td><td>$5</td><td>$5</td></tr>
         </tbody>
         <tfoot>
-          <tr class="bom-total"><td colspan="4">Total par unité</td><td><strong>1 500 Â¥ (~210 $)</strong></td></tr>
-          <tr><td colspan="4">Réseau 4 unités</td><td><strong>6 000 Â¥ (~840 $)</strong></td></tr>
-          <tr><td colspan="4">Réseau 16 unités</td><td><strong>24 000 Â¥ (~3 350 $)</strong></td></tr>
+          <tr class="bom-total"><td colspan="4">Total par unité</td><td><strong>1 500 ¥ (~210 $)</strong></td></tr>
+          <tr><td colspan="4">Réseau 4 unités</td><td><strong>6 000 ¥ (~840 $)</strong></td></tr>
+          <tr><td colspan="4">Réseau 16 unités</td><td><strong>24 000 ¥ (~3 350 $)</strong></td></tr>
         </tfoot>
       </table>
     </div>
     <p class="bom-note">
-      ✅ <strong>Avantages:</strong> 便宜 61%, SoC + ISP + écran + batterie + stockage inclus, Android 生态现成<br>
-      ⚠️ <strong>注意:</strong> 不可逆改装, Dépend de la chaîne Huaqiangbei, Bague d'adaptation需为每款手机定制 (建议统一用小米 12S Ultra)
+      ✅ <strong>Avantages:</strong> 61 % moins cher ; SoC + ISP + écran + batterie + stockage inclus ; écosystème Android déjà prêt<br>
+      ⚠️ <strong>Réserves :</strong> modification irréversible ; dépend de la chaîne Huaqiangbei ; la bague d’adaptation doit être usinée pour chaque modèle de téléphone (standardiser sur le Xiaomi 12S Ultra est recommandé)
     </p>
   </div>
 </section>
@@ -428,21 +429,21 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
   <div class="container">
     <div class="section-eyebrow">RÉSEAU · 阵列</div>
     <h2 class="section-title">{t(lang, 'array.title')}</h2>
-    <p class="section-sub">红岸三号的核心创新不在unité seule, 在阵列合成。多帧叠加算法压制天空背景涨落, 这是 Dragonfly 论文里验证过的科学原理。</p>
+    <p class="section-sub">L’innovation de Redbank III n’est pas dans l’unité seule mais dans la synthèse du réseau. L’empilement multi-trames écrase les fluctuations du fond de ciel — un principe validé par les articles de Dragonfly.</p>
 
     <div class="array-table-wrap">
       <table class="array-table">
         <thead>
           <tr>
-            <th>Taille du réseau</th><th>Ouverture équivalente</th><th>Réfracteur équivalent</th><th>Plan A 成本</th><th>Plan B 成本</th><th>Ce que vous pouvez imager</th>
+            <th>Taille du réseau</th><th>Ouverture équivalente</th><th>Réfracteur équivalent</th><th>Coût Plan A</th><th>Coût Plan B</th><th>Ce que vous pouvez imager</th>
           </tr>
         </thead>
         <tbody>
-          <tr><td><strong>1 台</strong></td><td>67.5mm</td><td>2.7"</td><td>$1,600</td><td>1 500 Â¥</td><td>Lune, Jupiter, Saturne, M42, M31</td></tr>
-          <tr><td><strong>4 台</strong></td><td>135mm</td><td>5.3"</td><td>$6,400</td><td>6 000 Â¥</td><td>+ galaxies faibles, halos stellaires</td></tr>
-          <tr><td><strong>8 台</strong></td><td>191mm</td><td>7.5"</td><td>$12,800</td><td>12 000 Â¥</td><td>+ galaxies ultra-diffuses, milieu intergalactique</td></tr>
-          <tr><td><strong>16 台</strong></td><td>270mm</td><td>10.6"</td><td>$25,600</td><td>24 000 Â¥</td><td>+ science de classe Dragonfly 8 objectifs</td></tr>
-          <tr><td><strong>32 台</strong></td><td>382mm</td><td>15"</td><td>$51,200</td><td>48 000 Â¥</td><td>+ toile cosmique, milieu circumgalactique</td></tr>
+          <tr><td><strong>1 unité</strong></td><td>67.5mm</td><td>2.7"</td><td>$1,600</td><td>1 500 ¥</td><td>Lune, Jupiter, Saturne, M42, M31</td></tr>
+          <tr><td><strong>4 unités</strong></td><td>135mm</td><td>5.3"</td><td>$6,400</td><td>6 000 ¥</td><td>+ galaxies faibles, halos stellaires</td></tr>
+          <tr><td><strong>8 unités</strong></td><td>191mm</td><td>7.5"</td><td>$12,800</td><td>12 000 ¥</td><td>+ galaxies ultra-diffuses, milieu intergalactique</td></tr>
+          <tr><td><strong>16 unités</strong></td><td>270mm</td><td>10.6"</td><td>$25,600</td><td>24 000 ¥</td><td>+ science de classe Dragonfly 8 objectifs</td></tr>
+          <tr><td><strong>32 unités</strong></td><td>382mm</td><td>15"</td><td>$51,200</td><td>48 000 ¥</td><td>+ toile cosmique, milieu circumgalactique</td></tr>
         </tbody>
       </table>
     </div>
@@ -451,17 +452,50 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
       <h3>Comparaison avec Dragonfly</h3>
       <div class="vs-grid">
         <div class="vs-item">
-          <div class="vs-label">Dragonfly (8 镜)</div>
+          <div class="vs-label">Dragonfly (8 objectifs)</div>
           <div class="vs-bar vs-dragonfly" style="--pct:100%">$150,000</div>
-          <div class="vs-note">404mm Ouverture équivalente · 闭源</div>
+          <div class="vs-note">404 mm d’ouverture équivalente · code fermé</div>
         </div>
         <div class="vs-item">
-          <div class="vs-label">红岸 III Plan B (32 镜)</div>
-          <div class="vs-bar vs-redbank" style="--pct:4.5%">48 000 Â¥ (~6 700 $)</div>
+          <div class="vs-label">Redbank III Plan B (32 objectifs)</div>
+          <div class="vs-bar vs-redbank" style="--pct:4.5%">48 000 ¥ (~6 700 $)</div>
           <div class="vs-note">382mm Ouverture équivalente · Entièrement open source</div>
         </div>
       </div>
-      <p class="vs-conclusion"><strong>便宜 7.4 倍, 口径接近, Entièrement open source。</strong></p>
+      <p class="vs-conclusion"><strong>7,4 fois moins cher, ouverture comparable, entièrement open source.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DEEP SKY (capability) ============ -->
+<section class="section" id="deepsky">
+  <div class="container">
+    <div class="section-eyebrow">DEEP SKY · 深空</div>
+    <h2 class="section-title">Le même matériel, pointé vers le haut, est une caméra du ciel profond</h2>
+    <p class="section-sub">
+      La surveillance du domaine temporel est la mission scientifique du réseau ; l’imagerie du ciel profond en est
+      <strong>l’autre visage, avec le même matériel</strong> — et la récompense la plus directe pour qui héberge un nœud :
+      un seul nœud saisit un M42 convaincant, et 4 à 8 nœuds empilés atteignent les disques galactiques et les halos stellaires.
+      Les cibles extrêmes à très basse brillance de surface, comme la Tête de Cheval ou les Piliers de la Création,
+      relèvent d’un réseau de 16 unités ou plus — un objectif de long terme que nous ne promettons pas aujourd’hui.
+    </p>
+    <div class="science-grid">
+      <div class="science-card">
+        <img src={`${imgBase}/images/targets/andromeda-hst.jpg`} alt="Galaxie d’Andromède (Hubble)" loading="lazy">
+        <div class="science-card-overlay">
+          <h3>Galaxie d’Andromède M31</h3>
+          <p>Quatre nœuds empilés résolvent le disque et le halo stellaire ténu — la science à basse brillance de surface validée par Dragonfly, rejouée à la manière open source.</p>
+          <div class="credit">NASA/ESA Hubble Space Telescope · cible de référence, non imagée par ce réseau</div>
+        </div>
+      </div>
+      <div class="science-card">
+        <img src={`${imgBase}/images/targets/orion-hst.jpg`} alt="Nébuleuse d’Orion (Hubble)" loading="lazy">
+        <div class="science-card-overlay">
+          <h3>Nébuleuse d’Orion M42</h3>
+          <p>Un seul nœud saisit un M42 convaincant ; l’empilement révèle les coquilles externes ténues — la première photo du ciel profond de tout nouveau nœud.</p>
+          <div class="credit">NASA/ESA Hubble Space Telescope · cible de référence, non imagée par ce réseau</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -474,7 +508,7 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
     <div class="software-grid">
       <div class="software-item">
         <h3>Acquisition</h3>
-        <p>多路 MIPI 同步曝光 (Plan A) / WiFi 触发同步 (Plan B)。NTP 对时 &lt; 1ms。RAW/DNG 输出。</p>
+        <p>Exposition synchronisée multi-voies MIPI (Plan A) / déclenchement par Wi-Fi (Plan B). Synchronisation NTP &lt; 1 ms. Sortie RAW/DNG.</p>
       </div>
       <div class="software-item">
         <h3>Alignement</h3>
@@ -513,14 +547,14 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
         <div class="timeline-year">2013</div>
         <div class="timeline-content">
           <h3>Naissance de Dragonfly</h3>
-          <p>Abraham 和 van Dokkum 用一个啤酒赌注开始 Dragonfly — 8 颗 Canon 400mm f/2.8L Objectif, unité seule $11,500。拍到了超暗弱星系, 改变了低面亮度天文学。但代码不开源, 设计不公开。</p>
+          <p>Abraham et van Dokkum ont lancé Dragonfly sur un pari de comptoir — huit Canon 400 mm f/2.8L, 11 500 $ l’unité. L’instrument a atteint des galaxies ultra-faibles et transformé l’astronomie à basse brillance de surface. Mais le code n’a jamais été ouvert ni la conception publiée.</p>
         </div>
       </div>
       <div class="timeline-item">
         <div class="timeline-year">2021</div>
         <div class="timeline-content">
           <h3>Lancement de MOTHRA</h3>
-          <p>Dragonfly 团队获得 XTX Markets 创始人 Alex Gerko 的 FRO 资助, 开始 MOTHRA — 1140 颗Objectif的超级阵列。成本数千万美元, 依然闭源。大科学的路径越走越远。</p>
+          <p>L’équipe Dragonfly obtient un financement FRO d’Alex Gerko, fondateur de XTX Markets, et lance MOTHRA — un super-réseau de 1 140 objectifs. Des dizaines de millions de dollars, toujours fermé. La grande science s’éloigne encore.</p>
         </div>
       </div>
       <div class="timeline-item">
@@ -534,14 +568,14 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
         <div class="timeline-year">2026</div>
         <div class="timeline-content">
           <h3>Lancement de Redbank III</h3>
-          <p>我们把 Dragonfly 的科学思路 + 开源机器人的工程范式 + 华强北的供应链能力结合起来。Plan A (IMX 模组) 走标准化路线, Plan B (旧手机改造) 走极致性价比路线。Entièrement open source, 任何人都能造。</p>
+          <p>Nous combinons la science de Dragonfly, les méthodes d’ingénierie de la robotique open source et la chaîne d’approvisionnement de Huaqiangbei. Le Plan A (modules IMX) suit la voie standardisée, le Plan B (téléphones recyclés) la voie du meilleur rapport coût/performance. Entièrement open source — n’importe qui peut en construire un.</p>
         </div>
       </div>
       <div class="timeline-item timeline-future">
-        <div class="timeline-year">未来</div>
+        <div class="timeline-year">À venir</div>
         <div class="timeline-content">
           <h3>Réseau distribué mondial</h3>
-          <p>1000 个红岸三号节点分布在全球, 通过 Octos AgentOS 统一调度, 形成一个Ouverture équivalente超过任何单一望远镜的虚拟阵列。这是天文学的真正民主化。</p>
+          <p>1 000 nœuds Redbank III répartis sur toute la planète, ordonnancés par Octos AgentOS en un réseau virtuel dont l’ouverture équivalente dépasse celle de n’importe quel télescope unique. C’est la véritable démocratisation de l’astronomie.</p>
         </div>
       </div>
     </div>
@@ -553,31 +587,36 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
   <div class="container">
     <div class="section-eyebrow">OPEN SOURCE · 开源</div>
     <h2 class="section-title">{t(lang, 'open.title')}</h2>
+    <p class="section-sub">
+      Les licences sont arrêtées ; la publication suit les jalons — nous n’agitons pas « entièrement open source »
+      comme un slogan, nous nous engageons sur un calendrier. Chaque pièce devient publique quand elle atteint
+      une qualité reproductible, et non sous forme de dépôt inachevé.
+    </p>
     <div class="open-grid">
+      <div class="open-item">
+        <h3>Site &amp; documents de conception</h3>
+        <div class="license-badge">CC BY-SA 4.0</div>
+        <p><strong>Public dès maintenant.</strong> Tout ce que contient ce site, les arbitrages techniques, les questions d’ingénierie — la source est le dépôt.</p>
+      </div>
       <div class="open-item">
         <h3>Matériel</h3>
         <div class="license-badge">CERN-OHL-W-2.0</div>
-        <p>CAD 图纸, BOM, Bague d'adaptation设计, Boîtier 3D 模型, 全部开源。OSHWA 认证。</p>
+        <p><strong>Ouvert à la finalisation des premiers nœuds.</strong> Sources CAO paramétriques, BOM, conception des bagues, STL imprimables. La certification OSHWA est un objectif.</p>
       </div>
       <div class="open-item">
         <h3>Logiciel</h3>
         <div class="license-badge">Apache-2.0</div>
-        <p>Acquisition, alignement, empilement, contrôle — tout open. Usage commercial, modification, redistribution autorisés.</p>
-      </div>
-      <div class="open-item">
-        <h3>Docs</h3>
-        <div class="license-badge">CC BY-SA 4.0</div>
-        <p>Tutoriels d'assemblage, guides de débogage, cas scientifiques — tout open. Traductions bienvenues.</p>
+        <p><strong>Ouvert progressivement, au rythme de la validation matérielle.</strong> Acquisition, alignement, empilement, ordonnancement et système de simulation. Usage commercial, modification et redistribution autorisés.</p>
       </div>
       <div class="open-item">
         <h3>Données</h3>
         <div class="license-badge">CC0</div>
-        <p>原始 FITS 帧, 叠加结果, 巡天Données, 全部发布到 Hugging Face。</p>
+        <p><strong>Publiées dès la première lumière.</strong> Trames brutes, tables photométriques, courbes de lumière — les données d’observation ne sont jamais vendues, ouvertes pour toujours.</p>
       </div>
     </div>
     <div class="open-cta">
       <a href="https://github.com/redbank-iii" class="btn btn-primary btn-lg">GitHub → redbank-iii</a>
-      <a href="#join" class="btn btn-ghost btn-lg">Rejoindre Discord</a>
+      <a href="https://redbank-twin.liyao.space/" class="btn btn-ghost btn-lg">Rejeux de simulation ↗</a>
     </div>
   </div>
 </section>
@@ -590,18 +629,18 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
     <div class="join-grid">
       <div class="join-item">
         <h3>En construire un</h3>
-        <p>Achetez le BOM, suivez le tutoriel, prenez votre première photo du ciel profond. Lite 1 000 Â¥, Pro 1 500 Â¥.</p>
-        <a href="#" class="btn btn-plan">Guide d'assemblage</a>
+        <p>Procurez-vous le BOM et suivez le guide — les premiers nœuds sont en validation de prototype ; le tutoriel d’assemblage paraîtra une fois le matériel figé.</p>
+        <a href="#bom-b" class="btn btn-plan">Voir d’abord le BOM</a>
       </div>
       <div class="join-item">
         <h3>Écrire du code</h3>
-        <p>Algorithmes d'empilement, contrôle de réseau, intégration Octos — contributeurs recherchés. Rust / Python / Android.</p>
-        <a href="#" class="btn btn-plan">Guide de contribution</a>
+        <p>Algorithmes d’empilement, ordonnancement et simulation, contrôle du réseau — contributeurs recherchés. Python / Rust / Android.</p>
+        <a href="https://github.com/redbank-iii" class="btn btn-plan">Organisation GitHub</a>
       </div>
       <div class="join-item">
-        <h3>用Données</h3>
-        <p>Toutes les trames FITS brutes et tous les résultats empilés sont publiés sur Hugging Face. Entraînez vos modèles, faites votre recherche.</p>
-        <a href="#" class="btn btn-plan">Données集</a>
+        <h3>Utiliser les données</h3>
+        <p>Les données d’observation sont publiées sous CC0 dès la première lumière — trames brutes, tables photométriques, courbes de lumière. Prenez-les pour votre recherche.</p>
+        <a href="https://redbank-twin.liyao.space/" class="btn btn-plan">Voir le flux simulé</a>
       </div>
     </div>
   </div>

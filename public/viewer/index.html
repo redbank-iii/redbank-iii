@@ -18,6 +18,12 @@
                         data
                     });
                     const encoded = encodeURIComponent(payload.slice(0, 8192));
+                    // `/$report_error` only exists under the makepad dev server. On the
+                    // static site it 404s on every viewer load, so keep it local.
+                    if (!/^https?:\/\/(localhost|127\.0\.0\.1)/.test(location.origin)) {
+                        console.debug('[viewer]', kind, encoded.slice(0, 256));
+                        return;
+                    }
                     await fetch('/$report_error?data=' + encoded, {cache: 'no-store'});
                 } catch (_error) {
                 }

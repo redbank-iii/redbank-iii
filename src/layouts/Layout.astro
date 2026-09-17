@@ -125,6 +125,16 @@ const pathWithoutLocale =
     }));
   }
 
+  // Off-site links carry a ↗ affordance, so honour it: open in a new tab and keep
+  // this page alive. Matters most for the simulation host, which lives on a
+  // separate box and can be offline — a visitor who hits an error still has us open.
+  document.querySelectorAll('a[href^="http"]').forEach((a) => {
+    if (a.host && a.host !== location.host && !a.target) {
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+    }
+  });
+
   // scroll fade-in
   const io = new IntersectionObserver((entries) => {
     for (const e of entries) {

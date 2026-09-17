@@ -1,5 +1,50 @@
 ---
-// Root redirect → default locale (zh)
+// Root entry — send visitors straight into a locale.
+//
+// This deliberately does NOT use `Astro.redirect()`: in a static build that emits
+// `<meta http-equiv="refresh" content="2;...">`, i.e. every visitor who types the
+// apex domain stares at a blank interstitial for two seconds. We emit the same
+// meta with a 0s delay (for no-JS and crawlers) plus an immediate scripted
+// `location.replace` that also honours the browser's preferred language.
 const base = import.meta.env.BASE_URL;
-return Astro.redirect(`${base.endsWith('/') ? base : base + '/'}zh/`);
+const baseWithSlash = base.endsWith('/') ? base : `${base}/`;
 ---
+
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<title>Redbank III 红岸三号</title>
+<meta name="robots" content="noindex">
+<meta http-equiv="refresh" content={`0;url=${baseWithSlash}zh/`}>
+<link rel="canonical" href="https://redbank-iii.org/zh/">
+<link rel="alternate" hreflang="zh" href="https://redbank-iii.org/zh/">
+<link rel="alternate" hreflang="en" href="https://redbank-iii.org/en/">
+<link rel="alternate" hreflang="fr" href="https://redbank-iii.org/fr/">
+<link rel="alternate" hreflang="x-default" href="https://redbank-iii.org/zh/">
+<style>
+  html, body { margin: 0; height: 100%; background: #060912; }
+</style>
+<script is:inline define:vars={{ baseWithSlash }}>
+  // Runs before the meta refresh can paint anything.
+  (function () {
+    var supported = ['zh', 'en', 'fr'];
+    var want = 'zh';
+    try {
+      var langs = navigator.languages && navigator.languages.length
+        ? navigator.languages
+        : [navigator.language || 'zh'];
+      for (var i = 0; i < langs.length; i++) {
+        var tag = String(langs[i]).toLowerCase();
+        var primary = tag.split('-')[0];
+        if (supported.indexOf(primary) !== -1) { want = primary; break; }
+      }
+    } catch (e) { /* fall through to zh */ }
+    location.replace(baseWithSlash + want + '/');
+  })();
+</script>
+</head>
+<body>
+  <a href={`${baseWithSlash}zh/`} style="color:#5b8dee">Redbank III 红岸三号</a>
+</body>
+</html>

@@ -115,7 +115,9 @@ body {
   margin-bottom: 48px;
 }
 .hero-desc strong { color: var(--accent-warm); font-weight: 500; }
-.hero-actions { display: flex; gap: 16px; justify-content: center; margin-bottom: 72px; }
+/* wrap instead of squeezing: three CJK labels in one 390px row used to shrink
+   below their content width and break "看设计" into one character per line */
+.hero-actions { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; margin-bottom: 72px; }
 
 .btn {
   display: inline-block; padding: 14px 32px;
@@ -123,6 +125,7 @@ body {
   text-decoration: none; border-radius: 4px;
   transition: all 0.2s;
   border: 1px solid transparent;
+  white-space: nowrap;
 }
 .btn-primary {
   background: var(--accent); color: var(--bg);
@@ -694,11 +697,14 @@ body {
   .nav-links.open {
     display: flex; flex-direction: column; align-items: stretch; gap: 0;
     position: absolute; top: 100%; left: 0; right: 0;
-    background: rgba(6, 9, 18, 0.97); backdrop-filter: blur(20px);
+    /* fully opaque: at 0.97 the huge hero title ghosted through the menu */
+    background: var(--bg);
     border-bottom: 1px solid var(--border);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
     padding: 8px 24px 16px;
   }
-  .nav-links.open a { padding: 12px 4px; font-size: 15px; border-bottom: 1px solid var(--border); }
+  /* 44px minimum touch target (was 12px padding on a 20px line box) */
+  .nav-links.open a { padding: 14px 4px; font-size: 15px; border-bottom: 1px solid var(--border); }
   .nav-links.open a:last-of-type { border-bottom: none; }
   .nav-links.open .nav-cta { border: none; border-radius: 0; padding: 12px 4px; }
   .nav-links.open .lang-switcher { margin: 12px 0 0; padding: 12px 0 0; border-left: none; border-top: 1px solid var(--border); }

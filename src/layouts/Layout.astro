@@ -125,6 +125,21 @@ const pathWithoutLocale =
     }));
   }
 
+  // 3D viewer loads on demand — 4 MB of wasm is not something to spend on every
+  // visitor who merely scrolls past the design section.
+  document.querySelectorAll('.viewer-embed').forEach((box) => {
+    const btn = box.querySelector('.viewer-load');
+    btn?.addEventListener('click', () => {
+      const src = box.getAttribute('data-viewer-src');
+      if (!src) return;
+      const frame = document.createElement('iframe');
+      frame.src = src;
+      frame.title = 'Redbank III interactive URDF viewer';
+      frame.setAttribute('allow', 'fullscreen');
+      box.replaceChildren(frame);
+    });
+  });
+
   // Off-site links carry a ↗ affordance, so honour it: open in a new tab and keep
   // this page alive. Matters most for the simulation host, which lives on a
   // separate box and can be offline — a visitor who hits an error still has us open.

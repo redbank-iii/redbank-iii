@@ -681,6 +681,34 @@ body {
 .sim-poster:hover { border-color: var(--accent); transform: translateY(-4px); }
 .sim-poster img { width: 100%; display: block; }
 
+/* ============ 3D VIEWER (click to load) ============ */
+/* The URDF player is a 4 MB wasm download that also panics when it runs inside an
+   iframe (clean standalone — it is a makepad window-id bug we cannot patch without
+   the Rust source). So it loads on demand, and we offer the standalone tab too. */
+.viewer-embed {
+  position: relative; height: 560px; background: #0d1117;
+  display: flex; align-items: center; justify-content: center; overflow: hidden;
+}
+.viewer-poster {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: contain; opacity: 0.35; filter: blur(1px);
+}
+.viewer-overlay {
+  position: relative; z-index: 1; text-align: center; padding: 24px;
+  display: flex; flex-direction: column; align-items: center; gap: 14px;
+}
+.viewer-newtab {
+  color: var(--text-dim); font-size: 13px; text-decoration: none;
+  display: inline-block; padding: 11px 16px; /* 44px touch target */
+}
+.viewer-newtab:hover { color: var(--accent); }
+.viewer-note { color: var(--text-mute); font-size: 12px; margin: 0; max-width: 34em; }
+.viewer-embed iframe { width: 100%; height: 100%; border: 0; display: block; }
+@media (max-width: 900px) { .viewer-embed { height: 420px; } }
+
+/* inline prose links that act as calls to action need a real touch target */
+.inline-cta { display: inline-block; padding: 8px 0; }
+
 /* ============ MOBILE NAV ============ */
 .nav-toggle {
   display: none;

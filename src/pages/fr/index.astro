@@ -11,7 +11,7 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
 
 <!-- ============ HERO ============ -->
 <header class="hero" id="top">
-  <div class="hero-bg"><img class="hero-bg-img" src={`${imgBase}/images/concept/hero-redbank.jpg`} alt="" aria-hidden="true"><div class="hero-bg-scrim"></div><canvas id="starfield"></canvas></div>
+  <div class="hero-bg"><img class="hero-bg-img" src={`${imgBase}/images/hero/milkyway-paranal.jpg`} alt="" aria-hidden="true"><div class="hero-bg-scrim"></div><canvas id="starfield"></canvas></div>
   <div class="hero-content">
     <div class="hero-eyebrow">{t(lang, 'hero.eyebrow')}</div>
     <h1 class="hero-title">
@@ -23,12 +23,12 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
     <p class="hero-desc" style="white-space: pre-line">{t(lang, 'hero.desc')}</p>
     <div class="hero-actions">
       <a href="#design" class="btn btn-primary">{t(lang, 'hero.cta.design')}</a>
-      <a href="https://github.com/redbank-iii/redbank-iii" class="btn btn-ghost">{t(lang, 'hero.cta.github')}</a>
+      <a href="https://github.com/redbank-iii" class="btn btn-ghost">{t(lang, 'hero.cta.github')}</a>
     </div>
     <div class="hero-stats">
-      <div class="stat"><div class="stat-num">Â¥1,500</div><div class="stat-label">{t(lang, 'hero.stat.cost')}</div></div>
-      <div class="stat"><div class="stat-num">382mm</div><div class="stat-label">{t(lang, 'hero.stat.aperture')}</div></div>
-      <div class="stat"><div class="stat-num">100×</div><div class="stat-label">{t(lang, 'hero.stat.advantage')}</div></div>
+      <div class="stat"><div class="stat-num">¥1 700+</div><div class="stat-label">{t(lang, 'hero.stat.cost')}</div></div>
+      <div class="stat"><div class="stat-num">mag 6–16</div><div class="stat-label">{t(lang, 'hero.stat.aperture')}</div></div>
+      <div class="stat"><div class="stat-num">~1,5 %</div><div class="stat-label">{t(lang, 'hero.stat.advantage')}</div></div>
       <div class="stat"><div class="stat-num">100%</div><div class="stat-label">{t(lang, 'hero.stat.open')}</div></div>
     </div>
   </div>
@@ -222,46 +222,23 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
   </div>
 </section>
 
-<!-- ============ CONCEPT ART ============ -->
-<section class="section section-dark" id="concept">
+<!-- ============ SIMULATION REPLAY ============ -->
+<section class="section section-dark" id="sim">
   <div class="container">
-    <div class="section-eyebrow">概念图 · CONCEPT ART</div>
-    <h2 class="section-title">{t(lang, 'concept.title')}</h2>
-    <p class="section-sub">{t(lang, 'concept.sub')}</p>
-    <div class="science-grid">
-      <div class="science-card">
-        <img src={`${imgBase}/images/concept/unit.jpg`} alt="Redbank III single unit concept" loading="lazy">
-        <div class="science-card-overlay">
-          <h3>{t(lang, 'concept.unit')}</h3>
-          <p>{t(lang, 'concept.unit.desc')}</p>
-          <div class="credit">Concept render · gpt-image-2</div>
-        </div>
-      </div>
-      <div class="science-card">
-        <img src={`${imgBase}/images/concept/unit-detail.jpg`} alt="Redbank III unit detail concept" loading="lazy">
-        <div class="science-card-overlay">
-          <h3>{t(lang, 'concept.detail')}</h3>
-          <p>{t(lang, 'concept.detail.desc')}</p>
-          <div class="credit">Concept render · gpt-image-2</div>
-        </div>
-      </div>
-      <div class="science-card">
-        <img src={`${imgBase}/images/concept/array.jpg`} alt="Redbank III 32-unit array concept" loading="lazy">
-        <div class="science-card-overlay">
-          <h3>{t(lang, 'concept.array')}</h3>
-          <p>{t(lang, 'concept.array.desc')}</p>
-          <div class="credit">Concept render · gpt-image-2</div>
-        </div>
-      </div>
-      <div class="science-card">
-        <img src={`${imgBase}/images/concept/radar-peak.jpg`} alt="Red Bank (红岸) homage concept" loading="lazy">
-        <div class="science-card-overlay">
-          <h3>{t(lang, 'concept.radar')}</h3>
-          <p>{t(lang, 'concept.radar.desc')}</p>
-          <div class="credit">Concept render · gpt-image-2</div>
-        </div>
-      </div>
-    </div>
+    <div class="section-eyebrow">SIMULATION · 仿真</div>
+    <h2 class="section-title">L'ordonnanceur tourne déjà —<br>regardez ses rejeux de simulation</h2>
+    <p class="section-sub">
+      Le réseau n'est pas encore construit, mais son logiciel a pris de l'avance : ciel, flux d'alertes, stations, ordonnancement, agents et pannes
+      sont modélisés en une <strong>simulation déterministe</strong> — même (graine, campagne), rejeu identique à l'octet près.
+      Le rejeu ci-dessous n'est pas une animation : c'est le flux d'événements calculé seconde par seconde par le noyau de simulation.
+    </p>
+    <a href="https://redbank-twin.liyao.space/demo-agent-ep.html" class="sim-poster">
+      <img src={`${imgBase}/images/sim/ep-replay-poster.jpg`} alt="Rejeu de simulation d'une campagne d'alerte EP : globe des stations, carte du ciel, flux d'événements, courbe de lumière" loading="lazy">
+    </a>
+    <p class="bom-note" style="margin-top:20px">
+      Quatre panneaux : <strong>globe</strong> (état des stations) · <strong>carte du ciel</strong> (où pointent les télescopes) · <strong>flux d'événements</strong> · <strong>courbe de lumière</strong>.
+      <a href="https://redbank-twin.liyao.space/" style="color:var(--accent)">Ouvrir tous les rejeux ↗</a>
+    </p>
   </div>
 </section>
 
@@ -599,7 +576,7 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
       </div>
     </div>
     <div class="open-cta">
-      <a href="https://github.com/redbank-iii/redbank-iii" class="btn btn-primary btn-lg">GitHub → redbank-iii/redbank-iii</a>
+      <a href="https://github.com/redbank-iii" class="btn btn-primary btn-lg">GitHub → redbank-iii</a>
       <a href="#join" class="btn btn-ghost btn-lg">Rejoindre Discord</a>
     </div>
   </div>

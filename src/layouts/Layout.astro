@@ -42,12 +42,13 @@ const pathWithoutLocale =
       <span class="logo-mark">◉</span>
       <span class="logo-text">REDBANK <em>III</em></span>
     </a>
-    <div class="nav-links">
+    <button class="nav-toggle" id="nav-toggle" aria-label={t(lang, 'nav.menu')} aria-controls="nav-links" aria-expanded="false">☰</button>
+    <div class="nav-links" id="nav-links">
       <a href="#mission">{t(lang, 'nav.mission')}</a>
       <a href="#design">{t(lang, 'nav.design')}</a>
       <a href="#plans">{t(lang, 'nav.plans')}</a>
       <a href="#array">{t(lang, 'nav.array')}</a>
-      <a href="#concept">{t(lang, 'nav.concept')}</a>
+      <a href="#sim">{t(lang, 'nav.sim')}</a>
       <a href="#story">{t(lang, 'nav.story')}</a>
       <a href="#open">{t(lang, 'nav.open')}</a>
       <a href="#join" class="nav-cta">{t(lang, 'nav.join')}</a>
@@ -76,26 +77,25 @@ const pathWithoutLocale =
       </div>
       <div class="footer-col">
         <h4>{t(lang, 'nav.plans')}</h4>
-        <a href="#plan-b">设计方案 — 手机改造</a>
+        <a href="#plans">{t(lang, 'nav.plans')}</a>
         <a href="#array">{t(lang, 'nav.array')}</a>
+        <a href={lang === 'zh' ? '#bom-main' : '#bom-b'}>BOM</a>
       </div>
       <div class="footer-col">
         <h4>Resources</h4>
-        <a href="https://github.com/redbank-iii/redbank-iii">GitHub</a>
-        <a href="#">Docs</a>
-        <a href="#">BOM</a>
-        <a href="#">Datasets</a>
+        <a href="https://github.com/redbank-iii">GitHub</a>
+        <a href="https://github.com/redbank-iii/redbank-iii/tree/main/docs">Docs</a>
+        <a href="https://redbank-twin.liyao.space/">Simulation replays</a>
       </div>
       <div class="footer-col">
         <h4>Community</h4>
-        <a href="#">Discord</a>
-        <a href="#">Forum</a>
+        <a href="https://github.com/redbank-iii/redbank-iii/issues">GitHub Issues</a>
       </div>
     </div>
     <div class="footer-bottom">
       <p>Hardware: CERN-OHL-W-2.0 · Software: Apache-2.0 · Docs: CC BY-SA 4.0 · Data: CC0</p>
       <p>{t(lang, 'footer.motto')}</p>
-      <p class="image-credits">Images: NASA/ESA/CSA/STScI (public domain)</p>
+      <p class="image-credits">Images: NASA/ESA/STScI · ESO/Bruno Gilli · ESO/M. Montargès et al. · NASA/CXC/RIKEN/D. Takei et al. · NASA/Swift/A. Beardmore (Univ. of Leicester) · International Gemini Observatory/NOIRLab/NSF/AURA/J. Miller et al. — ESO &amp; NOIRLab images CC BY 4.0</p>
     </div>
   </div>
 </footer>
@@ -110,6 +110,20 @@ const pathWithoutLocale =
     else nav?.classList.remove('hidden');
     lastY = y;
   }, { passive: true });
+
+  // mobile nav toggle
+  const navToggle = document.getElementById('nav-toggle');
+  const navLinks = document.getElementById('nav-links');
+  navToggle?.addEventListener('click', () => {
+    const open = navLinks?.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  if (navLinks) {
+    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      navToggle?.setAttribute('aria-expanded', 'false');
+    }));
+  }
 
   // scroll fade-in
   const io = new IntersectionObserver((entries) => {

@@ -7,11 +7,11 @@ const base = import.meta.env.BASE_URL;// normalize: BASE_URL is '/' at the domai
 const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
 ---
 
-<Layout lang={lang} title="红岸三号 · Redbank III — 开源阵列望远镜" description="用消费级传感器和开源设计,把 Dragonfly 级别的深空成像能力从 $150,000 压到 $2,000">
+<Layout lang={lang} title="红岸三号 · Redbank III — 开源望远镜网络" description="盯守 6–16 等亮端时域天空的开源望远镜网络: 变星、新星、伽马暴余晖。低成本节点 + 统一调度, 完全开源, 任何人都能造。">
 
 <!-- ============ HERO ============ -->
 <header class="hero" id="top">
-  <div class="hero-bg"><img class="hero-bg-img" src={`${imgBase}/images/concept/hero-redbank.jpg`} alt="" aria-hidden="true"><div class="hero-bg-scrim"></div><canvas id="starfield"></canvas></div>
+  <div class="hero-bg"><img class="hero-bg-img" src={`${imgBase}/images/hero/milkyway-paranal.jpg`} alt="" aria-hidden="true"><div class="hero-bg-scrim"></div><canvas id="starfield"></canvas></div>
   <div class="hero-content">
     <div class="hero-eyebrow">{t(lang, 'hero.eyebrow')}</div>
     <h1 class="hero-title">
@@ -23,12 +23,13 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
     <p class="hero-desc" style="white-space: pre-line">{t(lang, 'hero.desc')}</p>
     <div class="hero-actions">
       <a href="#design" class="btn btn-primary">{t(lang, 'hero.cta.design')}</a>
-      <a href="https://github.com/redbank-iii/redbank-iii" class="btn btn-ghost">{t(lang, 'hero.cta.github')}</a>
+      <a href="#sim" class="btn btn-ghost">{t(lang, 'hero.cta.sim')}</a>
+      <a href="https://github.com/redbank-iii" class="btn btn-ghost">{t(lang, 'hero.cta.github')}</a>
     </div>
     <div class="hero-stats">
-      <div class="stat"><div class="stat-num">¥1,500</div><div class="stat-label">{t(lang, 'hero.stat.cost')}</div></div>
-      <div class="stat"><div class="stat-num">382mm</div><div class="stat-label">{t(lang, 'hero.stat.aperture')}</div></div>
-      <div class="stat"><div class="stat-num">100×</div><div class="stat-label">{t(lang, 'hero.stat.advantage')}</div></div>
+      <div class="stat"><div class="stat-num">¥1,700 起</div><div class="stat-label">{t(lang, 'hero.stat.cost')}</div></div>
+      <div class="stat"><div class="stat-num">6–16 等</div><div class="stat-label">{t(lang, 'hero.stat.aperture')}</div></div>
+      <div class="stat"><div class="stat-num">~1.5%</div><div class="stat-label">{t(lang, 'hero.stat.advantage')}</div></div>
       <div class="stat"><div class="stat-num">100%</div><div class="stat-label">{t(lang, 'hero.stat.open')}</div></div>
     </div>
   </div>
@@ -44,17 +45,20 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
       <div class="mission-text">
         <p>
           2013 年,多伦多大学的 Roberto Abraham 和耶鲁大学的 Pieter van Dokkum 用一个啤酒赌注开始了
-          <strong>Dragonfly 望远镜阵列</strong> — 用 8 颗 Canon 400mm f/2.8L 专业镜头组成阵列,
-          拍到了此前只有哈勃和 Keck 才能看到的超暗弱星系。
+          <strong>Dragonfly 望远镜阵列</strong> — 用 8 颗相机镜头组阵, 拍到了此前只有哈勃和 Keck 才能看到的超暗弱星系。
+          它证明了一件事: <strong>便宜镜头 + 阵列合成, 能做正经科学。</strong>
+          但它单镜 $11,500, 代码不开源, 设计不公开, 普通人无法复制。
         </p>
         <p>
-          但 Dragonfly 的单镜成本是 <strong>$11,500</strong> — 一颗专业镜头的价格超过普通人一年的天文预算。
-          它的代码不开源, 设计不公开, 普通人无法复制。
+          与此同时, 天空的另一头空着: <strong>亮于 10 等的恒星, 全球没有一台设备在持续监测</strong> —
+          现有巡天为了看得深, 全部在亮端饱和 (ASAS-SN 饱和线约 10 等)。
+          参宿四 2019 年那场世纪变暗, 专业设备集体过曝, 关键数据反而来自爱好者。
         </p>
         <p>
-          <strong>红岸三号 (Redbank III)</strong> 要做的就是这件事的反面 —
-          用消费级传感器、二手手机、华强北的供应链, 做出等效口径相当、<strong>完全开源</strong>的阵列望远镜。
-          任何人, 在任何地方, 都能用 $2,000 以内的预算, 拍出 Dragonfly 级别的深空图像。
+          <strong>红岸三号 (Redbank III)</strong> 把这两件事接在一起 —
+          用消费级传感器、二手镜头和开源设计造出 ¥2,000 内的观测节点, 部署在阳台、楼顶与暗夜台址,
+          由软件调度成<strong>一台网络化的仪器</strong>: 主线盯守 6–16 等的时域天空 (变星、新星、伽马暴余晖),
+          同一套硬件叠加起来, 也能拍 Dragonfly 级别的深空。任何人, 在任何地方, 都造得起、接得进来。
         </p>
       </div>
       <div class="mission-quote">
@@ -188,92 +192,70 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
   </div>
 </section>
 
-<!-- ============ SCIENCE — real Hubble/JWST images ============ -->
+<!-- ============ SCIENCE — bright-end time domain, real observations ============ -->
 <section class="section section-dark" id="science">
   <div class="container">
     <div class="section-eyebrow">科学目标 · SCIENCE TARGETS</div>
-    <h2 class="section-title">这些, 用红岸三号就能拍</h2>
+    <h2 class="section-title">我们盯守的天空</h2>
     <p class="section-sub">
-      以下图像来自 NASA/ESA/CSA 的哈勃与詹姆斯·韦伯空间望远镜 (公有领域)。
-      红岸三号的 8-16 镜阵列可以拍到同等目标的暗弱版本 — 不是这个画质, 但是同一片天空。
+      亮端时域是现有巡天的结构性空白 — 为了看得深, 它们全部在 10 等左右饱和。
+      下面四个真实事件, 就是这张网要接住的科学。图像全部来自真实观测, 逐张署名。
     </p>
     <div class="science-grid">
       <div class="science-card">
-        <img src={`${imgBase}/images/targets/andromeda-hst.jpg`} alt="Andromeda Galaxy (Hubble)" loading="lazy">
+        <img src={`${imgBase}/images/targets-td/betelgeuse-sphere.jpg`} alt="Betelgeuse before and after the Great Dimming (VLT/SPHERE)" loading="lazy" style="object-fit:contain; background:#000;">
         <div class="science-card-overlay">
-          <h3>仙女座星系 M31</h3>
-          <p>红岸三号 4 镜阵列即可解析星系盘 + 暗弱星系晕。8 镜可追 Dragonfly 的低面亮度巡天。</p>
-          <div class="credit">NASA/ESA Hubble Space Telescope</div>
+          <h3>参宿四大变暗 · 2019–20</h3>
+          <p>全天最亮的恒星之一在四个月里暗了 1 个星等。专业巡天集体饱和, 关键测光反而来自业余观测者 — 这正是亮端凝视站的本职工作。</p>
+          <div class="credit">ESO/M. Montargès et al. (VLT/SPHERE) · CC BY 4.0</div>
         </div>
       </div>
       <div class="science-card">
-        <img src={`${imgBase}/images/targets/orion-hst.jpg`} alt="Orion Nebula (Hubble)" loading="lazy">
+        <img src={`${imgBase}/images/targets-td/sn2023ixf-gemini.jpg`} alt="SN 2023ixf in the Pinwheel Galaxy (Gemini North)" loading="lazy">
         <div class="science-card-overlay">
-          <h3>猎户座大星云 M42</h3>
-          <p>单台红岸三号即可拍出令人满意的 M42。阵列叠加后, 外围暗弱气体壳层浮现。</p>
-          <div class="credit">NASA/ESA Hubble Space Telescope</div>
+          <h3>超新星 SN 2023ixf · 2023</h3>
+          <p>板垣公一在 14.9 等逮住它, 比 ZTF 的回溯数据早了两天 — 亮端的发现权, 至今仍属于持续盯守的人。</p>
+          <div class="credit">International Gemini Observatory/NOIRLab/NSF/AURA/J. Miller et al. · CC BY 4.0</div>
         </div>
       </div>
       <div class="science-card">
-        <img src={`${imgBase}/images/targets/horsehead-hst.jpg`} alt="Horsehead Nebula (Hubble)" loading="lazy">
+        <img src={`${imgBase}/images/targets-td/gkper-chandra.jpg`} alt="Nova remnant GK Persei (Chandra/HST/VLA composite)" loading="lazy">
         <div class="science-card-overlay">
-          <h3>马头星云 Barnard 33</h3>
-          <p>典型的暗星云目标。需要 8+ 镜阵列 + 长曝光叠加才能从光污染背景中分离出来。</p>
-          <div class="credit">NASA/ESA Hubble Space Telescope</div>
+          <h3>新星遗迹 GK Persei</h3>
+          <p>新星爆发不可预约, 从增亮到峰值只有几天。网络的价值是任何时刻都有节点醒着 — 凝视站的环形缓存连爆发前的帧都留得住。</p>
+          <div class="credit">X-ray: NASA/CXC/RIKEN/D. Takei et al.; Optical: NASA/STScI; Radio: NRAO/VLA</div>
         </div>
       </div>
       <div class="science-card">
-        <img src={`${imgBase}/images/targets/pillars-hst.jpg`} alt="Pillars of Creation (Hubble)" loading="lazy">
+        <img src={`${imgBase}/images/targets-td/grb221009a-swift.jpg`} alt="X-ray dust rings around GRB 221009A (Swift/XRT)" loading="lazy">
         <div class="science-card-overlay">
-          <h3>创生之柱 (鹰状星云 M16)</h3>
-          <p>哈勃最标志性的目标。红岸三号 16 镜阵列可以拍到柱体结构的轮廓。</p>
-          <div class="credit">NASA/ESA/CSA Hubble Space Telescope</div>
+          <h3>伽马暴 GRB 221009A · 史上最亮</h3>
+          <p>X 射线在银河尘埃上散射出的同心环。余晖按分钟衰减, 响应站的设计目标: 警报下发后 15–45 秒开始曝光。</p>
+          <div class="credit">NASA/Swift/A. Beardmore (University of Leicester)</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ CONCEPT ART ============ -->
-<section class="section section-dark" id="concept">
+<!-- ============ SIMULATION REPLAY ============ -->
+<section class="section section-dark" id="sim">
   <div class="container">
-    <div class="section-eyebrow">概念图 · CONCEPT ART</div>
-    <h2 class="section-title">{t(lang, 'concept.title')}</h2>
-    <p class="section-sub">{t(lang, 'concept.sub')}</p>
-    <div class="science-grid">
-      <div class="science-card">
-        <img src={`${imgBase}/images/concept/unit.jpg`} alt="Redbank III single unit concept" loading="lazy">
-        <div class="science-card-overlay">
-          <h3>{t(lang, 'concept.unit')}</h3>
-          <p>{t(lang, 'concept.unit.desc')}</p>
-          <div class="credit">Concept render · gpt-image-2</div>
-        </div>
-      </div>
-      <div class="science-card">
-        <img src={`${imgBase}/images/concept/unit-detail.jpg`} alt="Redbank III unit detail concept" loading="lazy">
-        <div class="science-card-overlay">
-          <h3>{t(lang, 'concept.detail')}</h3>
-          <p>{t(lang, 'concept.detail.desc')}</p>
-          <div class="credit">Concept render · gpt-image-2</div>
-        </div>
-      </div>
-      <div class="science-card">
-        <img src={`${imgBase}/images/concept/array.jpg`} alt="Redbank III 32-unit array concept" loading="lazy">
-        <div class="science-card-overlay">
-          <h3>{t(lang, 'concept.array')}</h3>
-          <p>{t(lang, 'concept.array.desc')}</p>
-          <div class="credit">Concept render · gpt-image-2</div>
-        </div>
-      </div>
-      <div class="science-card">
-        <img src={`${imgBase}/images/concept/radar-peak.jpg`} alt="Red Bank (红岸) homage concept" loading="lazy">
-        <div class="science-card-overlay">
-          <h3>{t(lang, 'concept.radar')}</h3>
-          <p>{t(lang, 'concept.radar.desc')}</p>
-          <div class="credit">Concept render · gpt-image-2</div>
-        </div>
-      </div>
-    </div>
+    <div class="section-eyebrow">仿真 · SIMULATION</div>
+    <h2 class="section-title">调度系统已经在跑 —<br>看它的仿真回放</h2>
+    <p class="section-sub">
+      网络还没建成, 但它的软件先行: 天空、警报流、台站、调度、agent、故障, 整个网络被建成一个<strong>确定性的仿真系统</strong> —
+      同一 (种子, 战役) 重跑, 事件流逐字节一致。下面的回放不是动画, 是仿真内核逐秒推演出的系统事件:
+      爱因斯坦探针警报到达、派站决策、镜筒回转、曝光、评分归档, 每一条都可点击回看。
+    </p>
+    <a href="https://redbank-twin.liyao.space/demo-agent-ep.html" class="sim-poster">
+      <img src={`${imgBase}/images/sim/ep-replay-poster.jpg`} alt="EP 警报战役仿真回放界面: 地球台站分布、天球指向、事件流、光变曲线" loading="lazy">
+    </a>
+    <p class="bom-note" style="margin-top:20px">
+      界面四格: <strong>地球</strong> (台站分布与状态) · <strong>天球</strong> (望远镜在看哪里) · <strong>事件流</strong> (系统每一步) · <strong>光变曲线</strong> (目标亮度)。
+      「Agent 值守版」中派站决策由 Claude 实时作出 — 推理逐条可见, 思考耗时计入评分。
+      <a href="https://redbank-twin.liyao.space/" style="color:var(--accent)">打开全部回放 ↗</a>
+    </p>
   </div>
 </section>
 
@@ -337,7 +319,7 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
       <div class="principle">
         <div class="principle-num">壹</div>
         <h3>完全开源</h3>
-        <p>硬件 CERN-OHL-W-2.0, 软件 Apache-2.0, 文档 CC BY-SA 4.0。没有黑盒, 没有私藏。OSHWA 认证。</p>
+        <p>硬件 CERN-OHL-W-2.0, 软件 Apache-2.0, 文档 CC BY-SA 4.0。没有黑盒, 没有私藏。目标通过 OSHWA 认证。</p>
       </div>
       <div class="principle">
         <div class="principle-num">贰</div>
@@ -628,7 +610,11 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
   <div class="container">
     <div class="section-eyebrow">阵列 · ARRAY</div>
     <h2 class="section-title">{t(lang, 'array.title')}</h2>
-    <p class="section-sub">红岸三号的核心创新不在单镜, 在阵列合成。多帧叠加算法压制天空背景涨落, 这是 Dragonfly 论文里验证过的科学原理。</p>
+    <p class="section-sub">
+      先说清网络的形态: <strong>主形态是分布式</strong> — 大量单节点散布在阳台、楼顶与暗夜台址, 各自为主, 由软件统一调度;
+      本节的集中式 8×4 阵列是其中的<strong>旗舰参考设计</strong> — 把 32 个节点装上同一块托架, 叠加出等效大口径, 也是与 Dragonfly 对标的配置。
+      叠加压制天空背景涨落的原理, 在 Dragonfly 的论文里已被验证。
+    </p>
 
     <div class="array-table-wrap">
       <table class="array-table">
@@ -666,10 +652,41 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
   </div>
 </section>
 
-<!-- ============ TRACKING (赤道仪 vs 经纬仪) ============ -->
-<section class="section section-dark" id="tracking">
+<!-- ============ DEEP SKY (capability) ============ -->
+<section class="section section-dark" id="deepsky">
   <div class="container">
-    <div class="section-eyebrow">跟踪 · TRACKING</div>
+    <div class="section-eyebrow">深空 · DEEP SKY</div>
+    <h2 class="section-title">同一套硬件, 抬头就是深空</h2>
+    <p class="section-sub">
+      时域盯守是网络的科学主线, 深空成像是同一套硬件的<strong>另一面</strong> — 也是每个节点主人最直接的回报:
+      单节点就能拍出像样的 M42, 4–8 节点叠加可以追星系盘与星系晕。
+      马头星云、创生之柱这类极暗目标属于 16+ 镜阵列的远景, 我们不在今天许诺。
+    </p>
+    <div class="science-grid">
+      <div class="science-card">
+        <img src={`${imgBase}/images/targets/andromeda-hst.jpg`} alt="Andromeda Galaxy (Hubble)" loading="lazy">
+        <div class="science-card-overlay">
+          <h3>仙女座星系 M31</h3>
+          <p>4 节点叠加即可解析星系盘与暗弱星系晕 — Dragonfly 验证过的低面亮度科学, 用开源的方式重走一遍。</p>
+          <div class="credit">NASA/ESA Hubble Space Telescope · 示意目标, 非本网络拍摄</div>
+        </div>
+      </div>
+      <div class="science-card">
+        <img src={`${imgBase}/images/targets/orion-hst.jpg`} alt="Orion Nebula (Hubble)" loading="lazy">
+        <div class="science-card-overlay">
+          <h3>猎户座大星云 M42</h3>
+          <p>单节点即可拍出令人满意的 M42, 阵列叠加后外围暗弱气体壳层浮现 — 新节点主人的第一张深空照片。</p>
+          <div class="credit">NASA/ESA Hubble Space Telescope · 示意目标, 非本网络拍摄</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRACKING (赤道仪 vs 经纬仪) ============ -->
+<section class="section" id="tracking">
+  <div class="container">
+    <div class="section-eyebrow">跟踪 · 旗舰阵列 · TRACKING</div>
     <h2 class="section-title">32 个节点, 一台赤道仪 —<br>跟踪精度是买来的, 阵列结构是造出来的</h2>
     <p class="section-sub">
       赤道仪本质上是一个 2 自由度 (赤经 RA + 赤纬 Dec) 的旋转平台。32 个节点指向同一天区, 只需要 <strong>一台赤道仪</strong> 承载整个 8×4 支架统一跟踪 — 跟踪误差对所有节点是共模的, 不影响叠加对齐。32 台独立小赤道仪要 ¥48,000, 共享一台只要 <strong>¥1,400–2,900 (开源方案, 见下)</strong>, 还免掉 32 套极轴对准。
@@ -800,8 +817,12 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
       <div class="timeline-item timeline-future">
         <div class="timeline-year">未来</div>
         <div class="timeline-content">
-          <h3>全球分布式阵列</h3>
-          <p>1,000 个红岸三号节点 = 巡天覆盖能力超越任何单一专业设备。参照全球流星网 (GMN) 先例: 树莓派相机 5 年长到 1,000+ 台 / 40+ 国, 数据 24 小时公开。红岸三号把这个模式延伸到更深的天空 — 节点出生即内置 FITS / AAVSO / MPC 数据标准, TOM Toolkit 自动调度, GRB/SN 警报跨节点协同触发。</p>
+          <h3>全球分布式网络</h3>
+          <p>1,000 个红岸三号节点 = 巡天覆盖能力超越任何单一专业设备。参照全球流星网 (GMN) 先例: 树莓派相机 5 年长到 1,000+ 台 / 40+ 国, 数据 24 小时公开。红岸三号把这个模式延伸到更深的天空 — 节点出生即内置 FITS / AAVSO / MPC 数据标准, 统一调度, GRB/SN 警报跨节点协同触发。</p>
+          <figure style="margin-top:20px">
+            <img src={`${imgBase}/images/concept/radar-peak.jpg`} alt="冷湖暗夜台址愿景概念图" loading="lazy" style="width:100%; max-width:700px; border-radius:6px; border:1px solid var(--border); display:block;">
+            <figcaption style="font-family:var(--font-mono); font-size:10px; color:var(--text-mute); margin-top:8px;">愿景概念图 · 青海冷湖暗夜台址 · AI 生成 (gpt-image-2), 非实景</figcaption>
+          </figure>
         </div>
       </div>
     </div>
@@ -812,32 +833,36 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
 <section class="section section-dark" id="open">
   <div class="container">
     <div class="section-eyebrow">开源 · OPEN SOURCE</div>
-    <h2 class="section-title">{t(lang, 'open.title')}</h2>
+    <h2 class="section-title" style="white-space: pre-line">{t(lang, 'open.title')}</h2>
+    <p class="section-sub">
+      协议已定死, 开放按里程碑推进 — 不拿"全部开源"当口号, 拿时间表当承诺。
+      每一块在达到可复现质量时公开, 而不是把半成品倒出来。
+    </p>
     <div class="open-grid">
+      <div class="open-item">
+        <h3>网站与设计文档</h3>
+        <div class="license-badge">CC BY-SA 4.0</div>
+        <p><strong>已公开。</strong>本站全部内容、技术方案论证、工程问答, 源码即仓库。</p>
+      </div>
       <div class="open-item">
         <h3>硬件</h3>
         <div class="license-badge">CERN-OHL-W-2.0</div>
-        <p>CAD 图纸, BOM, 转接环设计, 外壳 3D 模型, 全部开源。OSHWA 认证。</p>
+        <p><strong>随首批节点定型开放。</strong>CAD 参数化源文件, BOM, 转接环设计, 打印件 STL。目标通过 OSHWA 认证。</p>
       </div>
       <div class="open-item">
         <h3>软件</h3>
         <div class="license-badge">Apache-2.0</div>
-        <p>采集, 对齐, 叠加, 控制, 全部开源。可商用, 可修改, 可再分发。</p>
-      </div>
-      <div class="open-item">
-        <h3>文档</h3>
-        <div class="license-badge">CC BY-SA 4.0</div>
-        <p>组装教程, 调试指南, 科学案例, 全部开源。欢迎翻译。</p>
+        <p><strong>随硬件验证逐步开放。</strong>采集, 对齐, 叠加, 调度与仿真系统。可商用, 可修改, 可再分发。</p>
       </div>
       <div class="open-item">
         <h3>数据</h3>
         <div class="license-badge">CC0</div>
-        <p>原始 FITS 帧, 叠加结果, 巡天数据, 全部发布到 Hugging Face。</p>
+        <p><strong>自首光起发布。</strong>原始帧, 测光表, 光变曲线 — 观测数据永不出售, 永久开放。</p>
       </div>
     </div>
     <div class="open-cta">
-      <a href="https://github.com/redbank-iii/redbank-iii" class="btn btn-primary btn-lg">GitHub → redbank-iii/redbank-iii</a>
-      <a href="#join" class="btn btn-ghost btn-lg">加入 Discord</a>
+      <a href="https://github.com/redbank-iii" class="btn btn-primary btn-lg">GitHub → redbank-iii</a>
+      <a href="https://redbank-twin.liyao.space/" class="btn btn-ghost btn-lg">仿真回放 ↗</a>
     </div>
   </div>
 </section>
@@ -850,18 +875,18 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
     <div class="join-grid">
       <div class="join-item">
         <h3>造一台</h3>
-        <p>按 BOM 采购, 按教程组装, 拍出你的第一张深空照片。Lite 版 $200, Pro 版 $618。</p>
-        <a href="#" class="btn btn-plan">组装教程</a>
+        <p>按方案 A/B 的 BOM 采购, 按教程组装 — 首批节点正在样机验证, 组装教程随硬件定型发布。</p>
+        <a href="#bom-main" class="btn btn-plan">先看 BOM</a>
       </div>
       <div class="join-item">
         <h3>写代码</h3>
-        <p>叠加算法, 阵列控制, Octos 集成, 都需要贡献者。Rust / Python / Android。</p>
-        <a href="#" class="btn btn-plan">贡献指南</a>
+        <p>叠加算法, 调度与仿真, 阵列控制, 都需要贡献者。Python / Rust / Android。</p>
+        <a href="https://github.com/redbank-iii" class="btn btn-plan">GitHub 组织</a>
       </div>
       <div class="join-item">
         <h3>用数据</h3>
-        <p>所有原始 FITS 帧和叠加结果都发布到 Hugging Face。拿去训你的模型, 做你的研究。</p>
-        <a href="#" class="btn btn-plan">数据集</a>
+        <p>观测数据自首光起以 CC0 发布 — 原始帧, 测光表, 光变曲线。拿去做你的研究。</p>
+        <a href="https://redbank-twin.liyao.space/" class="btn btn-plan">先看仿真数据流</a>
       </div>
     </div>
   </div>

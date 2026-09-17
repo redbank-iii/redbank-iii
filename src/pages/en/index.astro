@@ -7,11 +7,11 @@ const base = import.meta.env.BASE_URL;// normalize: BASE_URL is '/' at the domai
 const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
 ---
 
-<Layout lang={lang} title="红岸三号 · Redbank III — 开源阵列望远镜" description="用消费级Sensor和开源设计,把 Dragonfly 级别的深空成像能力从 $150,000 压到 $2,000">
+<Layout lang={lang} title="Redbank III 红岸三号 — Open Telescope Network" description="An open telescope network watching the bright-end time-domain sky (mag 6–16): variables, novae, GRB afterglows. Low-cost nodes, unified scheduling, fully open source.">
 
 <!-- ============ HERO ============ -->
 <header class="hero" id="top">
-  <div class="hero-bg"><img class="hero-bg-img" src={`${imgBase}/images/concept/hero-redbank.jpg`} alt="" aria-hidden="true"><div class="hero-bg-scrim"></div><canvas id="starfield"></canvas></div>
+  <div class="hero-bg"><img class="hero-bg-img" src={`${imgBase}/images/hero/milkyway-paranal.jpg`} alt="" aria-hidden="true"><div class="hero-bg-scrim"></div><canvas id="starfield"></canvas></div>
   <div class="hero-content">
     <div class="hero-eyebrow">{t(lang, 'hero.eyebrow')}</div>
     <h1 class="hero-title">
@@ -23,12 +23,13 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
     <p class="hero-desc" style="white-space: pre-line">{t(lang, 'hero.desc')}</p>
     <div class="hero-actions">
       <a href="#design" class="btn btn-primary">{t(lang, 'hero.cta.design')}</a>
-      <a href="https://github.com/redbank-iii/redbank-iii" class="btn btn-ghost">{t(lang, 'hero.cta.github')}</a>
+      <a href="#sim" class="btn btn-ghost">{t(lang, 'hero.cta.sim')}</a>
+      <a href="https://github.com/redbank-iii" class="btn btn-ghost">{t(lang, 'hero.cta.github')}</a>
     </div>
     <div class="hero-stats">
-      <div class="stat"><div class="stat-num">¥1,500</div><div class="stat-label">{t(lang, 'hero.stat.cost')}</div></div>
-      <div class="stat"><div class="stat-num">382mm</div><div class="stat-label">{t(lang, 'hero.stat.aperture')}</div></div>
-      <div class="stat"><div class="stat-num">100×</div><div class="stat-label">{t(lang, 'hero.stat.advantage')}</div></div>
+      <div class="stat"><div class="stat-num">¥1,700+</div><div class="stat-label">{t(lang, 'hero.stat.cost')}</div></div>
+      <div class="stat"><div class="stat-num">mag 6–16</div><div class="stat-label">{t(lang, 'hero.stat.aperture')}</div></div>
+      <div class="stat"><div class="stat-num">~1.5%</div><div class="stat-label">{t(lang, 'hero.stat.advantage')}</div></div>
       <div class="stat"><div class="stat-num">100%</div><div class="stat-label">{t(lang, 'hero.stat.open')}</div></div>
     </div>
   </div>
@@ -46,10 +47,13 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
           In 2013, Roberto Abraham (University of Toronto) and Pieter van Dokkum (Yale) started the <strong>Dragonfly Telephoto Array</strong> over a beer bet — eight Canon 400mm f/2.8L professional lenses networked into an array that imaged ultra-diffuse galaxies previously visible only to Hubble and Keck.
         </p>
         <p>
-          But a single Dragonfly lens costs <strong>$11,500</strong> — more than most amateurs spend on astronomy in a decade. Its code is closed, its design unpublished, its replication impossible for ordinary people.
+          Dragonfly proved something important: <strong>cheap lenses plus array synthesis can do serious science.</strong> But at $11,500 per lens, with closed code and an unpublished design, ordinary people cannot replicate it.
         </p>
         <p>
-          <strong>Redbank III</strong> is the opposite — consumer sensors, second-hand phones, and the Huaqiangbei supply chain, delivering equivalent aperture in a <strong>fully open source</strong> array telescope. Anyone, anywhere, can build Dragonfly-class deep-sky imaging for under $2,000.
+          Meanwhile the other end of the sky sits empty: <strong>no instrument on Earth continuously monitors stars brighter than magnitude ~10</strong> — every modern survey saturates at the bright end (ASAS-SN saturates near mag 10). When Betelgeuse dimmed in 2019, professional instruments overexposed; the key photometry came from amateurs.
+        </p>
+        <p>
+          <strong>Redbank III</strong> joins these two facts — open-design observing nodes built from consumer sensors and second-hand lenses for under ¥2,000, deployed on balconies, rooftops and dark-sky sites, scheduled by software into <strong>one networked instrument</strong>: watching the mag 6–16 time-domain sky (variables, novae, GRB afterglows) as its main mission, while the same hardware, stacked, also reaches Dragonfly-class deep sky. Anyone, anywhere, can afford to build one and plug it in.
         </p>
       </div>
       <div class="mission-quote">
@@ -181,87 +185,67 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
 <section class="section section-dark" id="science">
   <div class="container">
     <div class="section-eyebrow">SCIENCE TARGETS · 科学目标</div>
-    <h2 class="section-title">These are within Redbank III's reach</h2>
+    <h2 class="section-title">The sky we keep watch over</h2>
     <p class="section-sub">
-      The images below are from NASA/ESA/CSA's Hubble and James Webb Space Telescopes (public domain). Redbank III's 8-16 unit array can image fainter versions of these same targets — not this quality, but the same sky.
+      The bright-end time domain is a structural blind spot of modern surveys — to see deep, they all saturate around mag 10.
+      The four real events below are the science this network exists to catch. Every image is a real observation, individually credited.
     </p>
     <div class="science-grid">
       <div class="science-card">
-        <img src={`${imgBase}/images/targets/andromeda-hst.jpg`} alt="Andromeda Galaxy (Hubble)" loading="lazy">
+        <img src={`${imgBase}/images/targets-td/betelgeuse-sphere.jpg`} alt="Betelgeuse before and after the Great Dimming (VLT/SPHERE)" loading="lazy" style="object-fit:contain; background:#000;">
         <div class="science-card-overlay">
-          <h3>Andromeda Galaxy M31</h3>
-          <p>A 4-unit Redbank III array resolves the galactic disk and faint stellar halo. 8 units approach Dragonfly's low-surface-brightness survey depth.</p>
-          <div class="credit">NASA/ESA Hubble Space Telescope</div>
+          <h3>The Great Dimming of Betelgeuse · 2019–20</h3>
+          <p>One of the brightest stars in the sky faded by a full magnitude in four months. Professional surveys saturated; key photometry came from amateurs — exactly the job of a bright-end staring station.</p>
+          <div class="credit">ESO/M. Montargès et al. (VLT/SPHERE) · CC BY 4.0</div>
         </div>
       </div>
       <div class="science-card">
-        <img src={`${imgBase}/images/targets/orion-hst.jpg`} alt="Orion Nebula (Hubble)" loading="lazy">
+        <img src={`${imgBase}/images/targets-td/sn2023ixf-gemini.jpg`} alt="SN 2023ixf in the Pinwheel Galaxy (Gemini North)" loading="lazy">
         <div class="science-card-overlay">
-          <h3>Orion Nebula M42</h3>
-          <p>A single Redbank III unit captures a satisfying M42. Array stacking reveals the faint outer gas shells.</p>
-          <div class="credit">NASA/ESA Hubble Space Telescope</div>
+          <h3>Supernova SN 2023ixf · 2023</h3>
+          <p>Koichi Itagaki caught it at mag 14.9, two full days before ZTF's archival detections — at the bright end, discovery still belongs to whoever keeps watching.</p>
+          <div class="credit">International Gemini Observatory/NOIRLab/NSF/AURA/J. Miller et al. · CC BY 4.0</div>
         </div>
       </div>
       <div class="science-card">
-        <img src={`${imgBase}/images/targets/horsehead-hst.jpg`} alt="Horsehead Nebula (Hubble)" loading="lazy">
+        <img src={`${imgBase}/images/targets-td/gkper-chandra.jpg`} alt="Nova remnant GK Persei (Chandra/HST/VLA composite)" loading="lazy">
         <div class="science-card-overlay">
-          <h3>Horsehead Nebula Barnard 33</h3>
-          <p>A classic dark nebula target. Requires 8+ units and long-exposure stacking to separate from light-polluted backgrounds.</p>
-          <div class="credit">NASA/ESA Hubble Space Telescope</div>
+          <h3>Nova remnant GK Persei</h3>
+          <p>Novae don't make appointments — rise to peak takes days. A network's value is that some node is always awake; a staring station's ring buffer even keeps the frames from before the outburst.</p>
+          <div class="credit">X-ray: NASA/CXC/RIKEN/D. Takei et al.; Optical: NASA/STScI; Radio: NRAO/VLA</div>
         </div>
       </div>
       <div class="science-card">
-        <img src={`${imgBase}/images/targets/pillars-hst.jpg`} alt="Pillars of Creation (Hubble)" loading="lazy">
+        <img src={`${imgBase}/images/targets-td/grb221009a-swift.jpg`} alt="X-ray dust rings around GRB 221009A (Swift/XRT)" loading="lazy">
         <div class="science-card-overlay">
-          <h3>Pillars of Creation (Eagle Nebula M16)</h3>
-          <p>Hubble's most iconic target. A 16-unit Redbank III array can capture the pillar structure's outline.</p>
-          <div class="credit">NASA/ESA/CSA Hubble Space Telescope</div>
+          <h3>GRB 221009A · brightest of all time</h3>
+          <p>X-rays scattering off galactic dust into concentric rings. Afterglows fade by the minute — the response stations' design target: exposing within 15–45 seconds of an alert.</p>
+          <div class="credit">NASA/Swift/A. Beardmore (University of Leicester)</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ CONCEPT ART ============ -->
-<section class="section section-dark" id="concept">
+<!-- ============ SIMULATION REPLAY ============ -->
+<section class="section section-dark" id="sim">
   <div class="container">
-    <div class="section-eyebrow">概念图 · CONCEPT ART</div>
-    <h2 class="section-title">{t(lang, 'concept.title')}</h2>
-    <p class="section-sub">{t(lang, 'concept.sub')}</p>
-    <div class="science-grid">
-      <div class="science-card">
-        <img src={`${imgBase}/images/concept/unit.jpg`} alt="Redbank III single unit concept" loading="lazy">
-        <div class="science-card-overlay">
-          <h3>{t(lang, 'concept.unit')}</h3>
-          <p>{t(lang, 'concept.unit.desc')}</p>
-          <div class="credit">Concept render · gpt-image-2</div>
-        </div>
-      </div>
-      <div class="science-card">
-        <img src={`${imgBase}/images/concept/unit-detail.jpg`} alt="Redbank III unit detail concept" loading="lazy">
-        <div class="science-card-overlay">
-          <h3>{t(lang, 'concept.detail')}</h3>
-          <p>{t(lang, 'concept.detail.desc')}</p>
-          <div class="credit">Concept render · gpt-image-2</div>
-        </div>
-      </div>
-      <div class="science-card">
-        <img src={`${imgBase}/images/concept/array.jpg`} alt="Redbank III 32-unit array concept" loading="lazy">
-        <div class="science-card-overlay">
-          <h3>{t(lang, 'concept.array')}</h3>
-          <p>{t(lang, 'concept.array.desc')}</p>
-          <div class="credit">Concept render · gpt-image-2</div>
-        </div>
-      </div>
-      <div class="science-card">
-        <img src={`${imgBase}/images/concept/radar-peak.jpg`} alt="Red Bank (红岸) homage concept" loading="lazy">
-        <div class="science-card-overlay">
-          <h3>{t(lang, 'concept.radar')}</h3>
-          <p>{t(lang, 'concept.radar.desc')}</p>
-          <div class="credit">Concept render · gpt-image-2</div>
-        </div>
-      </div>
-    </div>
+    <div class="section-eyebrow">SIMULATION · 仿真</div>
+    <h2 class="section-title">The scheduler already runs —<br>watch its simulation replays</h2>
+    <p class="section-sub">
+      The network is not built yet, but its software went first: sky, alert streams, stations, scheduling, agents and faults are modeled as a
+      <strong>deterministic simulation</strong> — same (seed, campaign) reruns byte-identical. The replay below is not an animation: it is the
+      event stream computed second-by-second by the simulation kernel — an Einstein Probe alert arrives, stations are dispatched, mounts slew,
+      exposures fire, scores are archived. Every event is clickable.
+    </p>
+    <a href="https://redbank-twin.liyao.space/demo-agent-ep.html" class="sim-poster">
+      <img src={`${imgBase}/images/sim/ep-replay-poster.jpg`} alt="EP alert campaign simulation replay: station globe, sky plot, event stream, light curve" loading="lazy">
+    </a>
+    <p class="bom-note" style="margin-top:20px">
+      Four panels: <strong>globe</strong> (station status) · <strong>sky plot</strong> (where telescopes point) · <strong>event stream</strong> (every system step) · <strong>light curve</strong> (target brightness).
+      In the agent-on-duty variant, dispatch decisions are made live by Claude — reasoning visible, thinking time scored.
+      <a href="https://redbank-twin.liyao.space/" style="color:var(--accent)">Open all replays ↗</a>
+    </p>
   </div>
 </section>
 
@@ -325,7 +309,7 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
       <div class="principle">
         <div class="principle-num">I</div>
         <h3>Fully open source</h3>
-        <p>Hardware CERN-OHL-W-2.0, software Apache-2.0, docs CC BY-SA 4.0. No black boxes, nothing held back. OSHWA certified.</p>
+        <p>Hardware CERN-OHL-W-2.0, software Apache-2.0, docs CC BY-SA 4.0. No black boxes, nothing held back. OSHWA certification is a goal.</p>
       </div>
       <div class="principle">
         <div class="principle-num">II</div>
@@ -451,7 +435,11 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
   <div class="container">
     <div class="section-eyebrow">ARRAY · 阵列</div>
     <h2 class="section-title">{t(lang, 'array.title')}</h2>
-    <p class="section-sub">红岸三号的核心创新不在single unit, 在阵列合成。多帧叠加算法压制天空背景涨落, 这是 Dragonfly 论文里验证过的科学原理。</p>
+    <p class="section-sub">
+      First, the network's shape: <strong>the primary form is distributed</strong> — many independent nodes on balconies, rooftops and dark-sky sites, scheduled as one instrument.
+      The concentrated 8×4 array in this section is the <strong>flagship reference design</strong> — 32 nodes on one carrier, synthesizing a large equivalent aperture; it is also the configuration benchmarked against Dragonfly.
+      The sky-noise-suppression principle behind stacking was validated in the Dragonfly papers.
+    </p>
 
     <div class="array-table-wrap">
       <table class="array-table">
@@ -484,7 +472,38 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
           <div class="vs-note">382mm Equivalent aperture · Fully open source</div>
         </div>
       </div>
-      <p class="vs-conclusion"><strong>便宜 7.4 倍, 口径接近, Fully open source。</strong></p>
+      <p class="vs-conclusion"><strong>A fraction of the cost, comparable aperture, fully open source.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DEEP SKY (capability) ============ -->
+<section class="section" id="deepsky">
+  <div class="container">
+    <div class="section-eyebrow">DEEP SKY · 深空</div>
+    <h2 class="section-title">The same hardware, pointed up, is a deep-sky camera</h2>
+    <p class="section-sub">
+      Time-domain monitoring is the network's science mission; deep-sky imaging is the <strong>other face of the same hardware</strong> — and every node owner's most direct reward:
+      a single node captures a satisfying M42, and 4–8 stacked nodes reach galactic disks and stellar halos.
+      Extreme low-surface-brightness targets like the Horsehead or the Pillars of Creation belong to a 16+ unit array — a long-term goal we are not promising today.
+    </p>
+    <div class="science-grid">
+      <div class="science-card">
+        <img src={`${imgBase}/images/targets/andromeda-hst.jpg`} alt="Andromeda Galaxy (Hubble)" loading="lazy">
+        <div class="science-card-overlay">
+          <h3>Andromeda Galaxy M31</h3>
+          <p>4 stacked nodes resolve the disk and faint stellar halo — Dragonfly-validated low-surface-brightness science, replayed the open-source way.</p>
+          <div class="credit">NASA/ESA Hubble Space Telescope · reference target, not imaged by this network</div>
+        </div>
+      </div>
+      <div class="science-card">
+        <img src={`${imgBase}/images/targets/orion-hst.jpg`} alt="Orion Nebula (Hubble)" loading="lazy">
+        <div class="science-card-overlay">
+          <h3>Orion Nebula M42</h3>
+          <p>A single node captures a satisfying M42; stacking reveals the faint outer shells — a new node owner's first deep-sky photo.</p>
+          <div class="credit">NASA/ESA Hubble Space Telescope · reference target, not imaged by this network</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -561,10 +580,14 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
         </div>
       </div>
       <div class="timeline-item timeline-future">
-        <div class="timeline-year">未来</div>
+        <div class="timeline-year">Future</div>
         <div class="timeline-content">
-          <h3>Global distributed array</h3>
-          <p>1000 个红岸三号节点分布在全球, 通过 Octos AgentOS 统一调度, 形成一个Equivalent aperture超过任何单一望远镜的虚拟阵列。这是天文学的真正民主化。</p>
+          <h3>A global distributed network</h3>
+          <p>1,000 Redbank III nodes worldwide — survey coverage beyond any single professional instrument. The precedent is the Global Meteor Network: Raspberry Pi cameras grew to 1,000+ across 40+ countries in five years, data public within 24 hours. Redbank III extends that model deeper into the sky — every node speaks FITS / AAVSO / MPC standards from birth, centrally scheduled, with GRB/SN alerts triggering cross-node follow-up.</p>
+          <figure style="margin-top:20px">
+            <img src={`${imgBase}/images/concept/radar-peak.jpg`} alt="Lenghu dark-sky site vision concept" loading="lazy" style="width:100%; max-width:700px; border-radius:6px; border:1px solid var(--border); display:block;">
+            <figcaption style="font-family:var(--font-mono); font-size:10px; color:var(--text-mute); margin-top:8px;">Vision concept · Lenghu dark-sky site, Qinghai · AI-generated (gpt-image-2), not a photograph</figcaption>
+          </figure>
         </div>
       </div>
     </div>
@@ -576,31 +599,35 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
   <div class="container">
     <div class="section-eyebrow">OPEN SOURCE · 开源</div>
     <h2 class="section-title">{t(lang, 'open.title')}</h2>
+    <p class="section-sub">
+      Licenses are fixed; release follows milestones — we don't wave "fully open source" as a slogan, we commit to a timetable.
+      Each piece goes public when it reaches reproducible quality, not as a half-finished dump.
+    </p>
     <div class="open-grid">
+      <div class="open-item">
+        <h3>Site &amp; design docs</h3>
+        <div class="license-badge">CC BY-SA 4.0</div>
+        <p><strong>Public now.</strong> Everything on this site, the technical trade-offs, the engineering Q&amp;A — the source is the repo.</p>
+      </div>
       <div class="open-item">
         <h3>Hardware</h3>
         <div class="license-badge">CERN-OHL-W-2.0</div>
-        <p>CAD 图纸, BOM, Adapter ring设计, Enclosure 3D 模型, 全部开源。OSHWA 认证。</p>
+        <p><strong>Opens as the first nodes are finalized.</strong> Parametric CAD sources, BOM, adapter designs, printable STLs. OSHWA certification is a goal.</p>
       </div>
       <div class="open-item">
         <h3>Software</h3>
         <div class="license-badge">Apache-2.0</div>
-        <p>Capture, alignment, stacking, control — all open. Commercial use, modification, redistribution allowed.</p>
-      </div>
-      <div class="open-item">
-        <h3>Docs</h3>
-        <div class="license-badge">CC BY-SA 4.0</div>
-        <p>Assembly tutorials, debugging guides, science cases — all open. Translations welcome.</p>
+        <p><strong>Opens progressively with hardware validation.</strong> Capture, alignment, stacking, scheduling and the simulation system. Commercial use, modification, redistribution allowed.</p>
       </div>
       <div class="open-item">
         <h3>Data</h3>
         <div class="license-badge">CC0</div>
-        <p>原始 FITS 帧, 叠加结果, 巡天Data, 全部发布到 Hugging Face。</p>
+        <p><strong>Published from first light onward.</strong> Raw frames, photometry tables, light curves — observation data is never sold, open forever.</p>
       </div>
     </div>
     <div class="open-cta">
-      <a href="https://github.com/redbank-iii/redbank-iii" class="btn btn-primary btn-lg">GitHub → redbank-iii/redbank-iii</a>
-      <a href="#join" class="btn btn-ghost btn-lg">Join Discord</a>
+      <a href="https://github.com/redbank-iii" class="btn btn-primary btn-lg">GitHub → redbank-iii</a>
+      <a href="https://redbank-twin.liyao.space/" class="btn btn-ghost btn-lg">Simulation replays ↗</a>
     </div>
   </div>
 </section>
@@ -613,18 +640,18 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
     <div class="join-grid">
       <div class="join-item">
         <h3>Build one</h3>
-        <p>Buy the BOM, follow the tutorial, take your first deep-sky photo. Lite Â¥1,000, Pro Â¥1,500.</p>
-        <a href="#" class="btn btn-plan">Assembly guide</a>
+        <p>Source the BOM, follow the guide — first nodes are in prototype validation; the assembly tutorial ships when the hardware is finalized.</p>
+        <a href="#bom-b" class="btn btn-plan">See the BOM first</a>
       </div>
       <div class="join-item">
         <h3>Write code</h3>
-        <p>Stacking algorithms, array control, Octos integration — contributors needed. Rust / Python / Android.</p>
-        <a href="#" class="btn btn-plan">Contributing guide</a>
+        <p>Stacking algorithms, scheduling and simulation, array control — contributors needed. Python / Rust / Android.</p>
+        <a href="https://github.com/redbank-iii" class="btn btn-plan">GitHub org</a>
       </div>
       <div class="join-item">
-        <h3>用Data</h3>
-        <p>All raw FITS frames and stacked results are published to Hugging Face. Train your models, do your research.</p>
-        <a href="#" class="btn btn-plan">Data集</a>
+        <h3>Use the data</h3>
+        <p>Observation data is published under CC0 from first light — raw frames, photometry tables, light curves. Take it for your research.</p>
+        <a href="https://redbank-twin.liyao.space/" class="btn btn-plan">See the simulated stream</a>
       </div>
     </div>
   </div>

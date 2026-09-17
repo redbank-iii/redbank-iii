@@ -670,9 +670,38 @@ body {
   font-family: var(--font-mono); margin-bottom: 8px;
 }
 
+/* ============ SIMULATION POSTER ============ */
+.sim-poster {
+  display: block; border: 1px solid var(--border); border-radius: 6px;
+  overflow: hidden; transition: border-color 0.3s, transform 0.3s;
+}
+.sim-poster:hover { border-color: var(--accent); transform: translateY(-4px); }
+.sim-poster img { width: 100%; display: block; }
+
+/* ============ MOBILE NAV ============ */
+.nav-toggle {
+  display: none;
+  background: none; border: 1px solid var(--border); border-radius: 4px;
+  color: var(--text-dim); font-size: 18px; line-height: 1;
+  padding: 8px 12px; cursor: pointer;
+}
+.nav-toggle:hover { color: var(--accent); border-color: var(--accent); }
+
 /* ============ RESPONSIVE ============ */
 @media (max-width: 900px) {
+  .nav-toggle { display: block; }
   .nav-links { display: none; }
+  .nav-links.open {
+    display: flex; flex-direction: column; align-items: stretch; gap: 0;
+    position: absolute; top: 100%; left: 0; right: 0;
+    background: rgba(6, 9, 18, 0.97); backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    padding: 8px 24px 16px;
+  }
+  .nav-links.open a { padding: 12px 4px; font-size: 15px; border-bottom: 1px solid var(--border); }
+  .nav-links.open a:last-of-type { border-bottom: none; }
+  .nav-links.open .nav-cta { border: none; border-radius: 0; padding: 12px 4px; }
+  .nav-links.open .lang-switcher { margin: 12px 0 0; padding: 12px 0 0; border-left: none; border-top: 1px solid var(--border); }
   .mission-grid,
   .plans-compare,
   .principles,

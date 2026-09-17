@@ -28,6 +28,7 @@ const MIME = {
 };
 
 const findings = [];
+const checkedInternal = new Set();
 const add = (sev, page, viewport, kind, detail) =>
   findings.push({ sev, page, viewport, kind, detail });
 
@@ -82,7 +83,7 @@ async function auditPage(browser, pagePath, vp) {
       overflow: null, brokenImages: [], noAlt: [], deadLinks: [], badAnchors: [],
       dupIds: [], overlaps: [], emptyButtons: [], headings: [], lang: document.documentElement.lang,
       title: document.title, desc: document.querySelector('meta[name=description]')?.content || '',
-      externals: [], hiddenNav: null, tinyTap: [],
+      externals: [], internals: [], hiddenNav: null, tinyTap: [],
     };
     // horizontal overflow
     const de = document.documentElement;
@@ -104,7 +105,13 @@ async function auditPage(browser, pagePath, vp) {
       const h = a.getAttribute('href');
       if (h === '#' || h === '') out.deadLinks.push(a.textContent.trim().slice(0, 40));
       else if (h.startsWith('#') && !ids.has(h.slice(1))) out.badAnchors.push(`${h} ← "${a.textContent.trim().slice(0, 30)}"`);
-      else if (/^https?:\/\//.test(h)) out.externals.push(h);
+      else if (/^https?:\/\//.test(h)) {
+        // same-origin absolute URLs are ours to verify too
+        if (a.host === location.host) out.internals.push(a.pathname);
+        else out.externals.push(h);
+      } else if (!h.startsWith('mailto:') && !h.startsWith('tel:')) {
+        out.internals.push(new URL(h, location.href).pathname);
+      }
     });
     // duplicate ids
     const seen = {};
@@ -210,6 +217,17 @@ async function auditPage(browser, pagePath, vp) {
     if (nav.missing) add('high', pagePath, vp.name, 'nav-toggle-missing', 'no #nav-toggle / #nav-links');
     else if (!nav.visAfter) add('high', pagePath, vp.name, 'nav-toggle-broken', `click did not reveal menu (open=${nav.openCls}, aria=${nav.aria})`);
     else if (nav.aria !== 'true') add('med', pagePath, vp.name, 'nav-aria', `aria-expanded="${nav.aria}" after open`);
+  }
+
+  // every internal link must actually resolve — this is what catches a typo'd /sim/ path
+  for (const p of [...new Set(res.internals)]) {
+    if (checkedInternal.has(p)) continue;
+    checkedInternal.add(p);
+    const status = await new Promise((resolve) => {
+      http.get({ host: 'localhost', port: PORT, path: p }, (r) => { r.resume(); resolve(r.statusCode); })
+        .on('error', () => resolve(0));
+    });
+    if (status !== 200) add('high', pagePath, vp.name, 'broken-internal-link', `${p} → ${status || 'unreachable'}`);
   }
 
   await page.close();

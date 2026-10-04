@@ -9,7 +9,7 @@ cd twin && make demo
 cp demo/*.html <this-repo>/public/sim/
 ```
 
-本次构建自 twin `c341c0a`。
+本次构建自 twin `08d388b`。
 
 以前这些文件由 intel-mac 上的 `python3 -m http.server` + Cloudflare 隧道对外服务
 (`redbank-twin.liyao.space`),那台机器一关站点就没了。现在走 GitHub Pages,
